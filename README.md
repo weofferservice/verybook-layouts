@@ -16,3 +16,9 @@
 9. [Страница "Корзина"](https://weofferservice.github.io/verybook-layouts/8.%20shop-cart/shop-cart.html)
 10. [Страница "Обратная связь"](https://weofferservice.github.io/verybook-layouts/9.%20feedback/feedback.html)
 11. [Страница "Рейтинг автора"](https://weofferservice.github.io/verybook-layouts/10.%20author-rating/author-rating.html)
+
+Особую гордость представляют:
+- сворачивающийся/разворачивающийся блок в [личном кабинете автора](https://weofferservice.github.io/verybook-layouts/6.%20author-pa/author-pa.html#about)
+- подвижные книжные полки, например, на [странице "О книге"](https://weofferservice.github.io/verybook-layouts/5.%20book/book.html#shelf)
+- слайдеры на [на первой части главной страницы](https://weofferservice.github.io/verybook-layouts/1.%20index/index.html#slider)
+- вкладки на [на второй части главной страницы](https://weofferservice.github.io/verybook-layouts/2.%20index-2/index-2.html#help-slide-marks)
