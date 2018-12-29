@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Verybook</title>
+		<meta charset="UTF-8" />
+        <link href="css/create-ebook.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body onload="init()">
+        <header>
+            <div class="header header1">
+                <a href="#" class="logo">
+                    <span class="logo-word logo-line logo-line1">\</span>
+                    <span class="logo-word logo-line logo-line2">\</span>
+                    <span class="logo-word logo-v">V</span>
+                    <span class="logo-word logo-erybook">erybook</span>
+                </a>
+                <div class="search">
+                    <label class="search">
+                        <input type="text" name="search" autocomplete />
+                    </label>
+                    <button class="search" />
+                </div>
+                <div class="ask">
+                    <a href="#">Задать вопрос</a>
+                </div>
+                <div class="cart">
+                    <a href="#">Корзина</a>
+                </div>
+            </div>
+            <nav class="header header2">
+                <div class="menu">
+                    <!-- Для того, чтобы подчеркнуть страницу, которая выбрана, к div добавляется класс menu-item-selected -->
+                    <div class="shop ">
+                        <a href="#">Книжный магазин</a>
+                    </div>
+                    <div class="help menu-item-selected">
+                        <a href="#">Помощь автору</a>
+                    </div>
+                    <div class="authors-rating ">
+                        <a href="#">Рейтинг авторов</a>
+                    </div>
+                    <div class="about ">
+                        <a href="#">О проекте</a>
+                    </div>
+                </div>
+                <div class="entrance "> <!-- для залогиненого пользователя нужно добавить класс nick -->
+                    <a href="#">Войти</a> <!-- для залогиненого пользователя нужно поменять Войти на Логин -->
+                </div>
+            </nav>
+        </header>
+		
+		<main>
+            <div class="column-1">
+                <ul class="useful-info">
+                    <li class="useful-item h2">
+                        <h2>Полезная информация</h2>
+                    </li>
+                    <li class="useful-item h3">
+                        <h3>О продукте и ценах</h3>
+                        <ul class="links">
+                            <li class="link">
+                                <a href="#">Сколько стоит моя книга?</a>
+                            </li>
+                            <li class="link">
+                                <a href="#">На какой бумаге печатать книгу и обложку?</a>
+                            </li>
+                            <li class="link">
+                                <a href="#">Переплет и количество страниц</a>
+                            </li>
+                            <li class="link">
+                                <a href="#">Твердый переплет</a>
+                            </li>
+                            <li class="link">
+                                <a href="#">Как определить цену?</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="useful-item h3">
+                        <h3>Процесс публикации</h3>
+                        <ul class="links">
+                            <li class="link">
+                                <a href="#">Досуг и творчество</a>
+                            </li>
+                            <li class="link">
+                                <a href="#">Книги для родителей</a>
+                            </li>
+                            <li class="link">
+                                <a href="#">Познавательная литература</a>
+                            </li>
+                            <li class="link">
+                                <a href="#">Художественная литература</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="useful-item h3">
+                        <h3>Форматирование электронных книг</h3>
+                        <ul class="links">
+                            <li class="link">
+                                <a href="#">Досуг и творчество</a>
+                            </li>
+                            <li class="link">
+                                <a href="#">Книги для родителей</a>
+                            </li>
+                            <li class="link">
+                                <a href="#">Познавательная литература</a>
+                            </li>
+                            <li class="link">
+                                <a href="#">Художественная литература</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="useful-item h3">
+                        <h3>Copyright</h3>
+                        <ul class="links">
+                            <li class="link">
+                                <a href="#">Дошкольникам</a>
+                            </li>
+                            <li class="link">
+                                <a href="#">Школьникам и абитуриентам</a>
+                            </li>
+                            <li class="link">
+                                <a href="#">Студентам и аспирантам</a>
+                            </li>
+                            <li class="link">
+                                <a href="#">Педагогам</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="useful-item h3">
+                        <h3>Процесс публикации</h3>
+                        <ul class="links">
+                            <li class="link">
+                                <a href="#">Досуг и творчество</a>
+                            </li>
+                            <li class="link">
+                                <a href="#">Книги для родителей</a>
+                            </li>
+                            <li class="link">
+                                <a href="#">Познавательная литература</a>
+                            </li>
+                            <li class="link">
+                                <a href="#">Художественная литература</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="own-cover">
+                    <a href="#">Как создать свою обложку</a>
+                </div>
+            </div>
+            
+            <div class="column-2">
+                <div class="header">
+                    <h1>Создай книгу</h1>
+                    <ul class="nav">
+                        <li class="upload">
+                            <a href="#upload">Загрузить файл</a>
+                        </li>
+                        <li class="cover">
+                            <a href="#cover">Создать обложку</a>
+                        </li>
+                        <li class="description">
+                            <a href="#description">Описать книгу</a>
+                        </li>
+                    </ul>
+                </div>
+                <form class="book" method="post" action="/">
+                    <fieldset id="upload">
+                        <div class="upload">
+                            <h2>Загрузи файл для конвертации в форматы EPUB и PDF</h2>
+                            
+                            <div class="warning">
+                                Перед загрузкой и конвертацией файлов не забудьте ознакомиться с <a class="rules" href="#">правилами оформления</a> документов
+                            </div>
+                            
+                            <div class="content">
+                                <div class="title">
+                                    Загрузить файл
+                                </div>
+                                <div class="drag-or-choose">
+                                    Перетащи сюда или <span class="pseudo-link">выбери</span>
+                                </div>
+                                <input type="file" name="file">
+                            </div>
+                            <div class="test-file">
+                                <div class="file">
+                                    <span class="file-name">
+                                        prestupleniya_i_nakazaniya.doc
+                                    </span>
+                                    <span class="file-size">
+                                        <span class="parenthesis left-parenthesis">(</span>
+                                        <span class="size">52 мб</span>
+                                        <span class="parenthesis right-parenthesis">)</span>
+                                    </span>
+                                    <a class="remove-file" href="#" title="Удалить файл из списка загруженных">+</a>
+                                </div>
+                                <button class="test-file-btn">Проверить загруженный файл</button>
+                            </div>
+                        </div>
+                        <div class="shadow-under">
+                        </div>
+                    </fieldset>
+                    
+                    <fieldset id="cover">
+                        <div class="cover">
+                            <h2>Создай обложку, задай имя автора и название книги</h2>
+                            
+                            <ul class="types">
+                                <li class="type color-cover">
+                                    <div class="title">
+                                        Цветная обложка
+                                    </div>
+                                    <div class="color-pickers">
+                                        <div class="background">
+    <!--
+                                            <a class="color-picker" href="#">
+                                                Цвет обложки
+                                                <input type="hidden" name="background-color" value="#950019">
+                                            </a>
+    -->
+                                            <!-- Не все браузеры поддерживают input type="color" -->
+<!--
+                                            <div class="color-picker">
+                                                <label class="text" for="background-color">
+                                                    Цвет обложки
+                                                </label>
+                                                <input type="color" name="background-color" value="#950019" id="background-color">
+                                            </div>
+-->
+                                            <div class="color-picker" data-color="#950019" data-close="true">
+                                                <label class="text" for="background-color">
+                                                    Цвет обложки
+                                                </label>
+                                                <div class="color-picker-toggle">
+                                                    <div class="color-picker-icon" >
+                                                    </div>
+                                                    <input type="hidden" name="background-color" id="background-color">
+                                                </div>
+                                                <div class="color-picker-popover">
+                                                    <canvas class="color-picker-palette" width="384" height="256">
+                                                    </canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="border">
+    <!--
+                                            <a class="color-picker" href="#">
+                                                Цвет окантовки
+                                                <input type="hidden" name="border-color" value="#d79ea8">
+                                            </a>
+    -->
+                                            <!-- Не все браузеры поддерживают input type="color" -->
+<!--
+                                            <div class="color-picker">
+                                                <label class="text" for="border-color">
+                                                    Цвет окантовки
+                                                </label>
+                                                <input type="color" name="border-color" value="#d79ea8" id="border-color">
+                                            </div>
+-->
+                                            <div class="color-picker" data-color="#d79ea8" data-close="true">
+                                                <label class="text" for="border-color">
+                                                    Цвет окантовки
+                                                </label>
+                                                <div class="color-picker-toggle">
+                                                    <div class="color-picker-icon">
+                                                    </div>
+                                                    <input type="hidden" name="border-color" id="border-color">
+                                                </div>
+                                                <div class="color-picker-popover">
+                                                    <canvas class="color-picker-palette" width="384" height="256">
+                                                    </canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="type select-cover">
+                                    <a href="#">Выбрать готовый фон</a>
+                                </li>
+                                <li class="type upload-cover">
+                                    <a href="#">Загрузить свою обложку</a>
+                                </li>
+                            </ul>
+
+                            <div class="text-on-cover-and-preview">
+                                <div class="table text-on-cover">
+                                    <div class="tr author">
+                                        <div class="td">
+                                            <div class="skew-outer">
+                                                <input class="skew-inner" type="text" name="author-name" placeholder="Автор">
+                                            </div>
+                                        </div>
+                                        <div class="td">
+                                            <div class="skew-outer select">
+                                                <select class="skew-inner font-name" name="author-font-name">
+                                                    <option value="Courier New">Courier New</option>
+                                                    <option value="Times New Roman" selected>Times New Roman</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="td">
+                                            <div class="skew-outer select">
+                                                <select class="skew-inner font-size" name="author-font-size">
+                                                    <option value="12" selected>12</option>
+                                                    <option value="14">14</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="td">
+<!--
+                                            <a class="color-picker" href="#">
+                                                <input type="hidden" name="author-color" value="#950019">
+                                            </a>
+-->
+                                            <!-- Не все браузеры поддерживают input type="color" -->
+<!--                                            <input type="color" name="author-color" value="#950019">-->
+                                            <div class="color-picker" data-color="#950019" data-close="true">
+                                                <div class="color-picker-toggle">
+                                                    <div class="color-picker-icon">
+                                                    </div>
+                                                    <input type="hidden" name="author-color">
+                                                </div>
+                                                <div class="color-picker-popover">
+                                                    <canvas class="color-picker-palette" width="384" height="256">
+                                                    </canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tr ebook-title">
+                                        <div class="td">
+                                            <div class="skew-outer">
+                                                <input class="skew-inner" type="text" name="title" placeholder="Заголовок">
+                                            </div>
+                                        </div>
+                                        <div class="td">
+                                            <div class="skew-outer select">
+                                                <select class="skew-inner font-name" name="title-font-name">
+                                                    <option value="Courier New">Courier New</option>
+                                                    <option value="Times New Roman" selected>Times New Roman</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="td">
+                                            <div class="skew-outer select">
+                                                <select class="skew-inner font-size" name="title-font-size">
+                                                    <option value="12" selected>12</option>
+                                                    <option value="14">14</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="td">
+<!--
+                                            <a class="color-picker" href="#">
+                                                <input type="hidden" name="title-color" value="#030674">
+                                            </a>
+-->
+                                            <!-- Не все браузеры поддерживают input type="color" -->
+<!--                                            <input type="color" name="title-color" value="#030674">-->
+                                            <div class="color-picker" data-color="#030674" data-close="true">
+                                                <div class="color-picker-toggle">
+                                                    <div class="color-picker-icon">
+                                                    </div>
+                                                    <input type="hidden" name="title-color">
+                                                </div>
+                                                <div class="color-picker-popover">
+                                                    <canvas class="color-picker-palette" width="384" height="256">
+                                                    </canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tr ebook-subtitle">
+                                        <div class="td">
+                                            <div class="skew-outer">
+                                                <input class="skew-inner" type="text" name="subtitle" placeholder="Подзаголовок">
+                                            </div>
+                                        </div>
+                                        <div class="td">
+                                            <div class="skew-outer select">
+                                                <select class="skew-inner font-name" name="subtitle-font-name">
+                                                    <option value="Courier New">Courier New</option>
+                                                    <option value="Times New Roman" selected>Times New Roman</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="td">
+                                            <div class="skew-outer select">
+                                                <select class="skew-inner font-size" name="subtitle-font-size">
+                                                    <option value="12" selected>12</option>
+                                                    <option value="14">14</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="td">
+<!--
+                                            <a class="color-picker" href="#">
+                                                <input type="hidden" name="subtitle-color" value="#393939">
+                                            </a>
+-->
+                                            <!-- Не все браузеры поддерживают input type="color" -->
+<!--                                            <input type="color" name="subtitle-color" value="#393939">-->
+                                            <div class="color-picker" data-color="#393939" data-close="true">
+                                                <div class="color-picker-toggle">
+                                                    <div class="color-picker-icon">
+                                                    </div>
+                                                    <input type="hidden" name="subtitle-color">
+                                                </div>
+                                                <div class="color-picker-popover">
+                                                    <canvas class="color-picker-palette" width="384" height="256">
+                                                    </canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="preview">
+                                    <div class="canvas">
+                                        <div class="frame">
+                                            <div class="author">
+                                                Александр Иванов
+                                            </div>
+                                            <div class="title">
+                                                Сочинения
+                                            </div>
+                                            <div class="subtitle">
+                                                Часть I
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <a class="magnify" href="#"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shadow-under">
+                        </div>
+                    </fieldset>
+                    
+                    <fieldset id="description">
+                        <div class="description">
+                            <h2>Описание проекта</h2>
+                            
+                            <div class="warning">
+                                Качественно и полноценно составленное описание книги поможет читателям находить ее проще
+                            </div>
+
+                            <div class="genres">
+                                <div class="skew-outer select">
+                                    <select class="skew-inner genre" name="genre-1">
+                                        <option value="" selected hidden>Выберите жанр 1</option>
+                                        <option value=""></option>
+
+                                        <option value="Искусство сочинять детективы">Искусство сочинять детективы</option>
+                                        <option value="Детектив">Детектив</option>
+                                        <option value="Ужасы">Ужасы</option>
+                                        <option value="Триллер">Триллер</option>
+                                    </select>
+                                </div>
+                                <div class="skew-outer select">
+                                    <select class="skew-inner genre" name="genre-2">
+                                        <option value="" selected hidden>Выберите жанр 2</option>
+                                        <option value=""></option>
+
+                                        <option value="Искусство сочинять детективы">Искусство сочинять детективы</option>
+                                        <option value="Детектив">Детектив</option>
+                                        <option value="Ужасы">Ужасы</option>
+                                        <option value="Триллер">Триллер</option>
+                                    </select>
+                                </div>
+                                <div class="skew-outer select">
+                                    <select class="skew-inner genre" name="genre-3">
+                                        <option value="" selected hidden>Выберите жанр 3</option>
+                                        <option value=""></option>
+
+                                        <option value="Искусство сочинять детективы">Искусство сочинять детективы</option>
+                                        <option value="Детектив">Детектив</option>
+                                        <option value="Ужасы">Ужасы</option>
+                                        <option value="Триллер">Триллер</option>
+                                    </select>
+                                </div>
+
+                                <!-- Не все браузеры поддерживают datalist -->
+    <!--
+                                <input type="text" list="genres" name="genre-1" placeholder="Выберите жанр 1">
+                                <input type="text" list="genres" name="genre-2" placeholder="Выберите жанр 2">
+                                <input type="text" list="genres" name="genre-3" placeholder="Выберите жанр 3">
+
+                                <datalist id="genres">
+                                    <option value="Искусство">
+                                    <option value="Детектив">
+                                    <option value="Ужасы">
+                                    <option value="Триллер">
+                                </datalist>
+    -->
+                            </div>
+
+                            <div class="forbidden">
+                                <label for="forbidden">
+                                    Запрещенный контент
+                                </label>
+                                <input type="checkbox" name="is-forbidden" id="forbidden">
+                                <span class="explanation">
+                                    This project contains explicit content of an adult nature. It is intended for a mature audience of readers 18 or older
+                                </span>
+                                <a class="explanation" href="#"></a>
+                            </div>
+
+                            <div class="tags">
+                                <label for="tags">
+                                    Ключевые слова
+                                </label>
+                                <div class="skew-outer">
+                                    <input class="skew-inner" type="text" name="tags" id="tags">
+                                </div>
+                                <a class="explanation" href="#"></a>
+                            </div>
+
+                            <div class="annotation">
+                                <label for="annotation">
+                                    Аннотация
+                                </label>
+                                <div class="textarea">
+                                    <div class="skew-outer">
+                                        <textarea class="skew-inner" name="annotation" id="annotation"></textarea>
+                                    </div>
+                                    <ul class="comments">
+                                        <li class="comment">
+                                            Your description must be at least 50 characters not including spaces and no more than 1000 characters including spaces
+                                        </li>
+                                        <li class="comment">
+                                            The gauge above will help you to know when you fall within these parameters
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="preview-pages-count">
+                                <label for="preview-pages-count">
+                                    Количество страниц возможное для предпросмотра читателями
+                                </label>
+                                <div class="skew-outer">
+                                    <input class="skew-inner" type="number" name="preview-pages-count" id="preview-pages-count">
+                                </div>
+                                <a class="explanation" href="#"></a>
+                            </div>
+
+                            <div class="year">
+                                <label for="year">
+                                    Год издания
+                                </label>
+                                <div class="skew-outer select">
+                                    <select class="skew-inner" name="year" id="year">
+                                        <option value="2016" selected>2016</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2012">2012</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="license">
+                                <label for="license">
+                                    Лицензия
+                                </label>
+                                <div class="skew-outer select">
+                                    <select class="skew-inner" name="license" id="license" required>
+                                        <option value="verybook-1" selected>Verybook License v.1</option>
+                                        <option value="verybook-2">Verybook License v.2</option>
+                                        <option value="verybook-3">Verybook License v.3</option>
+                                        <option value="verybook-4">Verybook License v.4</option>
+                                        <option value="verybook-5">Verybook License v.5</option>
+                                    </select>
+                                </div>
+                                <a class="explanation" href="#"></a>
+                            </div>
+                        </div>
+                        <div class="shadow-under">
+                        </div>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <div class="consent">
+                            <div class="check">
+                                <label for="consent">
+                                    С <a class="vb-rules" href="#">правилами сервиса</a> Verybook ознакомлен и согласен
+                                </label>
+                                <input type="checkbox" name="is-consent" id="consent">
+                            </div>
+                            <button type="submit">Создать книгу</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </main>
+        
+        <div class="books-on-shelf">
+            <img src="img/bottom-book-1.jpg" />
+            <img src="img/bottom-book-2.jpg" />
+            <img src="img/bottom-book-3.jpg" />
+            <img src="img/bottom-book-4.jpg" />
+            <img src="img/bottom-book-5.jpg" />
+            <img src="img/bottom-book-6.jpg" />
+            <img src="img/bottom-book-7.jpg" />
+            <img src="img/bottom-book-8.jpg" />
+            <img src="img/bottom-book-9.jpg" />
+        </div>
+        
+		<footer>
+            <div class="footer-shelf">
+                <div class="footer-shelf shelf-part shelf-left-part"></div>
+                <div class="footer-shelf shelf-part shelf-right-part"></div>
+                <div class="footer-shelf shelf-part shelf-bottom-part"></div>
+            </div>
+            
+            <div class="under-footer-shelf">
+                <div class="copyright">
+                    © 1993–2014 Верибук.ру
+                </div>
+                
+                <div class="about-company">
+                    <a href="#">
+                        О компании
+                    </a>
+                    <a href="#">
+                        Пресс-центр
+                    </a>
+                    <a href="#">
+                        Вакансии
+                    </a>
+                    <a href="#">
+                        Реквизиты
+                    </a>
+                    <a href="#">
+                        О компании
+                    </a>
+                </div>
+                
+                <div class="help">
+                    <a href="#">
+                        Помощь
+                    </a>
+                    <a href="#">
+                        Как сделать заказ
+                    </a>
+                    <a href="#">
+                        Доставка
+                    </a>
+                    <a href="#">
+                        Оплата
+                    </a>
+                    <a href="#">
+                        Помощь
+                    </a>
+                    <a href="#">
+                        Обратная связь
+                    </a>
+                </div>
+                
+                <div class="earn-with-us">
+                    <a href="#">
+                        Зарабатывайте с нами
+                    </a>
+                    <a href="#">
+                        Продавайте Ваши товары на Ozon.ru
+                    </a>
+                    <a href="#">
+                        Становитесь поставщиками Букинистики
+                    </a>
+                    <a href="#">
+                        Партнёрская программа Ozon.ru
+                    </a>
+                    <a href="#">
+                        Размещайте рекламу на Ozon.ru
+                    </a>
+                    <a href="#">
+                        Открывайте пункты выдачи заказов Ozon.ru
+                    </a>
+                </div>
+                
+                <div class="site-map">
+                    <a href="#">
+                        Карта сайта
+                    </a>
+                    <a href="#">
+                        Покупка товаров (b2b)
+                    </a>
+                    <a href="#">
+                        Подарочные сертификаты
+                    </a>
+                    <a href="#">
+                        Loyalica
+                    </a>
+                </div>
+                
+                <div class="social-sharing">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=verybook.ru"
+                       title="Поделиться Verybook на Facebook"
+                       class="share-icon-facebook">
+                    </a>
+                    <a href="#"
+                       title="Поделиться Verybook ВКонтакте"
+                       class="share-icon-vk">
+                    </a>
+                    <a href="#"
+                       title="Поделиться Verybook в ЖЖ"
+                       class="share-icon-livejournal">
+                    </a>
+                </div>
+            </div>            
+		</footer>
+	</body>
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="js/vb.js"></script>
+    <script type="text/javascript" src="js/color-picker.js"></script>
+    <script type="text/javascript" src="js/upload-file.js"></script>
+</html>
