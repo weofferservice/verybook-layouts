@@ -1,0 +1,1770 @@
+@font-face {
+    font-family: 'Etelka Text Pro';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Etelka Text Pro'), url('fonts/Etelka-Text-Pro.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Core Sans M W01 SC 65 Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Core Sans M W01 SC 65 Bold'), url('fonts/Core Sans M W01 SC 65 Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Font Awesome';
+    font-style: normal;
+    font-weight: normal;
+    src: local('fontawesome-webfont'), url('fonts/fontawesome-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'EmojiSymbols-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('EmojiSymbols-Regular'), url('fonts/EmojiSymbols-Regular.woff') format('woff');
+}
+
+body {
+    width: 100%;
+    max-width: 1280px;
+    min-width: 700px;
+    margin-left: auto; /* auto сделает body по центру */
+    margin-right: auto; /* auto сделает body по центру */
+    box-sizing: border-box;
+    //border: 1px solid black;
+}
+
+/*
+ *  Хедер
+ */
+header {
+    height: 90px;
+    background-color: white;
+    width: 100%;
+    height: 115px;
+    box-sizing: border-box;
+    //border: 1px solid red;
+}
+
+/*
+ *  Тень под Хедером
+ */
+header::before {
+    content: '';
+    display: block;
+    position: relative;
+    left: 10%;
+    top: 103px;
+    z-index: -1;
+    height: 10px;
+    width: 40%;
+    box-shadow: 0 0 10px 0 #888;
+    transform: rotate(0.3deg);
+}
+
+header::after {
+    content: '';
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 22px;
+    z-index: -1;
+    height: 10px;
+    width: 40%;
+    box-shadow: 0 0 10px 0 #888;
+    transform: rotate(-0.3deg);
+}
+
+/*
+ *  Самая верхняя часть Хедера с логотипом, строкой поиска, задать вопросом и корзиной
+ */
+div.header1 {
+    width: 100%;
+    //height: 100px;
+    box-sizing: border-box;
+    position: relative;
+    top: -9px;
+    //border: 1px solid black;
+}
+
+div.header1 > div {
+    display: inline-block;
+}
+
+/*
+ *  Логотип (создан текстом со спец. подобранными шрифтами)
+ */
+a.logo {
+    text-decoration: none;
+    display: inline-block;
+    width: 162px;
+    height: 30px;
+    position: relative;
+    margin-top: 17px;
+    margin-left: 2.1%;
+    //border: 2px solid red;
+}
+
+/* Влияет на все части логотипа */
+span.logo-word {
+    color: #5f7495;
+    line-height: 30px;
+    //border: 1px solid black;
+}
+
+span.logo-line {
+    font-family: 'Times New Roman';
+    font-size: 35pt;
+    font-weight: 900;
+    text-shadow: 3px 0 0;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    //border: 1px solid black;
+}
+
+span.logo-line::after {
+    /* Памятка разработчику. В content учитываются символы экранировки, т.е. \\ - это всего лишь один слеш */
+    content: '\\';
+    font-family: 'Times New Roman';
+    position: relative;
+    left: -11px;
+    //border: 1px solid black;
+}
+
+span.logo-line2 {
+    position: absolute;
+    left: 13px;
+    //border: 1px solid black;
+}
+
+span.logo-v {
+    font-family: 'Core Sans M W01 SC 65 Bold';
+    font-size: 35pt;
+    vertical-align: top;
+    text-shadow: 1px 0 0;
+    position: absolute;
+    left: 27px;
+    top: 0;
+    //border: 1px solid black;
+}
+
+span.logo-v.ie { /* селектор ie используется, чтобы вводить корректировки в стили при использовании IE */
+    top: -1px;
+}
+
+span.logo-erybook {
+    font-family: 'Etelka Text Pro';
+    font-size: 20pt;
+    letter-spacing: 1px;
+    position: absolute;
+    left: 60px;
+    //top: 11px;
+    //border: 1px solid black;
+}
+
+/*
+ *  Блок поиска
+ */
+div.search {
+    position: absolute;
+    top: 15px;
+    left: 27%;
+    transform: skewX(15deg);
+    //border: 1px solid black;
+    width: 40.2%;
+    height: 30px;
+}
+
+label.search {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 30px;
+    width: 86.5%;    
+    border: 1px solid #ccc;
+    padding: 0px 8px;
+    position: absolute;
+    left: 0;
+    //border: 1px solid black;
+}
+
+/* Нутро наклоняю в противоположную сторону, чтобы текст при наборе был ровным */
+label.search > input {
+    border: 0;
+    outline: none;
+    transform: skewX(-15deg);
+    box-sizing: border-box;
+    height: 28px;
+    width: 100%;
+    font-family: Tahoma;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    //border: 1px solid black;
+}
+
+/*
+ *  Кнопка поиска
+ */
+button.search {
+    display: inline-block;
+    height: 30px;
+    width: 13.5%;
+    min-width: 35px;
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    position: absolute;
+    right: 1px;  
+    //border: 1px solid black;
+}
+
+button.search::before {
+    content: '\1f50d'; /* Значок лупы */
+    display: inline-block;
+    color: #888;
+    font-size: 19px;    
+    transform: skewX(-15deg);
+    background-position: 50% 50%;
+    //border: 1px solid black;
+}
+
+button.search:focus {
+    outline: none; /* При фокусе не будет голубой кромки */
+}
+
+button.search:active {
+    box-shadow: inset 0px 0px 2px 0 #ccc; /* При нажатии будет видно нажатие за счет тени */
+}
+
+/*
+ *  Ссылка "Задать вопрос"
+ */
+div.ask {
+    box-sizing: border-box;
+    position: absolute;
+    top: 15px;
+    //left: 78.2%;
+    right: 13.2%;
+    width: 110px;
+    //border: 1px solid black;
+}
+
+div.ask > a {
+    color: #888;
+    font-family: Tahoma;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    //border: 1px solid black;
+}
+
+/* Знак вопросика после ссылки Задать вопрос */
+div.ask::after {
+    content: '?';
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    color: #888;
+    font-size: 10pt;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #888;
+    border-radius: 50%;
+    position: relative;
+    left: 4px;
+    top: -1px;
+    //border: 1px solid black;
+}
+/* Переключение на этот класс будет скрывать Знак вопросика после ссылки Задать вопрос */
+div.ask.hidden::after {
+    display: none;
+}
+
+/*
+ *  Ссылка "Корзина"
+ */
+div.cart {
+    box-sizing: border-box;
+    position: absolute;
+    top: 17px;
+    //left: 89%;
+    right: 2.9%;
+    height: 23px;
+    width: 103px;
+    //border: 1px solid black;
+}
+
+div.cart > a {
+    color: #7f90aa;
+    font-family: Tahoma;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    position: absolute;
+    left: 29px;
+    top: 1px;
+    //border: 1px solid black;
+}
+
+/* Символ продуктовой корзинки */
+div.cart::before {
+    content: '\f07a';
+    display: inline-block;
+    font-family: 'Font Awesome';
+    color: #888;
+    font-size: 14pt;
+    position: absolute;
+    left: 1px;
+    //border: 1px solid black;
+}
+/* Переключение на этот класс будет скрывать символ продуктовой корзинки */
+div.cart.hidden::before {
+    display: none;
+}
+
+/* Красный шарик с количеством покупок */
+div.cart > a::after {
+    content: ''; 
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background-image: linear-gradient(#fac5c5, #f26464);
+    position: absolute;
+    left: 55px;
+    //border: 1px solid black;
+}
+
+/* Количество покупок в красном шарике */
+div.cart::after {
+    content: '222'; /* FIXME Это значение количества покупок в корзине будет определяться на лету */
+    color: white;
+    text-align: center;
+    display: inline-block;
+    width: 15px;
+    height: 9px;
+    font-family: Tahoma;
+    font-size: 9px;
+    letter-spacing: 0.3px;
+    position: absolute; /* Странно, но этот блок вылезает на передний план не за счет z-index, а за счет position: realtive */
+    left: 85px;
+    top: 4px;
+    //border: 1px solid black;
+}
+
+/*
+ *  Нижняя часть Хедера с полосой меню и ссылкой Войти
+ */
+nav.header2 {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    top: 23px;
+    //border: 1px solid black;
+}
+
+nav.header2 > div {
+    display: inline-block;
+}
+
+/*
+ *  Ссылка Войти с символом замочка
+ */
+div.entrance {
+    position: absolute;
+    right: 5.9%;
+    //border: 1px solid black;
+}
+
+/* символ замочка */
+div.entrance::before {
+    content: '\f023';
+    font-family: 'Font Awesome';
+    color: #888;
+    position: relative;
+    right: 6px;
+    top: 3px;
+}
+
+/* ссылка Войти */
+div.entrance > a {
+    color: #d3be4a;
+    font-family: Tahoma;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+}
+
+/*
+ *  Главное меню
+ */
+div.menu {
+    position: absolute;
+    //width: 555px;
+    width: 560px;
+    //border: 1px solid black;
+}
+
+div.menu > div.shop {
+    margin-left: 4.9%;
+}
+
+div.menu > div {
+    display: inline-block;
+    margin-left: 7.9%;
+    //border: 1px solid black;
+}
+
+div.menu > div > a {
+    color: #7f90aa;
+    font-family: Tahoma;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    //word-spacing: -3px;
+}
+
+/*
+ *  Слоган под хедером
+ */
+div.slogan {
+    font-family: 'Etelka Text Pro';
+    font-size: 20.5pt;
+    letter-spacing: 0.5px;
+    line-height: 40px;
+    word-spacing: -0.1px;
+    position: relative;
+    top: 40px;
+    left: 8.7%;    
+    width: 85%;
+    //border: 1px solid black;
+}
+
+/* Ссылка Новые книги бесплатно в слогане */
+div.slogan > a.new-books-free {
+    text-decoration: none;
+    color: #d3be4a;
+    margin-left: 6px;
+    margin-right: 8px;
+    padding-left: 10px;
+    padding-right: 7px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border: 1px dashed #d3be4a;
+    border-radius: 5px;
+	position: relative;
+    z-index: 1;
+}
+
+/* Ссылка Публикуй в слогане */
+div.slogan > a.publish-own {
+    text-decoration: none;
+    color: #5f7495;
+    border-bottom: 2px solid #5f7495;
+    margin-left: 1px;
+    margin-right: 1px;
+	position: relative;
+    z-index: 1;
+}
+
+/*
+ *  Главный баннер
+ */
+div.main-banner {
+    //width: 1247px;
+    width: 97.55%;
+    height: 375px;
+    overflow: hidden;
+    position: relative;
+    top: 82px;
+    left: 1.4%;
+}
+
+div.slider > a {
+    display: block;
+    max-width: calc(4 * 1247px);
+    max-height: 340px;
+    position: relative;
+    //border: 2px solid red;
+}
+
+div.slider > a > img {
+    width: 1247px;
+}
+
+div.slider {
+    width: 5000px;
+    transition: transform .8s ease;
+}
+
+/*
+ *  Кнопочки переключатели картинки главного баннера
+ */
+div.slider-buttons {
+    position: relative;
+    //left: 46.8%;
+    left: 45%;
+    top: 18px;
+}
+
+input[type="radio"][name="slide"] {
+    display: none;
+}
+
+label.slider-button {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: #d7d7d7;
+    margin-right: 7px;
+    cursor: pointer;
+}
+
+#slider-button-1:checked ~ div.slider-buttons > label[for="slider-button-1"],
+#slider-button-2:checked ~ div.slider-buttons > label[for="slider-button-2"],
+#slider-button-3:checked ~ div.slider-buttons > label[for="slider-button-3"],
+#slider-button-4:checked ~ div.slider-buttons > label[for="slider-button-4"] {
+    background-color: #8a8a8a;
+}
+
+#slider-button-1:checked ~ div.slider {
+    transform: translateX(0);
+}
+
+#slider-button-2:checked ~ div.slider {
+    transform: translateX(-1247px);
+}
+
+#slider-button-3:checked ~ div.slider {
+    transform: translateX(-2494px);
+}
+
+#slider-button-4:checked ~ div.slider {
+    transform: translateX(-3741px);
+}
+
+/*
+ *  Блок справа страницы с полками
+ */
+div.shelves {
+    position: relative;
+    margin-top: 125px;
+    left: 8px;
+    float: left;
+    //width: 993px;
+    width: 77.6%;
+    max-width: 993px;
+    //border: 1px solid black;
+}
+
+/* Блок одной полки (окруженный пунктиром) */
+div.shelves > div.shelf {
+    height: 358px;
+    box-sizing: border-box;
+    border: 1px dashed #aaa;
+    border-radius: 5px;
+    position: relative;
+    top: 18px;
+    background-color: white;
+    margin-bottom: 60px;
+}
+
+/* Стрелочка вверх (полуромбик) у блока одной полки (окруженный пунктиром) */
+div.arrow-up {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-left: 1px dashed #aaa;
+    border-top: 1px dashed #aaa;
+    transform: rotate(45deg);
+    position: relative;
+    top: -6px;
+    left: 110px;
+}
+
+div.arrow-up::after {
+    content: '';
+    width: 30px;
+    height: 15px;
+    display: block;
+    background-color: white;
+    transform: rotate(-45deg);
+    position: relative;
+    top: 3px;
+    left: -4px;    
+}
+
+/* Первая часть тени под полкой */
+div.shelves > div.shelf::before {
+    content: '';
+    display: block;
+    //width: 400px;
+    width: 40.3%;
+    height: 50px;
+    background-color: white;
+    box-shadow: 0 0 20px 5px #aaa;
+    position: absolute;
+    //left: 90px;
+    left: 9.1%;
+    bottom: 5px;
+    z-index: -1;
+    transform: rotate(1deg);
+}
+
+/* Вторая часть тени под полкой */
+div.shelves > div.shelf::after {
+    content: '';
+    display: block;
+    //width: 400px;
+    width: 40.3%;
+    height: 50px;
+    background-color: white;
+    box-shadow: 0 0 20px 5px #aaa;
+    position: absolute;
+    //right: 90px;
+    right: 9.1%;
+    bottom: 5px;
+    z-index: -1;
+    transform: rotate(-1deg);
+}
+
+/* Настройка всех частей шапки каждой полки */
+div.shelves > div.title > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Заголовок полки (надпись рядом со значком свисающего флажочка) */
+div.shelf-name > a {
+    font-family: Tahoma;
+    font-size: 21px;
+    color: black;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+    left: 5px;
+    bottom: 0px;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+}
+
+div.shelf-name {
+    margin-right: 30px;
+}
+
+div.shelves > div.title {
+    position: relative;
+    left: 35px;
+}
+
+/* Значок свисающего флажка */
+div.bookmark {
+    width: 8px;
+    height: 23px;
+    position: relative;
+    top: 2px;
+    left: -2.5px;
+    background-image: linear-gradient(#f28080 15%, #e40000 35%);
+}
+
+div.bookmark::after {
+    content: '';
+    display: block;
+    height: 8px;
+    width: 8px;
+    background-color: white;
+    position: absolute;
+    bottom: -5px;
+    transform: rotate(45deg);
+}
+
+/* Блок выбора сортировки полки */
+div.sort-by {
+    position: relative;
+    left: 0px;
+    bottom: -1px;
+    //width: 350px;
+    //height: 100px;
+    //border: 1px solid black;
+}
+
+div.sort-by > div {
+    font-family: Tahoma;
+    font-size: 11px;
+    color: black;
+    letter-spacing: 0.3px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+div.sort-by > input[type="radio"] {
+    display: none;
+}
+
+/* Переключалка типа сортировки у каждой полки (в шапке) */
+label.sort-link {
+    font-family: Tahoma;
+    font-size: 11px;
+    letter-spacing: 0.3px;
+    text-decoration: underline;
+    color: #5f7495;
+    margin-left: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 1px;
+    padding-bottom: 2px;
+    margin-right: -5px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    //border: 1px solid black;
+}
+
+div.sort-links {
+    min-width: 200px;
+    //border: 1px solid black;
+}
+
+#best-sellers-sort-link-1:checked ~ div.sort-links > label[for="best-sellers-sort-link-1"],
+#best-sellers-sort-link-2:checked ~ div.sort-links > label[for="best-sellers-sort-link-2"],
+#best-sellers-sort-link-3:checked ~ div.sort-links > label[for="best-sellers-sort-link-3"] {
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #e5d996;
+    word-spacing: 1px;
+    letter-spacing: 0.4px;
+}
+
+#new-sort-link-1:checked ~ div.sort-links > label[for="new-sort-link-1"],
+#new-sort-link-2:checked ~ div.sort-links > label[for="new-sort-link-2"],
+#new-sort-link-3:checked ~ div.sort-links > label[for="new-sort-link-3"] {
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #e5d996;
+    word-spacing: 1px;
+    letter-spacing: 0.4px;
+}
+
+#high-rating-sort-link-1:checked ~ div.sort-links > label[for="high-rating-sort-link-1"],
+#high-rating-sort-link-2:checked ~ div.sort-links > label[for="high-rating-sort-link-2"],
+#high-rating-sort-link-3:checked ~ div.sort-links > label[for="high-rating-sort-link-3"] {
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #e5d996;
+    word-spacing: 1px;
+    letter-spacing: 0.4px;
+}
+
+/*
+ *  Составные части полки (в данном случае полка - это рисунок доски, нарисованной по частям)
+ */
+/* Нижняя часть полки */
+div.shelf-bottom-part {
+    //width: 964px;
+    width: 97.1%;
+    height: 15px;
+    background-color: #cacaca;
+    position: absolute;
+    //left: 13px;
+    left: 1.4%;
+    top: 193px;
+    box-shadow: 0 10px 40px -6px #111;
+}
+
+/* Левая наклонная часть полки */
+div.shelf-left-part {
+    //width: 500px;
+    width: 50.4%;
+    height: 16px;
+    background-image: linear-gradient(#efefef, white);
+    transform: skewX(-70deg);
+    position: absolute;
+    //left: 36px;
+    left: 4.1%;
+    top: 176px;
+    //border: 1px solid black;
+}
+
+/* Правая наклонная часть полки */
+div.shelf-right-part {
+    //width: 500px;
+    width: 50.4%;
+    height: 16px;
+    background-image: linear-gradient(#efefef, white);
+    transform: skewX(70deg);
+    position: absolute;
+    //right: 36px;
+    right: 4.1%;
+    top: 176px;
+    //border: 1px solid black;
+}
+
+/* Блок с двигающимися обложками */
+div.book-slider-out {
+    //width: 860px;
+    width: 86.6%;
+    height: 160px;
+    overflow: hidden;
+    position: relative;
+    left: 67px;
+    top: 12px;
+    z-index: 1;
+    padding-left: 5px;
+    //border: 1px solid black;
+}
+
+div.book-slider-in {
+    //width: 2805px;
+    width: 4700px;
+    //transform: translateX(-935px);
+    transition: transform .8s ease;
+    //border: 1px solid black;
+}
+
+/* Обложки книг на полках и отступы между ними */
+div.book-slider-in > a {
+    margin-right: 83px;
+    padding: 0;
+    display: inline-block;
+}
+
+/* Тень к обложкам книг на полках */
+div.book-slider-in > a > img {
+    box-shadow: 0 0 5px 2px #888;
+}
+
+/* Блок с двигающимися подписями к обложкам книг на полках */
+div.book-title-slider-out {
+    //width: 885px;
+    width: 89.1%;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+    left: 69px;
+    top: 50px;
+    z-index: 1; /* Без этого ссылки после первого же transform перестают быть кликабельными */
+    background-color: transparent;
+    //border: 1px solid black;
+}
+
+div.book-title-slider-in {
+    //width: 2805px;
+    width: 4700px;    
+    //transform: translateX(-935px);
+    transition: transform .8s ease;
+}
+
+div.book-title-slider-in > a {
+    text-decoration: none;
+    display: inline-block;
+    position: relative; /* Без этого ссылки изначально не кликабельны */
+    z-index: 1; /* Без этого ссылки изначально не кликабельны */
+    vertical-align: top;
+    margin-right: 33px;
+    width: 150px;
+    height: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    //border: 1px solid black;
+    //background-color: black;
+}
+
+div.book-title-slider-in > a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 3px;
+    //width: 150px;
+    width: 100%;
+    height: 31px;
+    background-image: linear-gradient(to right, transparent 70%, white);
+    //border: 1px solid black;
+    //background-color: black;
+}
+
+/*
+ *  Кнопки перемещения книг на полках
+ */
+/* левая */
+button.left-arrow {
+    display: block;
+    position: absolute;
+    top: 94px;
+    left: 16px;
+    width: 35px;
+    height: 32px;
+    outline: none;
+    background-color: transparent;
+    border-right: none;
+    border-bottom: none;
+    border-left: 2px solid #cad9f1;
+    border-top: 2px solid #cad9f1;
+    transform: rotate(-55deg) skewX(-20deg);
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* правая */
+button.right-arrow {
+    display: block;
+    position: absolute;
+    top: 94px;
+    right: 16px;
+    width: 35px;
+    height: 32px;
+    outline: none;
+    background-color: transparent;
+    border-right: 2px solid #cad9f1;
+    border-bottom: 2px solid #cad9f1;
+    border-left: none;
+    border-top: none;
+    transform: rotate(-55deg) skewX(-20deg);
+    cursor: pointer;
+    z-index: 1;
+}
+
+/*
+ *  Описание книги под нарисованными полками
+ */
+/* Заголовок книги */
+div.book-title-slider-in > a > div.book-title {
+    font-family: Tahoma;
+    font-size: 13px;
+    color: #5f7495;
+    text-decoration: underline;
+    padding: 0;
+    word-spacing: 1px;
+    letter-spacing: 0.5px;
+    //overflow: hidden;
+    //white-space: nowrap;
+    //text-overflow: ellipsis;
+}
+
+/* Автор книги и общее количество его книг */
+div.book-title-slider-in > a > div.book-author {
+    position: relative;
+    top: -4px;
+}
+
+div.book-title-slider-in > a > div.book-author > div {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+/* Имя автора */
+div.book-title-slider-in > a > div.book-author > div.author-name {
+    font-family: Tahoma;
+    font-size: 11px;
+    color: black;
+    //word-spacing: 1px;
+    letter-spacing: 0.5px;
+    text-decoration: underline;
+}
+
+/* Общее количество книг автора */
+div.book-title-slider-in > a > div.book-author > div.book-count {
+    font-family: Tahoma;
+    font-size: 10px;
+    color: #888;
+    word-spacing: 1px;
+    position: relative;
+    z-index: -1;
+}
+
+div.book-title-slider-in > a > div.book-author > div.book-count > span {
+    text-decoration: underline;
+}
+
+/*
+ *  Звезды рейтинга у книги на полке
+ */
+div.rating {
+    display: inline-block;
+    width: 75px;
+    position: relative;
+    top: -3px;
+}
+
+div.rating-stars {
+    position: relative;
+    top: 11px;
+    left: -1px;
+    width: 75px;
+    height: 14px;
+    background-color: yellow;
+}
+
+/* SVG-маска из пяти дырок для звездочек */
+div.rating-stars::before {
+    content: '';
+    display: block;
+    width: 75px;
+    height: 15px;
+    background-image: url(../svg/rating-stars.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+div.rating-number {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #0acd1c;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    letter-spacing: 0.3px;
+}
+
+/* уровень заполненности звезд желтым фоном */
+div.book-title-slider-in > a:nth-of-type(1) > div.rating > div.rating-stars {
+    width: 67.5px; /* 4.5 * (75px / 5) */
+}
+div.book-title-slider-in > a:nth-of-type(2) > div.rating > div.rating-stars {
+    width: 57px; /* 3.8 * (75px / 5) */
+}
+div.book-title-slider-in > a:nth-of-type(3) > div.rating > div.rating-stars {
+    width: 61.5px; /* 4.1 * (75px / 5) */
+}
+div.book-title-slider-in > a:nth-of-type(4) > div.rating > div.rating-stars {
+    width: 64.5px; /* 4.3 * (75px / 5) */
+}
+div.book-title-slider-in > a:nth-of-type(5) > div.rating > div.rating-stars {
+    width: 72px; /* 4.8 * (75px / 5) */
+}
+div.book-title-slider-in > a:nth-of-type(6) > div.rating > div.rating-stars {
+    width: 72px; /* 4.8 * (75px / 5) */
+}
+div.book-title-slider-in > a:nth-of-type(7) > div.rating > div.rating-stars {
+    width: 64.5px; /* 4.3 * (75px / 5) */
+}
+div.book-title-slider-in > a:nth-of-type(8) > div.rating > div.rating-stars {
+    width: 61.5px; /* 4.1 * (75px / 5) */
+}
+div.book-title-slider-in > a:nth-of-type(9) > div.rating > div.rating-stars {
+    width: 57px; /* 3.8 * (75px / 5) */
+}
+div.book-title-slider-in > a:nth-of-type(10) > div.rating > div.rating-stars {
+    width: 67.5px; /* 4.5 * (75px / 5) */
+}
+div.book-title-slider-in > a:nth-of-type(11) > div.rating > div.rating-stars {
+    width: 67.5px; /* 4.5 * (75px / 5) */
+}
+div.book-title-slider-in > a:nth-of-type(12) > div.rating > div.rating-stars {
+    width: 57px; /* 3.8 * (75px / 5) */
+}
+div.book-title-slider-in > a:nth-of-type(13) > div.rating > div.rating-stars {
+    width: 61.5px; /* 4.1 * (75px / 5) */
+}
+div.book-title-slider-in > a:nth-of-type(14) > div.rating > div.rating-stars {
+    width: 64.5px; /* 4.3 * (75px / 5) */
+}
+div.book-title-slider-in > a:nth-of-type(15) > div.rating > div.rating-stars {
+    width: 72px; /* 4.8 * (75px / 5) */
+}
+
+/*
+ *  Лайки под книгой на полке
+ */
+div.likes {
+    font-family: Tahoma;
+    font-size: 10.4px;
+    color: #6690d6;
+    letter-spacing: 0.3px;    
+    position: relative;
+    top: 8px;
+    left: 4px;
+}
+
+div.likes::before {
+    content: '\1F44D'; /* символ большлго пальца поднятого к верху */
+    font-family: 'EmojiSymbols-Regular';
+    font-size: 16px;
+    color: #666;
+    position: relative;
+    left: -4px;
+}
+
+/* цена книги на книжной полке */
+div.book-title-slider-in > a > div.price {
+    font-family: Tahoma;
+    letter-spacing: 0.3px;
+    color: #525252;
+    
+    display: inline-block;
+    position: relative;
+    top: 23px;
+    border: 1px solid #c7ceda;
+    border-radius: 4px;
+    padding: 1px 6px;
+    padding-right: 5px;
+    height: 16px;
+}
+
+div.book-title-slider-in > a > div.price > span {
+    position: relative;
+    top: -4px;
+    left: -1px;
+}
+
+/* цена */
+div.book-title-slider-in > a > div.price > span.number {
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+/* надпись Бесплатно */
+div.book-title-slider-in > a > div.price > span.number.free {
+    color: red;
+    margin-right: 0;
+}
+
+/* валюта */
+div.book-title-slider-in > a > div.price > span.currency {
+    font-size: 11px;
+}
+
+/*
+ *  Баннер специальных предложений
+ */
+div.spec {
+    width: 199px;
+    position: relative;
+    top: 31px;
+    left: -6px;
+}
+
+/* Шапка баннера специальных предложений */
+div.spec > div.header {
+    font-family: Verdana;
+    font-size: 15px;
+    letter-spacing: 0.8px;
+    line-height: 19px;
+    font-style: italic;
+    padding-left: 17px;
+    padding-top: 15px;
+    color: #d3be4a;
+    height: 53px;    
+    border: 1px dashed #888;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #f5f5f5;
+}
+
+div.spec > div.header > div.arrow-down {
+    width: 15px;
+    height: 15px;
+    border-right: 2px solid #dae1ee;
+    border-bottom: 2px solid #dae1ee;
+    transform: rotate(41deg) skewX(-10deg);
+    position: relative;
+    top: -31px;
+    left: 137px;
+}
+
+/* Тело баннера специальных предложений */
+div.spec > div.main {
+    height: 395px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px dashed #888;
+    border-top: none;
+    padding-left: 20px;
+    padding-top: 35px;
+}
+
+/* Книжка на баннере специальных предложений */
+div.spec > div.main > .spec-book {
+    display: block;
+    position: relative;
+    left: -5px;
+    top: -2px;
+    margin-bottom: 47px;
+}
+
+/* Обложка книжки на баннере специальных предложений */
+div.spec > div.main > .spec-book > div.cover {
+    width: 55px;
+    height: 72px;
+    overflow: hidden;
+    float: left;
+}
+
+div.spec > div.main > .spec-book > div.cover > img {
+    width: 45px;
+    box-shadow: 0 0 3px 2px #888;
+    position: relative;
+    left: 5px;
+}
+
+/* Рейтинг-звездочка у книжки на баннере специальных предложений */
+div.spec > div.main > .spec-book > div.rating::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -17px;
+    background-image: url(../svg/rating-star.svg);
+    background-repeat: no-repeat;
+    background-size: 130%;
+    width: 50px;
+    height: 50px;    
+}
+
+div.spec > div.main > .spec-book > div.rating {
+    font-family: Tahoma;
+    font-size: 10px;
+    color: #0acd1c;
+    letter-spacing: 0.3px;
+    position: relative;
+    top: 1px;
+    left: 19px;
+}
+
+/* Описание книжки на баннере специальных предложений */
+div.spec > div.main > .spec-book > div.content {
+    position: relative;
+    left: 15px;
+    top: -3px;
+    padding-right: 10px;
+    height: 75px;
+    //border: 1px solid black;
+}
+
+/* Заголовок книжки на баннере специальных предложений */
+div.spec > div.main > .spec-book > div.content > div.title {
+    font-family: Tahoma;
+    font-size: 11px;
+    color: #d3be4a;
+    letter-spacing: 0.3px;
+    text-decoration: underline;
+    line-height: 16px;
+    margin-bottom: 4px;
+}
+
+/* Имя автора книжки на баннере специальных предложений */
+div.spec > div.main > .spec-book > div.content > div.author-name {
+    font-family: Tahoma;
+    font-size: 10px;
+    color: #6e6e6e;
+    text-decoration: underline;
+    letter-spacing: 0.3px;
+    margin-bottom: 9px;
+}
+
+/* Цена книжки на баннере специальных предложений */
+div.spec > div.main > .spec-book div.cost {
+    display: inline-block;
+    font-family: Tahoma;
+    font-size: 11.5px;
+    color: white;
+    height: 18px;
+    transform: skewX(15deg);
+    background-image: linear-gradient(#f9a47c 10%, #e9773e 60%);
+    margin-left: 4px;
+    position: absolute;
+    bottom: 0;
+}
+
+div.spec > div.main > .spec-book div.cost > span {
+    display: inline-block;
+    transform: skewX(-15deg);
+    box-sizing: border-box;
+    padding: 2px 13px;
+    padding-bottom: 15px;
+    position: relative;
+    left: 2px;
+}
+
+/*
+ *  Левое меню
+ */
+div.links {
+    //width: 227px;
+    width: 17.7%;
+    position: relative;
+    margin-top: 125px;
+    margin-left: 1.6%;
+    float: left;
+    padding: 0;
+    //border: 1px solid black;
+}
+
+div.links > nav.left-menu,
+div.links > nav.left-menu > ul.top-level,
+div.links > nav.left-menu > ul.top-level > li.top-level-link,
+div.links > nav.left-menu > ul.top-level > ul.bottom-level,
+div.links > nav.left-menu > ul.top-level > ul.bottom-level > li.bottom-level-link {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+div.links > nav.left-menu {
+    //width: 210px;
+    width: 92.5%;
+}
+
+div.links > nav.left-menu > ul.top-level > li.top-level-link {
+    margin-bottom: 7.5px;
+}
+
+div.links > nav.left-menu > ul.top-level > ul.bottom-level > li.bottom-level-link {
+    margin-bottom: 5px;
+}
+
+div.links > nav.left-menu > ul.top-level > ul.bottom-level {
+    margin-bottom: 20px;
+}
+
+div.links > nav.left-menu {
+    position: relative;
+    left: 10px;
+}
+
+li.top-level-link > a {
+    font-family: Tahoma;
+    font-size: 17px;
+    color: black;
+    letter-spacing: 0.3px;
+}
+
+li.bottom-level-link > a {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #5f7495;
+    letter-spacing: 0.3px;
+}
+
+/*
+ *  Ссылка в левом столбце на мануал
+ */
+div.manual {
+    position: relative;
+    margin-top: 446px;
+    //left: 42px;
+    left: 18.5%;
+}
+
+div.manual > a {
+    text-decoration: none;
+}
+
+div.manual > a > div.title {
+    font-family: Verdana;
+    font-size: 13px;
+    letter-spacing: 0.7px;
+    color: #5f7495;
+    text-decoration: underline;
+    //width: 120px;
+    width: 52.86%;
+    line-height: 20px;
+    margin-bottom: 14px;
+}
+
+div.manual > a > div.body {
+    font-family: Verdana;
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    color: #545454;
+    //width: 145px;
+    width: 63.87%;
+    line-height: 14px;
+}
+
+/*
+ *  Блок с рейтингом авторов
+ */
+div.shelves > div.shelf.author-shelf {
+    height: 285px;
+}
+
+/* Заголовок к блоку с рейтингом авторов */
+div.shelves > div.title.title-authors {
+    margin-top: 98px;
+}
+
+/* Флажочек рядом со ссылкой на полный рейтинг авторов */
+div.bookmark-authors {
+    background-image: linear-gradient(#ffc27c 15%, #ff8a06 35%);
+}
+
+/* Собственно сам блок внутри последней полки */
+div.shelf > div.authors-block {
+    position: relative;
+    top: 33px;
+    //left: 40px;
+    left: 4%;
+    width: 980px;
+    //width: 99.1%;
+    //border: 1px solid black;
+}
+
+/* Каждый автор - это ссылка */
+div.shelf > div.authors-block > a {
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 1px;
+    //margin-right: 40px;
+    margin-right: 4.08%;
+    height: 200px;
+    width: 120px;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    //border: 1px solid black;
+}
+
+/*
+ *  Имя автора
+ */
+/* внешний блок */
+div.shelf > div.authors-block > a > div.author-name {
+    margin-bottom: 10px;
+    height: 35px;
+    display: table-cell; /* Для выравнивания вложенного div-а по центру этого div-а (имеется в виду, по вертикали) */
+    vertical-align: middle;
+    //border: 1px solid black;
+}
+
+/* внутренний блок */
+div.shelf > div.authors-block > a > div.author-name > div {
+    font-family: Tahoma;
+    font-size: 11px;
+    letter-spacing: 0.6px;
+    color: #5f7495;
+    text-decoration: underline;
+    //border: 1px solid black;
+}
+
+/* общее количество книг автора */
+div.shelf > div.authors-block > a > div.book-count {
+    font-family: Tahoma;
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    word-spacing: 0.5px;
+    color: #747474;
+    position: relative;
+    left: 0.9px;
+    top: 1px;
+    text-decoration: underline;
+}
+
+/* фото автора */
+div.shelf > div.authors-block > a > div.photo {
+    position: relative;
+    left: 1px;
+    top: 12px;
+}
+    
+/* круглая маска для обрезания фотки автора */
+div.shelf > div.authors-block > a > div.photo::before {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-image: url(../svg/circle.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+}
+
+/* блок со звездочками рейтинга автора */
+div.shelf > div.authors-block > a div.rating {
+    position: relative;
+    top: 6px;
+    left: -1px;
+}
+
+div.shelf.author-shelf > div.authors-block > a div.rating-stars.author-rating-stars {
+    width: 63px;
+    height: 12px;
+    position: relative;
+    left: 1px;
+}
+
+/* маска для звездочек рейтинга автора */
+div.shelf > div.authors-block > a div.rating-stars::before {
+    width: 65px;
+    position: relative;
+    left: -1px;
+}
+
+/* закраска звездочек в рейтинге кокретного автора */
+div.authors-block > a:nth-of-type(1) > div.rating > div.rating-stars {
+    width: 63px; /* 5.0 * (63px / 5) */
+}
+div.authors-block > a:nth-of-type(2) > div.rating > div.rating-stars {
+    width: 63px; /* 5.0 * (63px / 5) */
+}
+div.authors-block > a:nth-of-type(3) > div.rating > div.rating-stars {
+    width: 61.36px; /* 4.87 * (63px / 5) */
+}
+div.authors-block > a:nth-of-type(4) > div.rating > div.rating-stars {
+    width: 61.87px; /* 4.91 * (63px / 5) */
+}
+div.authors-block > a:nth-of-type(5) > div.rating > div.rating-stars {
+    width: 62.62px; /* 4.97 * (63px / 5) */
+}
+div.authors-block > a:nth-of-type(6) > div.rating > div.rating-stars {
+    width: 57.96px; /* 4.6 * (63px / 5) */
+}
+
+/* цифорка рейтинга автора */
+div.shelf > div.authors-block > a div.rating-number {
+    position: relative;
+    top: 16px;
+    left: -8px;
+    width: 20px;
+    //border: 1px solid black;
+}
+
+/* количество лайков за данного автора */
+div.shelf > div.authors-block > a div.likes {
+    font-size: 9px;
+    letter-spacing: 0.2px;
+    position: relative;
+    top: 18px;
+    left: 7px;    
+}
+
+/* символ большого пальчика вверх */
+div.shelf > div.authors-block > a div.likes::before {
+    position: relative;
+    left: -3px;
+    top: 2px;
+}
+
+/*
+ *  SEO-блок
+ */
+div.seo {
+    //width: 850px;
+    width: 85.6%;
+    position: relative;
+    top: 37px;
+    //left: 56px;
+    left: 5.6%;
+}
+
+div.seo > div.title {
+    font-family: Tahoma;
+    font-size: 22px;
+    letter-spacing: 1.1px;
+    margin-bottom: 30px;
+}
+
+div.seo > div.body > p {
+    font-family: Tahoma;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    word-spacing: 0.5px;
+    line-height: 27px;
+    margin-bottom: 40px;
+}
+
+/*
+ *  Футер
+ */
+footer {
+    //height: 500px;
+    //border: 1px solid black;
+}
+
+/*
+ *  Отчеркивающая тень в футере
+ */
+footer > div.shadow {
+    position: relative;
+    //width: 1280px;
+    width: 100%;
+    height: 65px;
+    background-color: white;
+    //border: 1px solid black;
+}
+
+footer > div.shadow::before {
+    content: '';
+    display: block;
+    position: absolute;
+    //left: 20px;
+    left: 1.56%;
+    bottom: 0;
+    //width: 620px;
+    width: 48.5%;
+    height: 10px;
+    box-shadow: 0 0 10px 0 #666;
+    transform: rotate(0.09deg);
+    z-index: -1;
+}
+
+footer > div.shadow::after {
+    content: '';
+    display: block;
+    position: absolute;
+    //right: 20px;
+    right: 1.56%;
+    bottom: 0;
+    //width: 620px;
+    width: 48.5%;
+    height: 10px;
+    box-shadow: 0 0 10px 0 #666;
+    transform: rotate(-0.09deg);
+    z-index: -1;
+}
+
+/*
+ *  Ссылки (картинки) на партнеров в футере
+ */
+footer > div.partners {
+    margin-top: 79px;
+    width: 100%;
+    padding-left: 0.5%;
+    box-sizing: border-box;
+    //border: 1px solid black;
+}
+
+footer > div.partners > a {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+    //margin-left: 117px;
+    margin-left: 9%;
+    text-decoration: none;
+    //border: 1px solid black;
+}
+
+/*
+ *  Полка в Футере
+ */
+footer > div.footer-shelf {
+    position: relative;
+    //width: 1280px;
+    width: 100%;
+    height: 95px;
+    //border: 1px solid black;    
+}
+
+/* левая часть полки */
+footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-left-part {
+    position: absolute;
+    top: 65px;
+    left: 4.8%;
+    //width: 650px;
+    width: 50.78%;
+    height: 20px;
+    //border: 1px solid black;
+}
+
+/* правая часть полки */
+footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-right-part {
+    position: absolute;
+    top: 65px;
+    right: 5%;
+    //width: 650px;
+    width: 50.78%;
+    height: 20px;
+    //border: 1px solid black;
+}
+
+/* нижняя часть полки */
+footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-bottom-part {
+    position: absolute;
+    top: 88px;
+    left: 2.2%;
+    //width: 1220px;
+    width: 95.3%;
+    height: 17px;
+}
+
+/*
+ *  Под полкой футера
+ */
+footer > div.under-footer-shelf {
+    width: 100%;
+    //border: 1px solid black;
+}
+
+footer > div.under-footer-shelf > div {
+    display: inline-block;
+    vertical-align: top;
+    font-family: Tahoma;
+    letter-spacing: 0.3px;
+    margin-top: 55px;
+    //margin-left: 15px;
+    margin-left: 1.2%;
+    //border: 1px solid black;
+}
+
+footer > div.under-footer-shelf > div.copyright {
+    font-size: 11.5px;
+    letter-spacing: 0.1px;
+    word-spacing: 0.1px;
+    width: 18%;
+    margin-left: 4.5%;
+}
+
+footer > div.under-footer-shelf > div.about-company {
+    width: 13%;
+}
+
+footer > div.under-footer-shelf > div.help {
+    width: 11%;
+}
+
+footer > div.under-footer-shelf > div.earn-with-us {
+    width: 19.5%;
+}
+
+footer > div.under-footer-shelf > div.site-map {
+    width: 13%;
+}
+
+footer > div.under-footer-shelf > div > a {
+    display: block;
+}
+
+footer > div.under-footer-shelf > div > a:nth-of-type(1) {
+    font-size: 14px;
+    color: #5f7495;
+    margin-bottom: 23px;
+}
+
+footer > div.under-footer-shelf > div > a:not(:nth-of-type(1)) {
+    font-size: 11px;
+    color: #3b3b3b;
+    margin-bottom: 9px;
+}
+
+/*
+ *  Шаринг соц.сетей
+ */
+footer > div.under-footer-shelf > div.social-sharing {
+    position: absolute;
+}
+
+footer > div.under-footer-shelf > div.social-sharing > a {
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-image: url(../img/social-icons.png);
+    background-size: 500%;
+    height: 25px;
+    width: 25px;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+footer > div.under-footer-shelf > div.social-sharing > a.share-icon-facebook {
+    background-position: -75px 0;
+}
+
+footer > div.under-footer-shelf > div.social-sharing > a.share-icon-vk {
+    background-position: 0 -25px;
+}
+
+footer > div.under-footer-shelf > div.social-sharing > a.share-icon-livejournal {
+    background-position: -75px -25px;
+}

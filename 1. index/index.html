@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Verybook</title>
+		<meta charset="UTF-8" />
+        <link href="css/index.css" type="text/css" rel="stylesheet" />
+        <script src="js/jquery-2.2.3.min.js"></script>
+        <script src="js/index.js"></script>
+	</head>
+	<body onload="init()">
+        <header>
+            <div class="header header1">
+                <a href="#" class="logo">
+                    <span class="logo-word logo-line logo-line1">\</span>
+                    <span class="logo-word logo-line logo-line2">\</span>
+                    <span class="logo-word logo-v">V</span>
+                    <span class="logo-word logo-erybook">erybook</span>
+                </a>
+                <div class="search">
+                    <label class="search">
+                        <input type="text" name="search" autocomplete />
+                    </label>
+                    <button class="search" />
+                </div>
+                <div class="ask">
+                    <a href="#">Задать вопрос</a>
+                </div>
+                <div class="cart">
+                    <a href="#">Корзина</a>
+                </div>
+            </div>
+            <nav class="header header2">
+                <div class="menu">
+                    <div class="shop">
+                        <a href="#">Книжный магазин</a>
+                    </div>
+                    <div class="help">
+                        <a href="#">Помощь автору</a>
+                    </div>
+                    <div class="authors-rating">
+                        <a href="#">Рейтинг авторов</a>
+                    </div>
+                    <div class="about">
+                        <a href="#">О проекте</a>
+                    </div>
+                </div>
+                <div class="entrance">
+                    <a href="#">Войти</a>
+                </div>
+            </nav>
+        </header>
+		<main>
+            <div class="slogan">
+                Читай <a href="#" class="new-books-free">новые книги бесплатно</a> и решай их судьбу или <a href="#" class="publish-own">публикуй</a> собственные
+            </div>
+            <div class="main-banner">
+                <input type="radio" name="slide" id="slider-button-1" checked/>
+                <input type="radio" name="slide" id="slider-button-2" />
+                <input type="radio" name="slide" id="slider-button-3" />
+                <input type="radio" name="slide" id="slider-button-4" />
+                <div class="slider">
+                    <a href="#">
+                        <img class="slide slide1" src="img/main-banner-1.jpg"/><img class="slide slide2" src="img/main-banner-2.jpg"/><img class="slide slide3" src="img/main-banner-3.jpg"/><img class="slide slide4" src="img/main-banner-4.jpg"/>
+                    </a>
+                </div>
+                <div class="slider-buttons">
+                    <label class="slider-button" for="slider-button-1"></label>
+                    <label class="slider-button" for="slider-button-2"></label>
+                    <label class="slider-button" for="slider-button-3"></label>
+                    <label class="slider-button" for="slider-button-4"></label>
+                </div>
+            </div>
+            <div class="links">
+                <nav class="left-menu">
+                    <ul class="top-level">
+                        <li class="top-level-link"><a href="#">Бест-селлеры</a></li>
+                        <li class="top-level-link"><a href="#">Новинки</a></li>
+                        <li class="top-level-link"><a href="#">Акции</a></li>
+                        <li class="top-level-link"><a href="#">Детям и родителям</a></li>
+                        <ul class="bottom-level">
+                            <li class="bottom-level-link"><a href="#">Досуг и творчество</a></li>
+                            <li class="bottom-level-link"><a href="#">Книги для родителей</a></li>
+                            <li class="bottom-level-link"><a href="#">Познавательная литература</a></li>
+                            <li class="bottom-level-link"><a href="#">Художественная литература</a></li>
+                        </ul>
+                        <li class="top-level-link"><a href="#">Учебная литература</a></li>
+                        <ul class="bottom-level">
+                            <li class="bottom-level-link"><a href="#">Дошкольникам</a></li>
+                            <li class="bottom-level-link"><a href="#">Школьникам и абитуриентам</a></li>
+                            <li class="bottom-level-link"><a href="#">Студентам и аспирантам</a></li>
+                            <li class="bottom-level-link"><a href="#">Педагогам</a></li>
+                        </ul>
+                        <li class="top-level-link"><a href="#">Бизнес-литература</a></li>
+                        <ul class="bottom-level">
+                            <li class="bottom-level-link"><a href="#">Деловая литература. Право. Психология</a></li>
+                            <li class="bottom-level-link"><a href="#">Маркетинг. Реклама</a></li>
+                            <li class="bottom-level-link"><a href="#">Менеджмент</a></li>
+                            <li class="bottom-level-link"><a href="#">Финансы. Банковское дело. Инвестиции</a></li>
+                        </ul>
+                        <li class="top-level-link"><a href="#">Нехудожественная литература</a></li>
+                        <ul class="bottom-level">
+                            <li class="bottom-level-link"><a href="#">Искусство. Культура</a></li>
+                            <li class="bottom-level-link"><a href="#">Компьютеры. Интернет</a></li>
+                            <li class="bottom-level-link"><a href="#">Кулинария. Напитки</a></li>
+                            <li class="bottom-level-link"><a href="#">Медицина</a></li>
+                            <li class="bottom-level-link"><a href="#">Наука.Техника</a></li>
+                            <li class="bottom-level-link"><a href="#">Общественные и гуманитарные науки</a></li>
+                            <li class="bottom-level-link"><a href="#">Психология</a></li>
+                            <li class="bottom-level-link"><a href="#">Публицистика</a></li>
+                            <li class="bottom-level-link"><a href="#">Путешествия. Хобби. Фото. Спорт</a></li>
+                            <li class="bottom-level-link"><a href="#">Религии мира</a></li>
+                            <li class="bottom-level-link"><a href="#">Рукоделие. Творчество</a></li>
+                            <li class="bottom-level-link"><a href="#">Эзотерика</a></li>
+                        </ul>   
+                    </ul>
+                </nav>
+                
+                <div class="spec">
+                    <div class="header">
+                        <div class="title">
+                            Специальные предложения
+                        </div>
+                        <div class="arrow-down">
+                        </div>
+                    </div>
+                    <div class="main">
+                        <a href="#" class="spec-book spec-book-1">
+                            <div class="cover"><img src="img/book1.jpg" /></div>
+                            <div class="content">
+                                <div class="title">Энциклопедия Marvel Heroes</div>
+                                <div class="author-name">Дмитрий Глуховский</div>
+                                <div class="cost"><span>599 р.</span></div>
+                            </div>                            
+                            <div class="rating">3,8</div>
+                        </a>
+                        <a href="#" class="spec-book spec-book-2">
+                            <div class="cover"><img src="img/book5.jpg" /></div>
+                            <div class="content">
+                                <div class="title">Непобежденные</div>
+                                <div class="author-name">А.П. Константинов</div>
+                                <div class="cost"><span>99 р.</span></div>
+                            </div>                            
+                            <div class="rating">3,8</div>
+                        </a>
+                        <a href="#" class="spec-book spec-book-3">
+                            <div class="cover"><img src="img/book4.jpg" /></div>
+                            <div class="content">
+                                <div class="title">Энциклопедия Marvel Heroes</div>
+                                <div class="author-name">Дмитрий Глуховский</div>
+                                <div class="cost"><span>99 р.</span></div>
+                            </div>                            
+                            <div class="rating">3,8</div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="manual">
+                    <a href="#">
+                        <div class="title">
+                            Подробный мануал по EPUB
+                        </div>
+                        <div class="body">
+                            Для выставления<br>на продажу собственных<br>книг настоятельно<br>рекомендем<br>ознакомиться с нашим<br>мануалом, который<br>упростит и сделает более
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Здесь начинаются полки -->
+            
+            <div class="shelves">
+                
+                <!-- Первая полка (Бест-селлеры) -->
+                
+                <div class="title">
+                    <div class="bookmark"></div>
+                    <div class="shelf-name">
+                        <a href="#">Бест-селлеры</a>
+                    </div>
+                    <div class="sort-by">
+                        <div>Сортировать:</div>                       
+                        
+                        <input type="radio" name="best-sellers-sort-link" id="best-sellers-sort-link-1" />
+                        <input type="radio" name="best-sellers-sort-link" id="best-sellers-sort-link-2" checked />
+                        <input type="radio" name="best-sellers-sort-link" id="best-sellers-sort-link-3" />
+                        <div class="sort-links">
+                            <label class="sort-link" for="best-sellers-sort-link-1">по рейтингу</label>
+                            <label class="sort-link" for="best-sellers-sort-link-2">по дате</label>
+                            <label class="sort-link" for="best-sellers-sort-link-3">по цене</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="shelf">
+                    <div class="arrow-up"></div>
+                    
+                    <button class="left-arrow" onclick="leftArrowAction('best-sellers')"></button>
+                    
+                    <div class="book-slider-out best-sellers">
+                        <div class="book-slider-in best-sellers">
+                            <a href="#">
+                                <img src="img/book1.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book2.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book3.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book4.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book5.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book5.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book4.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book3.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book2.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book1.jpg" />
+                            </a>                            
+                            <a href="#">
+                                <img src="img/book1.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book2.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book3.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book4.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book5.jpg" />
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="shelf-left-part"></div>
+                    <div class="shelf-right-part"></div>
+                    <div class="shelf-bottom-part"></div>
+                    
+                    <div class="book-title-slider-out">
+                        <div class="book-title-slider-in best-sellers">
+                            <a href="#">
+                                <div class="book-title">
+                                    Древняя Русь в картинках
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А.А. Иванов
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>11 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,5</div>
+                                <div class="likes">
+                                    9002
+                                </div>
+                                <div class="price">
+                                    <span class="number">20</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Как отравили Сталина
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        С.В. Куприн
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>8 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">3,8</div>
+                                <div class="likes">
+                                    10002
+                                </div>
+                                <div class="price">
+                                    <span class="number">18</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Фаина Раневская
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А.П. Константинов
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>5 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,1</div>
+                                <div class="likes">
+                                    14002
+                                </div>
+                                <div class="price">
+                                    <span class="number free">Бесплатно</span><span class="currency"></span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Тайны мозга вашего ребенка
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А. Александров
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>2 книги</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,3</div>
+                                <div class="likes">
+                                    8046
+                                </div>
+                                <div class="price">
+                                    <span class="number">21</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Тайны мозга
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А. Александров
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>4 книги</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,8</div>
+                                <div class="likes">
+                                    11012
+                                </div>
+                                <div class="price">
+                                    <span class="number">5</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Тайны мозга
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А. Александров
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>4 книги</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,8</div>
+                                <div class="likes">
+                                    11012
+                                </div>
+                                <div class="price">
+                                    <span class="number">5</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Тайны мозга вашего ребенка
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А. Александров
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>2 книги</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,3</div>
+                                <div class="likes">
+                                    8046
+                                </div>
+                                <div class="price">
+                                    <span class="number">21</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Фаина Раневская
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А.П. Константинов
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>5 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,1</div>
+                                <div class="likes">
+                                    14002
+                                </div>
+                                <div class="price">
+                                    <span class="number free">Бесплатно</span><span class="currency"></span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Как отравили Сталина
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        С.В. Куприн
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>8 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">3,8</div>
+                                <div class="likes">
+                                    10002
+                                </div>
+                                <div class="price">
+                                    <span class="number">18</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Древняя Русь в картинках
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А.А. Иванов
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>11 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,5</div>
+                                <div class="likes">
+                                    9002
+                                </div>
+                                <div class="price">
+                                    <span class="number">20</span><span class="currency">руб</span>
+                                </div>
+                            </a>                            
+                            <a href="#">
+                                <div class="book-title">
+                                    Древняя Русь в картинках
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А.А. Иванов
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>11 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,5</div>
+                                <div class="likes">
+                                    9002
+                                </div>
+                                <div class="price">
+                                    <span class="number">20</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Как отравили Сталина
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        С.В. Куприн
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>8 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">3,8</div>
+                                <div class="likes">
+                                    10002
+                                </div>
+                                <div class="price">
+                                    <span class="number">18</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Фаина Раневская
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А.П. Константинов
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>5 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,1</div>
+                                <div class="likes">
+                                    14002
+                                </div>
+                                <div class="price">
+                                    <span class="number free">Бесплатно</span><span class="currency"></span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Тайны мозга вашего ребенка
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А. Александров
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>2 книги</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,3</div>
+                                <div class="likes">
+                                    8046
+                                </div>
+                                <div class="price">
+                                    <span class="number">21</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Тайны мозга
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А. Александров
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>4 книги</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,8</div>
+                                <div class="likes">
+                                    11012
+                                </div>
+                                <div class="price">
+                                    <span class="number">5</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <button class="right-arrow" onclick="rightArrowAction('best-sellers')"></button>
+                </div>
+                
+                <!-- Вторая полка (Новинки) -->
+                
+                <div class="title">
+                    <div class="bookmark"></div>
+                    <div class="shelf-name">
+                        <a href="#">Новинки</a>
+                    </div>
+                    <div class="sort-by">
+                        <div>Сортировать:</div>                       
+                        
+                        <input type="radio" name="new-sort-link" id="new-sort-link-1" checked />
+                        <input type="radio" name="new-sort-link" id="new-sort-link-2" />
+                        <input type="radio" name="new-sort-link" id="new-sort-link-3" />
+                        <div class="sort-links">
+                            <label class="sort-link" for="new-sort-link-1">по рейтингу</label>
+                            <label class="sort-link" for="new-sort-link-2">по дате</label>
+                            <label class="sort-link" for="new-sort-link-3">по цене</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="shelf">
+                    <div class="arrow-up"></div>
+                    
+                    <button class="left-arrow" onclick="leftArrowAction('new-books')"></button>
+                    
+                    <div class="book-slider-out new-books">
+                        <div class="book-slider-in new-books">
+                            <a href="#">
+                                <img src="img/book1.jpg" >
+                            </a>
+                            <a href="#">
+                                <img src="img/book2.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book3.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book4.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book5.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book5.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book4.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book3.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book2.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book1.jpg" />
+                            </a>                            
+                            <a href="#">
+                                <img src="img/book1.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book2.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book3.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book4.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book5.jpg" />
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="shelf-left-part"></div>
+                    <div class="shelf-right-part"></div>
+                    <div class="shelf-bottom-part"></div>
+                    
+                    <div class="book-title-slider-out">
+                        <div class="book-title-slider-in new-books">
+                            <a href="#">
+                                <div class="book-title">
+                                    Древняя Русь в картинках
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А.А. Иванов
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>11 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,5</div>
+                                <div class="likes">
+                                    9002
+                                </div>
+                                <div class="price">
+                                    <span class="number">20</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Как отравили Сталина
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        С.В. Куприн
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>8 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">3,8</div>
+                                <div class="likes">
+                                    10002
+                                </div>
+                                <div class="price">
+                                    <span class="number">18</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Фаина Раневская
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А.П. Константинов
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>5 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,1</div>
+                                <div class="likes">
+                                    14002
+                                </div>
+                                <div class="price">
+                                    <span class="number free">Бесплатно</span><span class="currency"></span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Тайны мозга вашего ребенка
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А. Александров
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>2 книги</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,3</div>
+                                <div class="likes">
+                                    8046
+                                </div>
+                                <div class="price">
+                                    <span class="number">21</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Тайны мозга
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А. Александров
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>4 книги</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,8</div>
+                                <div class="likes">
+                                    11012
+                                </div>
+                                <div class="price">
+                                    <span class="number">5</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Тайны мозга
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А. Александров
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>4 книги</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,8</div>
+                                <div class="likes">
+                                    11012
+                                </div>
+                                <div class="price">
+                                    <span class="number">5</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Тайны мозга вашего ребенка
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А. Александров
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>2 книги</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,3</div>
+                                <div class="likes">
+                                    8046
+                                </div>
+                                <div class="price">
+                                    <span class="number">21</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Фаина Раневская
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А.П. Константинов
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>5 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,1</div>
+                                <div class="likes">
+                                    14002
+                                </div>
+                                <div class="price">
+                                    <span class="number free">Бесплатно</span><span class="currency"></span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Как отравили Сталина
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        С.В. Куприн
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>8 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">3,8</div>
+                                <div class="likes">
+                                    10002
+                                </div>
+                                <div class="price">
+                                    <span class="number">18</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Древняя Русь в картинках
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А.А. Иванов
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>11 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,5</div>
+                                <div class="likes">
+                                    9002
+                                </div>
+                                <div class="price">
+                                    <span class="number">20</span><span class="currency">руб</span>
+                                </div>
+                            </a>                            
+                            <a href="#">
+                                <div class="book-title">
+                                    Древняя Русь в картинках
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А.А. Иванов
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>11 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,5</div>
+                                <div class="likes">
+                                    9002
+                                </div>
+                                <div class="price">
+                                    <span class="number">20</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Как отравили Сталина
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        С.В. Куприн
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>8 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">3,8</div>
+                                <div class="likes">
+                                    10002
+                                </div>
+                                <div class="price">
+                                    <span class="number">18</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Фаина Раневская
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А.П. Константинов
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>5 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,1</div>
+                                <div class="likes">
+                                    14002
+                                </div>
+                                <div class="price">
+                                    <span class="number free">Бесплатно</span><span class="currency"></span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Тайны мозга вашего ребенка
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А. Александров
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>2 книги</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,3</div>
+                                <div class="likes">
+                                    8046
+                                </div>
+                                <div class="price">
+                                    <span class="number">21</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Тайны мозга
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А. Александров
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>4 книги</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,8</div>
+                                <div class="likes">
+                                    11012
+                                </div>
+                                <div class="price">
+                                    <span class="number">5</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <button class="right-arrow" onclick="rightArrowAction('new-books')"></button>
+                </div>
+                
+                <!-- Третья полка (Высший рейтинг) -->
+                
+                <div class="title">
+                    <div class="bookmark"></div>
+                    <div class="shelf-name">
+                        <a href="#">Высший рейтинг</a>
+                    </div>
+                    <div class="sort-by">
+                        <div>Сортировать:</div>                       
+                        
+                        <input type="radio" name="high-rating-sort-link" id="high-rating-sort-link-1" />
+                        <input type="radio" name="high-rating-sort-link" id="high-rating-sort-link-2" />
+                        <input type="radio" name="high-rating-sort-link" id="high-rating-sort-link-3" checked />
+                        <div class="sort-links">
+                            <label class="sort-link" for="high-rating-sort-link-1">по рейтингу</label>
+                            <label class="sort-link" for="high-rating-sort-link-2">по дате</label>
+                            <label class="sort-link" for="high-rating-sort-link-3">по цене</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="shelf">
+                    <div class="arrow-up"></div>
+                    
+                    <button class="left-arrow" onclick="leftArrowAction('highest-rating')"></button>
+                    
+                    <div class="book-slider-out highest-rating">
+                        <div class="book-slider-in highest-rating">
+                            <a href="#">
+                                <img src="img/book1.jpg" >
+                            </a>
+                            <a href="#">
+                                <img src="img/book2.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book3.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book4.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book5.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book5.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book4.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book3.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book2.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book1.jpg" />
+                            </a>                            
+                            <a href="#">
+                                <img src="img/book1.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book2.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book3.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book4.jpg" />
+                            </a>
+                            <a href="#">
+                                <img src="img/book5.jpg" />
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="shelf-left-part"></div>
+                    <div class="shelf-right-part"></div>
+                    <div class="shelf-bottom-part"></div>
+                    
+                    <div class="book-title-slider-out">
+                        <div class="book-title-slider-in highest-rating">
+                            <a href="#">
+                                <div class="book-title">
+                                    Древняя Русь в картинках
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А.А. Иванов
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>11 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,5</div>
+                                <div class="likes">
+                                    9002
+                                </div>
+                                <div class="price">
+                                    <span class="number">20</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Как отравили Сталина
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        С.В. Куприн
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>8 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">3,8</div>
+                                <div class="likes">
+                                    10002
+                                </div>
+                                <div class="price">
+                                    <span class="number">18</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Фаина Раневская
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А.П. Константинов
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>5 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,1</div>
+                                <div class="likes">
+                                    14002
+                                </div>
+                                <div class="price">
+                                    <span class="number free">Бесплатно</span><span class="currency"></span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Тайны мозга вашего ребенка
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А. Александров
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>2 книги</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,3</div>
+                                <div class="likes">
+                                    8046
+                                </div>
+                                <div class="price">
+                                    <span class="number">21</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Тайны мозга
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А. Александров
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>4 книги</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,8</div>
+                                <div class="likes">
+                                    11012
+                                </div>
+                                <div class="price">
+                                    <span class="number">5</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Тайны мозга
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А. Александров
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>4 книги</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,8</div>
+                                <div class="likes">
+                                    11012
+                                </div>
+                                <div class="price">
+                                    <span class="number">5</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Тайны мозга вашего ребенка
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А. Александров
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>2 книги</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,3</div>
+                                <div class="likes">
+                                    8046
+                                </div>
+                                <div class="price">
+                                    <span class="number">21</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Фаина Раневская
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А.П. Константинов
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>5 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,1</div>
+                                <div class="likes">
+                                    14002
+                                </div>
+                                <div class="price">
+                                    <span class="number free">Бесплатно</span><span class="currency"></span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Как отравили Сталина
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        С.В. Куприн
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>8 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">3,8</div>
+                                <div class="likes">
+                                    10002
+                                </div>
+                                <div class="price">
+                                    <span class="number">18</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Древняя Русь в картинках
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А.А. Иванов
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>11 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,5</div>
+                                <div class="likes">
+                                    9002
+                                </div>
+                                <div class="price">
+                                    <span class="number">20</span><span class="currency">руб</span>
+                                </div>
+                            </a>                            
+                            <a href="#">
+                                <div class="book-title">
+                                    Древняя Русь в картинках
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А.А. Иванов
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>11 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,5</div>
+                                <div class="likes">
+                                    9002
+                                </div>
+                                <div class="price">
+                                    <span class="number">20</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Как отравили Сталина
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        С.В. Куприн
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>8 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">3,8</div>
+                                <div class="likes">
+                                    10002
+                                </div>
+                                <div class="price">
+                                    <span class="number">18</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Фаина Раневская
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А.П. Константинов
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>5 книг</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,1</div>
+                                <div class="likes">
+                                    14002
+                                </div>
+                                <div class="price">
+                                    <span class="number free">Бесплатно</span><span class="currency"></span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Тайны мозга вашего ребенка
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А. Александров
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>2 книги</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,3</div>
+                                <div class="likes">
+                                    8046
+                                </div>
+                                <div class="price">
+                                    <span class="number">21</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="book-title">
+                                    Тайны мозга
+                                </div>
+                                <div class="book-author">
+                                    <div class="author-name">
+                                        А. Александров
+                                    </div>
+                                    <div class="book-count">
+                                        (<span>4 книги</span>)
+                                    </div>
+                                </div>
+                                
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                </div>
+                                <div class="rating rating-number">4,8</div>
+                                <div class="likes">
+                                    11012
+                                </div>
+                                <div class="price">
+                                    <span class="number">5</span><span class="currency">руб</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <button class="right-arrow" onclick="rightArrowAction('highest-rating')"></button>
+                </div>
+                
+                <!-- Рейтинг авторов -->
+                
+                <div class="title title-authors">
+                    <div class="bookmark bookmark-authors"></div>
+                    <div class="shelf-name">
+                        <a href="#">Рейтинг авторов</a>
+                    </div>                    
+                </div>
+                <div class="shelf author-shelf">
+                    <div class="arrow-up"></div>
+                    
+                    <div class="authors-block">
+                        <a href="#">
+                            <div class="author-name">
+                                <div>Илья Константинов</div>
+                            </div>
+                            <div class="book-count">
+                                5 книг
+                            </div>
+
+                            <div class="photo">
+                                <img src="img/photo1.jpg" />
+                            </div>
+
+                            <div class="rating">
+                                <div class="rating-stars author-rating-stars"></div>
+                            </div>
+                            <div class="rating rating-number">5,0</div>
+                            <div class="likes">
+                                2763
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="author-name">
+                                <div>Иван Бездомный</div>
+                            </div>
+                            <div class="book-count">
+                                8 книг
+                            </div>
+
+                            <div class="photo">
+                                <img src="img/photo2.jpg" />
+                            </div>
+
+                            <div class="rating">
+                                <div class="rating-stars author-rating-stars"></div>
+                            </div>
+                            <div class="rating rating-number">5,0</div>
+                            <div class="likes">
+                                3480
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="author-name">
+                                <div>Константин Константинопольский</div>
+                            </div>
+                            <div class="book-count">
+                                8 книг
+                            </div>
+
+                            <div class="photo">
+                                <img src="img/photo3.jpg" />
+                            </div>
+                            
+                            <div class="rating">
+                                <div class="rating-stars author-rating-stars"></div>
+                            </div>
+                            <div class="rating rating-number">4,87</div>
+                            <div class="likes">
+                                3480
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="author-name">
+                                <div>Александр Неизвестный</div>
+                            </div>
+                            <div class="book-count">
+                                8 книг
+                            </div>
+
+                            <div class="photo">
+                                <img src="img/photo4.jpg" />
+                            </div>
+
+                            <div class="rating">
+                                <div class="rating-stars author-rating-stars"></div>
+                            </div>
+                            <div class="rating rating-number">4,91</div>
+                            <div class="likes">
+                                3480
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="author-name">
+                                <div>Adam Moran Thompson</div>
+                            </div>
+                            <div class="book-count">
+                                8 книг
+                            </div>
+
+                            <div class="photo">
+                                <img src="img/photo5.jpg" />
+                            </div>
+
+                            <div class="rating">
+                                <div class="rating-stars author-rating-stars"></div>
+                            </div>
+                            <div class="rating rating-number">4,97</div>
+                            <div class="likes">
+                                3480
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="author-name">
+                                <div>Сунь Хуй в Чай</div>
+                            </div>
+                            <div class="book-count">
+                                8 книг
+                            </div>
+
+                            <div class="photo">
+                                <img src="img/photo6.jpg" />
+                            </div>
+
+                            <div class="rating">
+                                <div class="rating-stars author-rating-stars"></div>
+                            </div>
+                            <div class="rating rating-number">4,6</div>
+                            <div class="likes">
+                                3480
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- SEO блок -->
+                <div class="seo">
+                    <div class="title">
+                        Публикация собственных книг
+                    </div>
+                    <div class="body">
+                        <p>После переноса операционной базы онлайн-мегамаркета из Санкт-Петербурга в Москву началось активное
+                            развитие проекта по всем направлениям. К существующим в ассортименте книгам и музыкальным дискам
+                            добавились видео-товары, компьютерные игры и программные продукты, открылся раздел букинистики и
+                            антикварных книг.В 2005 годупосетителям сайта стали доступны электроника, компьютерная техника,
+                            фототовары и мобильные телефоны — этот сегмент вышел на второе место по объёмам продаж после книг.
+                            В 2007 году были добавлены товары для детей, семьи и дома. Сегодня на сайте можно купить практически
+                            всё, за эти годы Ozon.ru прошел путь от магазина медийных товаров до онлайн-мегамаркета с самым
+                            широким в Рунете ассортиментом товаров – 3 500 000 товаров в 14 категориях.</p>
+                        <p>Ежедневно на сайт Ozon.ru заходят около 700 000 посетителей. Ассортимент онлайн-мегамаркета разделен
+                            на большие разделы, товары в которых собраны в постоянно обновляемые каталоги. Чтобы найти
+                            необходимый товар, можно воспользоваться и системой поиска, которая позволяет осуществлять
+                            эффективный и быстрый поиск по самом у широкому спектру параметров, которые в обычных магазинах
+                            недоступны.</p>
+                        <p>Магазин поддерживает 19 способов оплаты и способов доставки заказов, которые позволяют покупателям в
+                            зависимости от места проживания подобрать оптимальное сочетание. Магазин поддерживает 19 способов
+                            оплаты и способов доставки заказов, которые позволяют покупателям в зависимости от места проживания
+                            подобрать оптимальное сочетание. заказов, которые позволяют покупателям в зависимости от места
+                            проживания подобрать оптимальное сочетание.</p>
+                    </div>
+                </div>                
+            </div>
+            
+            <div style="clear: both">
+                <!--
+                    Т.к. div.links и div.shelves являются float: left, то
+                    они не тянут свой контейнер main.
+                    Для того чтобы это исправить нужно вставить этот тег
+                -->
+            </div>
+        </main>
+		<footer>
+            <div class="shadow">
+            </div>
+            <div class="partners">
+                <a href="#">
+                    <img src="img/partner1.jpg" />
+                </a>
+                <a href="#">
+                    <img src="img/partner2.jpg" />
+                </a>
+                <a href="#">
+                    <img src="img/partner3.jpg" />
+                </a>
+                <a href="#">
+                    <img src="img/partner4.jpg" />
+                </a>
+                <a href="#">
+                    <img src="img/partner5.jpg" />
+                </a>
+            </div>
+            
+            <div class="footer-shelf">
+                <div class="footer-shelf shelf-part shelf-left-part"></div>
+                <div class="footer-shelf shelf-part shelf-right-part"></div>
+                <div class="footer-shelf shelf-part shelf-bottom-part"></div>
+            </div>
+            
+            <div class="under-footer-shelf">
+                <div class="copyright">
+                    © 1993–2014 Верибук.ру
+                </div>
+                
+                <div class="about-company">
+                    <a href="#">
+                        О компании
+                    </a>
+                    <a href="#">
+                        Пресс-центр
+                    </a>
+                    <a href="#">
+                        Вакансии
+                    </a>
+                    <a href="#">
+                        Реквизиты
+                    </a>
+                    <a href="#">
+                        О компании
+                    </a>
+                </div>
+                
+                <div class="help">
+                    <a href="#">
+                        Помощь
+                    </a>
+                    <a href="#">
+                        Как сделать заказ
+                    </a>
+                    <a href="#">
+                        Доставка
+                    </a>
+                    <a href="#">
+                        Оплата
+                    </a>
+                    <a href="#">
+                        Помощь
+                    </a>
+                    <a href="#">
+                        Обратная связь
+                    </a>
+                </div>
+                
+                <div class="earn-with-us">
+                    <a href="#">
+                        Зарабатывайте с нами
+                    </a>
+                    <a href="#">
+                        Продавайте Ваши товары на Ozon.ru
+                    </a>
+                    <a href="#">
+                        Становитесь поставщиками Букинистики
+                    </a>
+                    <a href="#">
+                        Партнёрская программа Ozon.ru
+                    </a>
+                    <a href="#">
+                        Размещайте рекламу на Ozon.ru
+                    </a>
+                    <a href="#">
+                        Открывайте пункты выдачи заказов Ozon.ru
+                    </a>
+                </div>
+                
+                <div class="site-map">
+                    <a href="#">
+                        Карта сайта
+                    </a>
+                    <a href="#">
+                        Покупка товаров (b2b)
+                    </a>
+                    <a href="#">
+                        Подарочные сертификаты
+                    </a>
+                    <a href="#">
+                        Loyalica
+                    </a>
+                </div>
+                
+                <div class="social-sharing">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=verybook.ru"
+                       title="Поделиться Verybook на Facebook"
+                       class="share-icon-facebook">
+                    </a>
+                    <a href="#"
+                       title="Поделиться Verybook ВКонтакте"
+                       class="share-icon-vk">
+                    </a>
+                    <a href="#"
+                       title="Поделиться Verybook в ЖЖ"
+                       class="share-icon-livejournal">
+                    </a>
+                </div>
+            </div>            
+		</footer>
+	</body>
+</html>
