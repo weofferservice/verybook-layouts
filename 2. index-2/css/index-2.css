@@ -1,0 +1,1049 @@
+@font-face {
+    font-family: 'Etelka Text Pro';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Etelka Text Pro'), url('fonts/Etelka-Text-Pro.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Core Sans M W01 SC 65 Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Core Sans M W01 SC 65 Bold'), url('fonts/Core Sans M W01 SC 65 Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Font Awesome';
+    font-style: normal;
+    font-weight: normal;
+    src: local('fontawesome-webfont'), url('fonts/fontawesome-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'EmojiSymbols-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('EmojiSymbols-Regular'), url('fonts/EmojiSymbols-Regular.woff') format('woff');
+}
+
+body {
+    width: 100%;
+    max-width: 1280px;
+    min-width: 700px;
+    margin-left: auto; /* auto сделает body по центру */
+    margin-right: auto; /* auto сделает body по центру */
+    box-sizing: border-box;
+    //border: 1px solid black;
+}
+
+/*
+ *  Хедер
+ */
+header {
+    height: 90px;
+    background-color: white;
+    width: 100%;
+    height: 115px;
+    box-sizing: border-box;
+    //border: 1px solid red;
+}
+
+/*
+ *  Тень под Хедером
+ */
+header::before {
+    content: '';
+    display: block;
+    position: relative;
+    left: 10%;
+    top: 103px;
+    z-index: -1;
+    height: 10px;
+    width: 40%;
+    box-shadow: 0 0 10px 0 #888;
+    transform: rotate(0.3deg);
+}
+
+header::after {
+    content: '';
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 22px;
+    z-index: -1;
+    height: 10px;
+    width: 40%;
+    box-shadow: 0 0 10px 0 #888;
+    transform: rotate(-0.3deg);
+}
+
+/*
+ *  Самая верхняя часть Хедера с логотипом, строкой поиска, задать вопросом и корзиной
+ */
+div.header1 {
+    width: 100%;
+    //height: 100px;
+    box-sizing: border-box;
+    position: relative;
+    top: -9px;
+    //border: 1px solid black;
+}
+
+div.header1 > div {
+    display: inline-block;
+}
+
+/*
+ *  Логотип (создан текстом со спец. подобранными шрифтами)
+ */
+a.logo {
+    text-decoration: none;
+    display: inline-block;
+    width: 162px;
+    height: 30px;
+    position: relative;
+    margin-top: 17px;
+    margin-left: 2.1%;
+    //border: 2px solid red;
+}
+
+/* Влияет на все части логотипа */
+span.logo-word {
+    color: #5f7495;
+    line-height: 30px;
+    //border: 1px solid black;
+}
+
+span.logo-line {
+    font-family: 'Times New Roman';
+    font-size: 35pt;
+    font-weight: 900;
+    text-shadow: 3px 0 0;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    //border: 1px solid black;
+}
+
+span.logo-line::after {
+    /* Памятка разработчику. В content учитываются символы экранировки, т.е. \\ - это всего лишь один слеш */
+    content: '\\';
+    font-family: 'Times New Roman';
+    position: relative;
+    left: -11px;
+    //border: 1px solid black;
+}
+
+span.logo-line2 {
+    position: absolute;
+    left: 13px;
+    //border: 1px solid black;
+}
+
+span.logo-v {
+    font-family: 'Core Sans M W01 SC 65 Bold';
+    font-size: 35pt;
+    vertical-align: top;
+    text-shadow: 1px 0 0;
+    position: absolute;
+    left: 27px;
+    top: 0;
+    //border: 1px solid black;
+}
+
+span.logo-v.ie { /* селектор ie используется, чтобы вводить корректировки в стили при использовании IE */
+    top: -1px;
+}
+
+span.logo-erybook {
+    font-family: 'Etelka Text Pro';
+    font-size: 20pt;
+    letter-spacing: 1px;
+    position: absolute;
+    left: 60px;
+    //top: 11px;
+    //border: 1px solid black;
+}
+
+/*
+ *  Блок поиска
+ */
+div.search {
+    position: absolute;
+    top: 15px;
+    left: 27%;
+    transform: skewX(15deg);
+    //border: 1px solid black;
+    width: 40.2%;
+    height: 30px;
+}
+
+label.search {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 30px;
+    width: 86.5%;    
+    border: 1px solid #ccc;
+    padding: 0px 8px;
+    position: absolute;
+    left: 0;
+    //border: 1px solid black;
+}
+
+/* Нутро наклоняю в противоположную сторону, чтобы текст при наборе был ровным */
+label.search > input {
+    border: 0;
+    outline: none;
+    transform: skewX(-15deg);
+    box-sizing: border-box;
+    height: 28px;
+    width: 100%;
+    font-family: Tahoma;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    //border: 1px solid black;
+}
+
+/*
+ *  Кнопка поиска
+ */
+button.search {
+    display: inline-block;
+    height: 30px;
+    width: 13.5%;
+    min-width: 35px;
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    position: absolute;
+    right: 1px;  
+    //border: 1px solid black;
+}
+
+button.search::before {
+    content: '\1f50d'; /* Значок лупы */
+    display: inline-block;
+    color: #888;
+    font-size: 19px;    
+    transform: skewX(-15deg);
+    background-position: 50% 50%;
+    //border: 1px solid black;
+}
+
+button.search:focus {
+    outline: none; /* При фокусе не будет голубой кромки */
+}
+
+button.search:active {
+    box-shadow: inset 0px 0px 2px 0 #ccc; /* При нажатии будет видно нажатие за счет тени */
+}
+
+/*
+ *  Ссылка "Задать вопрос"
+ */
+div.ask {
+    box-sizing: border-box;
+    position: absolute;
+    top: 15px;
+    //left: 78.2%;
+    right: 13.2%;
+    width: 110px;
+    //border: 1px solid black;
+}
+
+div.ask > a {
+    color: #888;
+    font-family: Tahoma;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    //border: 1px solid black;
+}
+
+/* Знак вопросика после ссылки Задать вопрос */
+div.ask::after {
+    content: '?';
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    color: #888;
+    font-size: 10pt;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #888;
+    border-radius: 50%;
+    position: relative;
+    left: 4px;
+    top: -1px;
+    //border: 1px solid black;
+}
+/* Переключение на этот класс будет скрывать Знак вопросика после ссылки Задать вопрос */
+div.ask.hidden::after {
+    display: none;
+}
+
+/*
+ *  Ссылка "Корзина"
+ */
+div.cart {
+    box-sizing: border-box;
+    position: absolute;
+    top: 17px;
+    //left: 89%;
+    right: 2.9%;
+    height: 23px;
+    width: 103px;
+    //border: 1px solid black;
+}
+
+div.cart > a {
+    color: #7f90aa;
+    font-family: Tahoma;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    position: absolute;
+    left: 29px;
+    top: 1px;
+    //border: 1px solid black;
+}
+
+/* Символ продуктовой корзинки */
+div.cart::before {
+    content: '\f07a';
+    display: inline-block;
+    font-family: 'Font Awesome';
+    color: #888;
+    font-size: 14pt;
+    position: absolute;
+    left: 1px;
+    //border: 1px solid black;
+}
+/* Переключение на этот класс будет скрывать символ продуктовой корзинки */
+div.cart.hidden::before {
+    display: none;
+}
+
+/* Красный шарик с количеством покупок */
+div.cart > a::after {
+    content: ''; 
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background-image: linear-gradient(#fac5c5, #f26464);
+    position: absolute;
+    left: 55px;
+    //border: 1px solid black;
+}
+
+/* Количество покупок в красном шарике */
+div.cart::after {
+    content: '222'; /* FIXME Это значение количества покупок в корзине будет определяться на лету */
+    color: white;
+    text-align: center;
+    display: inline-block;
+    width: 15px;
+    height: 9px;
+    font-family: Tahoma;
+    font-size: 9px;
+    letter-spacing: 0.3px;
+    position: absolute; /* Странно, но этот блок вылезает на передний план не за счет z-index, а за счет position: realtive */
+    left: 85px;
+    top: 4px;
+    //border: 1px solid black;
+}
+
+/*
+ *  Нижняя часть Хедера с полосой меню и ссылкой Войти
+ */
+nav.header2 {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    top: 23px;
+    //border: 1px solid black;
+}
+
+nav.header2 > div {
+    display: inline-block;
+}
+
+/*
+ *  Ссылка Войти с символом замочка
+ */
+div.entrance {
+    position: absolute;
+    right: 5.9%;
+    //border: 1px solid black;
+}
+
+/* символ замочка */
+div.entrance::before {
+    content: '\f023';
+    font-family: 'Font Awesome';
+    color: #888;
+    position: relative;
+    right: 6px;
+    top: 3px;
+}
+
+/* ссылка Войти */
+div.entrance > a {
+    color: #d3be4a;
+    font-family: Tahoma;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+}
+
+/*
+ *  Главное меню
+ */
+div.menu {
+    position: absolute;
+    //width: 555px;
+    width: 560px;
+    //border: 1px solid black;
+}
+
+div.menu > div.shop {
+    margin-left: 4.9%;
+}
+
+div.menu > div.help > a {
+    text-decoration: none;
+    color: black;
+}
+
+div.menu > div.help {
+    height: 25px;
+    border-bottom: 6px solid #d3be4a;
+}
+
+div.menu > div {
+    display: inline-block;
+    margin-left: 7.9%;
+    //border: 1px solid black;
+}
+
+div.menu > div > a {
+    color: #7f90aa;
+    font-family: Tahoma;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    //word-spacing: -3px;
+}
+
+/*
+ *  Слоган под хедером
+ */
+div.slogan {
+    font-family: 'Etelka Text Pro';
+    font-size: 20.5pt;
+    letter-spacing: 0.5px;
+    line-height: 40px;
+    word-spacing: -0.1px;
+    margin-top: 39px;
+    margin-left: 8.6%;    
+    width: 85%;
+    //border: 1px solid black;
+}
+
+/* Ссылка Новые книги бесплатно в слогане */
+div.slogan > a.publish-own {
+    text-decoration: none;
+    color: #d3be4a;
+    margin-left: 6px;
+    margin-right: 8px;
+    padding-left: 10px;
+    padding-right: 7px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border: 1px dashed #d3be4a;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Стрелочка вниз (полуромбик) у слова Публикуй в слогане (окруженное пунктиром) */
+div.arrow-down {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-right: 1px dashed #d3be4a;
+    border-bottom: 1px dashed #d3be4a;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 36px;
+    left: 46%;
+}
+
+/* Ссылка Публикуй в слогане */
+div.slogan > a.new-books-free {
+    text-decoration: none;
+    color: #5f7495;
+    border-bottom: 2px solid #5f7495;
+    margin-left: 1px;
+    margin-right: 1px;
+    position: relative;
+    z-index: 1;
+}
+
+/*
+ *  Блок цитат вместо главного баннера
+ */
+/* Рамки слева и справа от цитаты */
+div.border {
+    height: 105px;
+    width: 5px;
+    border: 2px solid #d3be4a;
+    border-bottom: none;
+    border-top: none;
+    position: absolute;
+    top: 90px;
+}
+
+div.border.border-left {
+    left: 40px;
+    border-right: none;
+}
+
+div.border.border-right {
+    right: 40px;
+    border-left: none;
+}
+
+div.border.border-bottom {
+    top: 177px;
+}
+
+div.border.border-left.border-top {
+    transform: rotate(31deg);
+}
+
+div.border.border-left.border-bottom {
+    transform: rotate(-31deg);
+}
+
+div.border.border-right.border-top {
+    transform: rotate(-31deg);
+}
+
+div.border.border-right.border-bottom {
+    transform: rotate(31deg);
+}
+
+/* Сама цитата */
+p.quotes {
+    font-family: Tahoma;
+    font-size: 29px;
+    letter-spacing: 0.5px;
+    line-height: 44px;
+    word-spacing: 0.3px;
+    box-sizing: border-box;
+    width: 100%;    
+    position: absolute;
+    top: 85px;
+    padding: 0 95px;
+    //border: 1px solid black;
+}
+
+/*
+ *  Кнопочки переключатели текста главного баннера
+ */
+input[type="radio"][name="slide"] {
+    display: none;
+}
+
+div.slider-buttons {
+    margin-left: 45%;
+    margin-top: 255px;
+    //border: 1px solid black;
+}
+
+label.slider-button {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: #d7d7d7;
+    margin-right: 13px;
+    cursor: pointer;
+}
+
+#slider-button-1:checked ~ div.slider-buttons > label[for="slider-button-1"],
+#slider-button-2:checked ~ div.slider-buttons > label[for="slider-button-2"],
+#slider-button-3:checked ~ div.slider-buttons > label[for="slider-button-3"] {
+    background-color: #8a8a8a;
+}
+
+/*
+ *  Вкладки переключатели текста помощи
+ */
+input[type="radio"][name="help-slide"] {
+    display: none;
+}
+
+div.help-slide-marks {
+    margin-left: 1.2%;
+    margin-right: 1.2%;
+    margin-top: 45px;
+    margin-bottom: -5px;
+    width: 97.6%;
+    box-sizing: border-box;
+    //border: 1px solid black;
+}
+
+label.help-slide-mark {
+    display: inline-block;
+    height: 155px;
+    width: 33.33%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 1px solid #b7b7b7;
+    background-image: linear-gradient(#fffefe, #fefdfa);
+    cursor: pointer;
+    position: relative;
+}
+
+label.help-slide-mark > img {
+    position: absolute;
+}
+
+label.help-slide-mark > p {
+    font-family: Tahoma;
+    font-size: 21px;
+    letter-spacing: 0.3px;
+    line-height: 29px;
+    position: absolute;
+    color: #667493;
+    text-decoration: underline;
+}
+
+div.help-slide-marks > label[for="help-slide-1"] {
+    z-index: 3;    
+}
+
+div.help-slide-marks > label[for="help-slide-2"] {
+    z-index: 2;
+    margin-left: -4px;
+}
+
+div.help-slide-marks > label[for="help-slide-3"] {
+    z-index: 1;
+    margin-left: -4px;
+}
+
+div.help-slide-marks > label[for="help-slide-2"] > img {
+    top: 42px;
+    left: 30px;
+    //border: 1px solid black;
+}
+
+div.help-slide-marks > label[for="help-slide-3"] > img {
+    top: 37px;
+    left: 0;
+    //border: 1px solid black;
+}
+
+div.help-slide-marks > label[for="help-slide-1"] > p {
+    //right: 70px;
+    right: 16.81%;
+    top: 15px;
+    width: 170px;
+}
+
+div.help-slide-marks > label[for="help-slide-2"] > p {
+    //right: 18px;
+    right: 4.32%;
+    top: 15px;
+    width: 205px;
+    //border: 1px solid black;
+}
+
+div.help-slide-marks > label[for="help-slide-3"] > p {
+    right: 6%;
+    top: 15px;
+    width: 210px;
+    //border: 1px solid black;
+}
+
+#help-slide-1:checked ~ div.help-slide-marks > label[for="help-slide-1"],
+#help-slide-2:checked ~ div.help-slide-marks > label[for="help-slide-2"],
+#help-slide-3:checked ~ div.help-slide-marks > label[for="help-slide-3"] {
+    height: 165px;
+    border: 1px solid #b7b7b7;
+    border-bottom: 0;
+    z-index: 4;
+}
+
+#help-slide-1:checked ~ div.help-slide-marks > label[for="help-slide-2"],
+#help-slide-1:checked ~ div.help-slide-marks > label[for="help-slide-3"] {
+    border-left: 0;
+    border-top-left-radius: 0;
+}
+
+#help-slide-2:checked ~ div.help-slide-marks > label[for="help-slide-1"] {
+    border-right: 0;
+    border-top-right-radius: 0;
+}
+
+#help-slide-2:checked ~ div.help-slide-marks > label[for="help-slide-3"] {
+    border-left: 0;
+    border-top-left-radius: 0;
+}
+
+#help-slide-3:checked ~ div.help-slide-marks > label[for="help-slide-1"],
+#help-slide-3:checked ~ div.help-slide-marks > label[for="help-slide-2"] {
+    border-right: 0;
+    border-top-right-radius: 0;
+}
+
+#help-slide-1:checked ~ div.help-slide-marks > label[for="help-slide-1"] > p,
+#help-slide-2:checked ~ div.help-slide-marks > label[for="help-slide-2"] > p,
+#help-slide-3:checked ~ div.help-slide-marks > label[for="help-slide-3"] > p {
+    color: black;
+    text-decoration: none;
+}
+
+#help-slide-1:not(checked) ~ div.help-slide-marks > label[for="help-slide-1"],
+#help-slide-2:not(checked) ~ div.help-slide-marks > label[for="help-slide-2"],
+#help-slide-3:not(checked) ~ div.help-slide-marks > label[for="help-slide-3"] {
+    border: 1px dashed #b7b7b7;
+    border-bottom: 1px solid #b7b7b7;
+}
+
+/*
+ *  Содержимое помощи
+ */
+div.help-slide-content {
+    //width: 1249.28px;
+    width: 97.6%;
+    box-sizing: border-box;
+    margin-left: 1.2%;
+    margin-right: 1.2%;
+    border: 1px solid #b7b7b7;
+    border-top: 0;
+    background-image: linear-gradient(#fefdfa, #f7f5e5);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/*
+ *  Блоки с помощью на вкладке с шагом
+ */
+/* Первая строка блоков помощи */
+div.help-slide-content > div.row {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 107px;
+    //margin-left: 85px;
+    //margin-right: 131px;
+    margin-left: 6.8%;    
+    margin-right: 10.7%;
+    //border: 1px solid black;
+}
+
+div.help-slide-content > div:nth-of-type(1) {
+    width: 20%;
+}
+div.help-slide-content > div:nth-of-type(2) {
+    margin-right: 10.4%;
+    width: 15.1%;
+}
+
+div.help-slide-content > div:nth-of-type(3) {
+    width: 15.1%;
+    margin-right: 0;
+    //border: 1px solid black;
+}
+
+/* Вторая строка блоков помощи */
+div.help-slide-content > div.row-2 {
+    margin-top: 20px;
+    margin-bottom: 100px;
+    //margin-right: 197px;
+    //margin-left: 83px;
+    margin-right: 15.77%;    
+    margin-left: 6.64%;
+}
+
+div.help-slide-content > div:nth-of-type(4) {
+    width: 15.1%;
+    margin-top: 75px;
+    //margin-right: 202px;
+    margin-right: 16.17%;
+    //border: 1px solid black;
+}
+
+div.help-slide-content > div.row-2:nth-of-type(5) {
+    margin-right: 14.8%;
+    width: 17.4%;
+}
+
+/* Ссылки помощи */
+div.help-slide-content > div.row > a {
+    font-family: Tahoma;
+    font-size: 14px;
+    letter-spacing: 0.1px;
+    word-spacing: 0.3px;
+    line-height: 20px;
+    color: #5f7495;
+    display: block;
+    margin-bottom: 12px;
+    //border: 1px solid black;
+}
+
+div.help-slide-content > div.row > a:first-of-type {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    line-height: 27px;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+/*
+ *  Блочок "Verybook поможет"
+ */
+div.help-slide-content > div:nth-of-type(6) {
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 18px;
+    //width: 250px;
+    width: 16.6%;
+    //border: 1px solid black;
+}
+
+div.help-slide-content > div.row.row-2 > a.verybook-help-you > .verybook-help-you {
+    display: inline-block;
+}
+
+div.help-slide-content > div.row.row-2 > a.verybook-help-you > p.verybook-help-you {
+    font-family: Tahoma;
+    font-size: 26px;
+    letter-spacing: 0.7px;
+    line-height: 32px;
+    width: 115px;
+    color: #ccbd54;
+    text-decoration: none;
+    margin-right: 10px;
+    margin-bottom: 7px;
+    //border: 1px solid black;
+}
+
+div.help-slide-content > div.row.row-2 > p.verybook-help-you {
+    font-family: Tahoma;
+    font-size: 14px;
+    line-height: 20px;
+    color: black;
+    letter-spacing: 0.5px;
+    margin-top: 0;
+    //border: 1px solid black;
+}
+
+/*
+ *  Основное тело страницы
+ */
+main {
+    width: 100%;
+    position: relative;
+    margin-bottom: 280px;
+    //border: 1px solid black;
+}
+
+/* Книжки на полке в футере */
+div.books-on-shelf {
+    position: absolute;
+    z-index: 1;
+    bottom: -358px;
+    //left: 185px;
+    left: 14.45%;
+    width: 71%;
+    height: 183px;
+    overflow: hidden;
+    //border: 1px solid black;
+}
+
+div.books-on-shelf > img {
+    margin-right: -4px;
+}
+
+/*
+ *  Футер
+ */
+/*
+ *  Составные части полки (в данном случае полка - это рисунок доски, нарисованной по частям)
+ */
+/* Нижняя часть полки */
+div.shelf-bottom-part {
+    //width: 964px;
+    width: 97.1%;
+    height: 15px;
+    background-color: #cacaca;
+    position: absolute;
+    //left: 13px;
+    left: 1.4%;
+    top: 193px;
+    box-shadow: 0 10px 40px -6px #111;
+}
+
+/* Левая наклонная часть полки */
+div.shelf-left-part {
+    //width: 500px;
+    width: 50.4%;
+    height: 16px;
+    background-image: linear-gradient(#efefef, white);
+    transform: skewX(-70deg);
+    position: absolute;
+    //left: 36px;
+    left: 4.1%;
+    top: 176px;
+    //border: 1px solid black;
+}
+
+/* Правая наклонная часть полки */
+div.shelf-right-part {
+    //width: 500px;
+    width: 50.4%;
+    height: 16px;
+    background-image: linear-gradient(#efefef, white);
+    transform: skewX(70deg);
+    position: absolute;
+    //right: 36px;
+    right: 4.1%;
+    top: 176px;
+    //border: 1px solid black;
+}
+
+footer > div.footer-shelf {
+    position: relative;
+    //width: 1280px;
+    width: 100%;
+    height: 95px;
+    //border: 1px solid black;    
+}
+
+/* левая часть полки */
+footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-left-part {
+    position: absolute;
+    top: 65px;
+    left: 4.8%;
+    //width: 650px;
+    width: 50.78%;
+    height: 20px;
+    //border: 1px solid black;
+}
+
+/* правая часть полки */
+footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-right-part {
+    position: absolute;
+    top: 65px;
+    right: 5%;
+    //width: 650px;
+    width: 50.78%;
+    height: 20px;
+    //border: 1px solid black;
+}
+
+/* нижняя часть полки */
+footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-bottom-part {
+    position: absolute;
+    top: 88px;
+    left: 2.2%;
+    //width: 1220px;
+    width: 95.3%;
+    height: 17px;
+}
+
+/*
+ *  Под полкой футера
+ */
+footer > div.under-footer-shelf {
+    width: 100%;
+    //border: 1px solid black;
+}
+
+footer > div.under-footer-shelf > div {
+    display: inline-block;
+    vertical-align: top;
+    font-family: Tahoma;
+    letter-spacing: 0.3px;
+    margin-top: 55px;
+    //margin-left: 15px;
+    margin-left: 1.2%;
+    //border: 1px solid black;
+}
+
+footer > div.under-footer-shelf > div.copyright {
+    font-size: 11.5px;
+    letter-spacing: 0.1px;
+    word-spacing: 0.1px;
+    width: 18%;
+    margin-left: 4.5%;
+}
+
+footer > div.under-footer-shelf > div.about-company {
+    width: 13%;
+}
+
+footer > div.under-footer-shelf > div.help {
+    width: 11%;
+}
+
+footer > div.under-footer-shelf > div.earn-with-us {
+    width: 19.5%;
+}
+
+footer > div.under-footer-shelf > div.site-map {
+    width: 13%;
+}
+
+footer > div.under-footer-shelf > div > a {
+    display: block;
+}
+
+footer > div.under-footer-shelf > div > a:nth-of-type(1) {
+    font-size: 14px;
+    color: #5f7495;
+    margin-bottom: 23px;
+}
+
+footer > div.under-footer-shelf > div > a:not(:nth-of-type(1)) {
+    font-size: 11px;
+    color: #3b3b3b;
+    margin-bottom: 9px;
+}
+
+/*
+ *  Шаринг соц.сетей
+ */
+footer > div.under-footer-shelf > div.social-sharing {
+    position: absolute;
+}
+
+footer > div.under-footer-shelf > div.social-sharing > a {
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-image: url(../img/social-icons.png);
+    background-size: 500%;
+    height: 25px;
+    width: 25px;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+footer > div.under-footer-shelf > div.social-sharing > a.share-icon-facebook {
+    background-position: -75px 0;
+}
+
+footer > div.under-footer-shelf > div.social-sharing > a.share-icon-vk {
+    background-position: 0 -25px;
+}
+
+footer > div.under-footer-shelf > div.social-sharing > a.share-icon-livejournal {
+    background-position: -75px -25px;
+}
