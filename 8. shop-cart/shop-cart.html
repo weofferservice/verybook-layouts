@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Verybook</title>
+		<meta charset="UTF-8" />
+        <link href="css/shop-cart.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body onload="init()">
+        <header>
+            <div class="header header1">
+                <a href="#" class="logo">
+                    <span class="logo-word logo-line logo-line1">\</span>
+                    <span class="logo-word logo-line logo-line2">\</span>
+                    <span class="logo-word logo-v">V</span>
+                    <span class="logo-word logo-erybook">erybook</span>
+                </a>
+                <div class="search">
+                    <label class="search">
+                        <input type="text" name="search" autocomplete />
+                    </label>
+                    <button class="search" />
+                </div>
+                
+                <!-- Для того, чтобы подчеркнуть, что выбран один из следующих пунктов, к div добавляется класс header-item-selected -->
+                <div class="ask ">
+                    <a href="#">Задать вопрос</a>
+                </div>
+                <div class="cart header-item-selected">
+                    <a href="#">Корзина</a>
+                </div>
+            </div>
+            <nav class="header header2">
+                <div class="menu">
+                    <!-- Для того, чтобы подчеркнуть страницу, которая выбрана, к div добавляется класс menu-item-selected -->
+                    <div class="shop ">
+                        <a href="#">Книжный магазин</a>
+                    </div>
+                    <div class="help ">
+                        <a href="#">Помощь автору</a>
+                    </div>
+                    <div class="authors-rating ">
+                        <a href="#">Рейтинг авторов</a>
+                    </div>
+                    <div class="about ">
+                        <a href="#">О проекте</a>
+                    </div>
+                </div>
+                <div class="entrance "> <!-- для залогиненого пользователя нужно добавить класс nick -->
+                    <a href="#">Войти</a> <!-- для залогиненого пользователя нужно поменять Войти на Логин -->
+                </div>
+            </nav>
+        </header>
+		
+		<main>
+            <div class="column-1">
+                <div class="header">
+                    <h1>Оформление заказа</h1>
+                    <ul class="nav">
+                        <li class="main-cart">
+                            <a href="#main-cart">Корзина</a>
+                        </li>
+                        <li class="spare-cart">
+                            <a href="#spare-cart">Запасная тележка</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="main-cart" id="main-cart">
+                    <div class="slider-outer">
+                        <input type="radio" name="buy-process" id="select-goods" checked>
+                        <input type="radio" name="buy-process" id="payment-goods" >
+                        <input type="radio" name="buy-process" id="enjoy-goods" >
+                        
+                        <div class="slider-inner select-goods">
+                            <h2>Корзина</h2>
+                            
+                            <table class="table">
+                                <thead class="thead">
+                                    <tr class="tr">
+                                        <th class="th product">
+                                            Книга
+                                        </th>
+                                        <th class="th price">
+                                            Цена
+                                        </th>
+                                        <th class="th to-spare-cart">
+                                            Выложить из корзины
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="tbody">
+                                    <tr class="tr">
+                                        <td class="td product">
+                                            <div class="book">
+                                                <div class="cover">
+                                                    <a class="to-book" href="#">
+                                                        <img src="img/book1.jpg" width="100" height="160">
+                                                    </a>
+                                                </div>
+                                                <div class="title-author">
+                                                    <a class="to-book" href="#">
+                                                        Полет над гнездом кукушки
+                                                    </a>
+                                                    <a class="to-author" href="#">
+                                                        Александр Константинопольский
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="td price">
+                                            <span class="value">415</span>
+                                            <span class="currency">
+                                                <img src="svg/ruble-currency-sign.svg" width="511" height="511">
+                                            </span>
+                                        </td>
+                                        <td class="td to-spare-cart">
+                                            <a class="to-spare-cart" href="#" title="Отложить на неопределенный срок"></a>
+                                        </td>
+                                    </tr>
+                                    <tr class="tr">
+                                        <td class="td product">
+                                            <div class="book">
+                                                <div class="cover">
+                                                    <a class="to-book" href="#">
+                                                        <img src="img/book2.jpg" width="100" height="160">
+                                                    </a>
+                                                </div>
+                                                <div class="title-author">
+                                                    <a class="to-book" href="#">
+                                                        Как рожать на вершине скалы
+                                                    </a>
+                                                    <a class="to-author" href="#">
+                                                        Мария Малиновская
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="td price">
+                                            <span class="value">0</span>
+                                            <span class="currency">
+                                                <img src="svg/ruble-currency-sign.svg" width="511" height="511">
+                                            </span>
+                                        </td>
+                                        <td class="td to-spare-cart">
+                                            <a class="to-spare-cart" href="#" title="Отложить на неопределенный срок"></a>
+                                        </td>
+                                    </tr>
+                                    <tr class="tr">
+                                        <td class="td product">
+                                            <div class="book">
+                                                <div class="cover">
+                                                    <a class="to-book" href="#">
+                                                        <img src="img/book3.jpg" width="100" height="160">
+                                                    </a>
+                                                </div>
+                                                <div class="title-author">
+                                                    <a class="to-book" href="#">
+                                                        Кто подставил кролика роджера?
+                                                    </a>
+                                                    <a class="to-author" href="#">
+                                                        Владимир Вольфович Константинопольский
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="td price">
+                                            <span class="value">230</span>
+                                            <span class="currency">
+                                                <img src="svg/ruble-currency-sign.svg" width="511" height="511">
+                                            </span>
+                                        </td>
+                                        <td class="td to-spare-cart">
+                                            <a class="to-spare-cart" href="#" title="Отложить на неопределенный срок"></a>
+                                        </td>
+                                    </tr>
+                                </tbody>                    
+                            </table>
+                            
+                            <div class="buttons">
+                                <!-- 
+                                    hide - это доп.класс для того чтобы, 
+                                           если общая сумма покупки равно 0, то показывать кнопку Скачать,
+                                           в противном случае показывать кнопку Перейти к оплате
+                                -->
+                                <label class="buy-process" for="payment-goods">
+                                    Перейти к оплате
+                                </label>
+                                <label class="buy-process" for="enjoy-goods">
+                                    Скачать
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="slider-inner payment-goods">
+                            <h2>Выбор способа оплаты</h2>
+                            
+                            <input type="radio" name="payment-mode" id="paypal" checked>
+                            <input type="radio" name="payment-mode" id="card" >
+                            <div class="payment-mode">
+                                <div class="paypal-mode">
+                                    <label class="figure" for="paypal"></label>
+                                    <label class="text" for="paypal">
+                                        PayPal
+                                    </label>
+                                </div>
+                                
+                                <div class="card-mode">
+                                    <label class="figure" for="card"></label>
+                                    <label class="text" for="card">
+                                        Банковская карта
+                                    </label>
+                                    <div class="card-info">
+                                        <form method="post" action="https://secure.payler.com/gapi/Submit">
+                                            <div class="row">
+                                                <div class="card-holder">
+                                                    <label for="card-holder">
+                                                        <span class="text">
+                                                            Имя владельца карты
+                                                        </span>
+                                                        <span class="explanation" 
+                                                              title="Имя владельца карты должно быть введено в латинской транскрипции именно так, как оно указано на Вашей карте"></span>
+                                                    </label>
+                                                    <div class="skew-outer">
+                                                        <input class="skew-inner" 
+                                                               type="text" 
+                                                               id="card-holder" 
+                                                               maxlength="26" 
+                                                               name="card-holder" 
+                                                               autofocus 
+                                                               required 
+                                                               placeholder="как оно указано на Вашей карте">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card-num">
+                                                    <label for="card-num">
+                                                        <span class="text">
+                                                            Номер карты
+                                                        </span>
+                                                        <span id="card-type">
+                                                        </span>
+                                                    </label>
+                                                    <div class="skew-outer">
+                                                        <input class="skew-inner" 
+                                                               type="text" 
+                                                               id="card-num" 
+                                                               name="card-cvc" 
+                                                               x-autocompletetype="cc-number" 
+                                                               required 
+                                                               placeholder="16 цифр указанных на лицевой стороне">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="card-cvc">
+                                                    <label for="card-cvc">
+                                                        <span class="text">
+                                                            CVV
+                                                        </span>
+                                                        <span class="explanation"
+                                                              title="Код CVV - это трехзначное число, узнать которое Вы можете посмотрев на обратную сторону банковской карты. Обычно CVV напечатано на полосе для подписи"></span>
+                                                    </label>
+                                                    <div class="skew-outer">
+                                                        <input class="skew-inner" 
+                                                               type="tel" 
+                                                               id="card-cvc" 
+                                                               name="card-cvc"
+                                                               pattern="\d*" 
+                                                               x-autocompletetype="cc-csc" 
+                                                               required 
+                                                               placeholder="xxx">
+                                                    </div>
+                                                </div>
+                                                <div class="card-expired">
+                                                    <label for="card-expired">
+                                                        <span class="text">
+                                                            Срок действия
+                                                        </span>
+                                                    </label>
+                                                    <div class="skew-outer">
+                                                        <input class="skew-inner" 
+                                                               type="tel" 
+                                                               id="card-expired" 
+                                                               maxlength="9" 
+                                                               name="card-expired" 
+                                                               pattern="\d*" 
+                                                               x-autocompletetype="cc-exp" 
+                                                               required 
+                                                               placeholder="MM/YY">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="cost">
+                                Сумма:
+                                <span class="value">800</span>
+                                <span class="currency">руб.</span>
+                            </div>
+                            
+                            <div class="buttons">
+                                <label class="buy-process" for="select-goods">
+                                    Вернуться к списку покупок
+                                </label>                            
+                                <label class="buy-process" for="enjoy-goods" id="submit">
+                                    Скачать и оплатить
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="slider-inner enjoy-goods">
+                            <h2>Желаем Вам приятного чтения</h2>
+                            
+                            <div class="info">
+                                <div class="title">
+                                    Спасибо, что пользуетесь нашим сервисом!
+                                </div>
+                                <div class="warning">
+                                    <span class="row-1">
+                                        Если файлы не начали скачиваться - не беспокойтесь!
+                                    </span>
+                                    <span class="row-2">
+                                        Просто перейдите в <a class="pa" href="#">личный кабинет</a> и Вы увидите эти книги в списке купленных, где их можно многократно скачивать без каких-либо ограничений.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="shadow-under">
+                    </div>
+                </div>
+                
+                <div class="spare-cart" id="spare-cart">
+                    <h2>Книги, которые могут Вас заинтересовать</h2>
+                    
+                    <table class="table">
+                        <thead class="thead">
+                            <tr class="tr">
+                                <th class="th product">
+                                    Книга
+                                </th>
+                                <th class="th price">
+                                    Цена
+                                </th>
+                                <th class="th to-main-cart">
+                                    Переложить в корзину
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr class="tr">
+                                <td class="td product">
+                                    <div class="book">
+                                        <div class="cover">
+                                            <a class="to-book" href="#">
+                                                <img src="img/book1.jpg" width="100" height="160">
+                                            </a>
+                                        </div>
+                                        <div class="title-author">
+                                            <a class="to-book" href="#">
+                                                Полет над гнездом кукушки
+                                            </a>
+                                            <a class="to-author" href="#">
+                                                Александр Константинопольский
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="td price">
+                                    <span class="value">415</span>
+                                    <span class="currency">
+                                        <img src="svg/ruble-currency-sign.svg" width="511" height="511">
+                                    </span>
+                                </td>
+                                <td class="td to-main-cart">
+                                    <a class="to-main-cart" href="#" title="Переложить в корзину"></a>
+                                </td>
+                            </tr>
+                            <tr class="tr">
+                                <td class="td product">
+                                    <div class="book">
+                                        <div class="cover">
+                                            <a class="to-book" href="#">
+                                                <img src="img/book2.jpg" width="100" height="160">
+                                            </a>
+                                        </div>
+                                        <div class="title-author">
+                                            <a class="to-book" href="#">
+                                                Как рожать на вершине скалы
+                                            </a>
+                                            <a class="to-author" href="#">
+                                                Мария Малиновская
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="td price">
+                                    <span class="value">0</span>
+                                    <span class="currency">
+                                        <img src="svg/ruble-currency-sign.svg" width="511" height="511">
+                                    </span>
+                                </td>
+                                <td class="td to-main-cart">
+                                    <a class="to-main-cart" href="#" title="Переложить в корзину"></a>
+                                </td>
+                            </tr>
+                            <tr class="tr">
+                                <td class="td product">
+                                    <div class="book">
+                                        <div class="cover">
+                                            <a class="to-book" href="#">
+                                                <img src="img/book3.jpg" width="100" height="160">
+                                            </a>
+                                        </div>
+                                        <div class="title-author">
+                                            <a class="to-book" href="#">
+                                                Кто подставил кролика роджера?
+                                            </a>
+                                            <a class="to-author" href="#">
+                                                Владимир Вольфович Константинопольский
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="td price">
+                                    <span class="value">230</span>
+                                    <span class="currency">
+                                        <img src="svg/ruble-currency-sign.svg" width="511" height="511">
+                                    </span>
+                                </td>
+                                <td class="td to-main-cart">
+                                    <a class="to-main-cart" href="#" title="Переложить в корзину"></a>
+                                </td>
+                            </tr>
+                        </tbody>                    
+                    </table>
+                    
+                    <a class="show-more-books" href="#">
+                        Показать еще книги
+                    </a>
+                    
+                    <div class="shadow-under">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="column-2 continue-shopping-column">
+                <ul class="item top-level">
+                    <li class="top-level-link">
+                        <a href="#">Бест-селлеры</a>
+                    </li>
+                    <li class="top-level-link">
+                        <a href="#">Новинки</a>
+                    </li>
+                    <li class="top-level-link">
+                        <a href="#">Акции</a>
+                    </li>
+                    <li class="top-level-link">
+                        <a href="#">Детям и родителям</a>
+                    </li>
+                    <ul class="bottom-level">
+                        <li class="bottom-level-link">
+                            <a href="#">Досуг и творчество</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Книги для родителей</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Познавательная литература</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Художественная литература</a>
+                        </li>
+                    </ul>
+                    <li class="top-level-link">
+                        <a href="#">Учебная литература</a>
+                    </li>
+                    <ul class="bottom-level">
+                        <li class="bottom-level-link">
+                            <a href="#">Дошкольникам</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Школьникам и абитуриентам</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Студентам и аспирантам</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Педагогам</a>
+                        </li>
+                    </ul>
+                    <li class="top-level-link">
+                        <a href="#">Бизнес-литература</a>
+                    </li>
+                    <ul class="bottom-level">
+                        <li class="bottom-level-link">
+                            <a href="#">Деловая литература. Право. Психология</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Маркетинг. Реклама</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Менеджмент</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Финансы. Банковское дело. Инвестиции</a>
+                        </li>
+                    </ul>
+                    <li class="top-level-link">
+                        <a href="#">Нехудожественная литература</a>
+                    </li>
+                    <ul class="bottom-level">
+                        <li class="bottom-level-link">
+                            <a href="#">Искусство. Культура</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Компьютеры. Интернет</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Кулинария. Напитки</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Медицина</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Наука.Техника</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Общественные и гуманитарные науки</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Психология</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Публицистика</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Путешествия. Хобби. Фото. Спорт</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Религии мира</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Рукоделие. Творчество</a>
+                        </li>
+                        <li class="bottom-level-link">
+                            <a href="#">Эзотерика</a>
+                        </li>
+                    </ul>   
+                </ul>
+
+                <div class="item spec">
+                    <div class="header">
+                        <div class="title">
+                            Специальные предложения
+                        </div>
+                        <div class="arrow-down">
+                        </div>
+                    </div>
+                    <div class="main">
+                        <a href="#" class="spec-book spec-book-1">
+                            <div class="cover-rating">
+                                <img class="cover" src="img/book1.jpg" width="100" height="160">
+                                <div class="rating">3,8</div>
+                            </div>
+                            <div class="content">
+                                <div class="title">Энциклопедия Marvel Heroes</div>
+                                <div class="author-name">Дмитрий Глуховский</div>
+                                <div class="price">
+                                    <span class="value">599</span>
+                                    <span class="currency">р.</span>
+                                </div>
+                            </div>                                
+                        </a>
+                        <a href="#" class="spec-book spec-book-2">
+                            <div class="cover-rating">
+                                <img class="cover" src="img/book5.jpg" width="100" height="160">
+                                <div class="rating">3,8</div>
+                            </div>
+                            <div class="content">
+                                <div class="title">Непобежденные</div>
+                                <div class="author-name">А.П. Константинов</div>
+                                <div class="price">
+                                    <span class="value">99</span>
+                                    <span class="currency">р.</span>
+                                </div>
+                            </div>                                
+                        </a>
+                        <a href="#" class="spec-book spec-book-3">
+                            <div class="cover-rating">
+                                <img class="cover" src="img/book4.jpg" width="100" height="160">
+                                <div class="rating">3,8</div>
+                            </div>
+                            <div class="content">
+                                <div class="title">Энциклопедия Marvel Heroes</div>
+                                <div class="author-name">Дмитрий Глуховский</div>
+                                <div class="price">
+                                    <span class="value">99</span>
+                                    <span class="currency">р.</span>
+                                </div>
+                            </div>                                
+                        </a>
+                        <a class="show-all" href="#">Показать все предложения</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <div class="books-on-shelf">
+            <img src="img/bottom-book-1.jpg" />
+            <img src="img/bottom-book-2.jpg" />
+            <img src="img/bottom-book-3.jpg" />
+            <img src="img/bottom-book-4.jpg" />
+            <img src="img/bottom-book-5.jpg" />
+            <img src="img/bottom-book-6.jpg" />
+            <img src="img/bottom-book-7.jpg" />
+            <img src="img/bottom-book-8.jpg" />
+            <img src="img/bottom-book-9.jpg" />
+        </div>
+        
+		<footer>
+            <div class="footer-shelf">
+                <div class="footer-shelf shelf-part shelf-left-part"></div>
+                <div class="footer-shelf shelf-part shelf-right-part"></div>
+                <div class="footer-shelf shelf-part shelf-bottom-part"></div>
+            </div>
+            
+            <div class="under-footer-shelf">
+                <div class="copyright">
+                    © 1993–2014 Верибук.ру
+                </div>
+                
+                <div class="about-company">
+                    <a href="#">
+                        О компании
+                    </a>
+                    <a href="#">
+                        Пресс-центр
+                    </a>
+                    <a href="#">
+                        Вакансии
+                    </a>
+                    <a href="#">
+                        Реквизиты
+                    </a>
+                    <a href="#">
+                        О компании
+                    </a>
+                </div>
+                
+                <div class="help">
+                    <a href="#">
+                        Помощь
+                    </a>
+                    <a href="#">
+                        Как сделать заказ
+                    </a>
+                    <a href="#">
+                        Доставка
+                    </a>
+                    <a href="#">
+                        Оплата
+                    </a>
+                    <a href="#">
+                        Помощь
+                    </a>
+                    <a href="#">
+                        Обратная связь
+                    </a>
+                </div>
+                
+                <div class="earn-with-us">
+                    <a href="#">
+                        Зарабатывайте с нами
+                    </a>
+                    <a href="#">
+                        Продавайте Ваши товары на Ozon.ru
+                    </a>
+                    <a href="#">
+                        Становитесь поставщиками Букинистики
+                    </a>
+                    <a href="#">
+                        Партнёрская программа Ozon.ru
+                    </a>
+                    <a href="#">
+                        Размещайте рекламу на Ozon.ru
+                    </a>
+                    <a href="#">
+                        Открывайте пункты выдачи заказов Ozon.ru
+                    </a>
+                </div>
+                
+                <div class="site-map">
+                    <a href="#">
+                        Карта сайта
+                    </a>
+                    <a href="#">
+                        Покупка товаров (b2b)
+                    </a>
+                    <a href="#">
+                        Подарочные сертификаты
+                    </a>
+                    <a href="#">
+                        Loyalica
+                    </a>
+                </div>
+                
+                <div class="social-sharing">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=verybook.ru"
+                       title="Поделиться Verybook на Facebook"
+                       class="share-icon-facebook">
+                    </a>
+                    <a href="#"
+                       title="Поделиться Verybook ВКонтакте"
+                       class="share-icon-vk">
+                    </a>
+                    <a href="#"
+                       title="Поделиться Verybook в ЖЖ"
+                       class="share-icon-livejournal">
+                    </a>
+                </div>
+            </div>            
+		</footer>
+	</body>
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="js/vb.js"></script>
+    
+    <script type="text/javascript" src="js/creditly.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var creditly = Creditly.initialize(
+                '#card-expired',
+                '#card-num',
+                '#card-cvc',
+                '#card-type');
+
+            $('#submit').click(function(event) {
+                event.preventDefault();
+                
+                var output = creditly.validate();
+                if (output) {
+                    // Your validated credit card output
+                    console.log(output);
+                }
+                
+                if ($('#card').prop('checked')) {
+                    $('.card-info').find('form').trigger('submit');
+                } else {
+                    console.log("Пока не знаю, что делать для PayPal");
+                }
+            });
+        });
+    </script>
+</html>
