@@ -1,0 +1,1214 @@
+@font-face {
+    font-family: 'Myriad Pro Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Regular'), url('fonts/MyriadProRegular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Etelka Text Pro';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Etelka Text Pro'), url('fonts/Etelka-Text-Pro.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Core Sans M W01 SC 65 Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Core Sans M W01 SC 65 Bold'), url('fonts/Core Sans M W01 SC 65 Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'EmojiSymbols-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('EmojiSymbols-Regular'), url('fonts/EmojiSymbols-Regular.woff') format('woff');
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 1280px;
+    min-width: 700px;
+    margin-left: auto; /* auto сделает body по центру */
+    margin-right: auto; /* auto сделает body по центру */
+    box-sizing: border-box;
+    //border: 1px solid red;
+}
+
+/***
+ *** Хедер
+ ***/
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin-top: 24px;
+    width: 100%;
+    position: relative;
+    background-color: white;
+    //border: 1px solid red;
+}
+
+/*
+ *  Тень под Хедером
+ */
+header::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 2%;
+    bottom: 3px;
+    z-index: -1;
+    height: 10px;
+    width: 48%;
+    box-shadow: 0 0 10px 0 #888;
+    transform: rotate(0.5deg);
+}
+
+header::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 2%;
+    bottom: 3px;
+    z-index: -1;
+    height: 10px;
+    width: 48%;
+    box-shadow: 0 0 10px 0 #888;
+    transform: rotate(-0.5deg);
+}
+
+/*
+ *  Самая верхняя часть Хедера с логотипом, строкой поиска, задать вопросом и корзиной
+ */
+.header1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1230px;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5px;
+    //border: 1px solid black;
+}
+
+/*
+ *  Нижняя часть Хедера с полосой меню и ссылкой Войти
+ */
+.header2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1230px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 31px;
+    margin-bottom: 0;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    //border: 1px solid black;
+}
+
+/**
+ ** Ссылка Войти/Логин
+ **/
+.entrance {
+    margin-right: 42px;
+    //border: 1px solid black;
+}
+
+.entrance a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;    
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #d3be4a;
+    letter-spacing: 0.3px;
+    height: 25px;
+    text-decoration: none;
+    //border: 1px solid red;
+}
+
+/*
+ *  Символ замочка
+ */
+.entrance a .figure-1 {
+    box-sizing: border-box;
+    width: 13px;
+    height: 13px;
+    background: url('../svg/padlock.svg') no-repeat;
+    background-size: 100%;
+    margin-top: 1px;
+    //border: 1px solid black;
+}
+
+/*
+ *  Слово Войти или Логин
+ */
+.entrance a .text {
+    height: 25px;
+    margin-left: 7px;
+    margin-right: 3px;
+    text-decoration: underline;
+    //border: 1px solid black;
+}
+
+/*
+ *  Стрелочка вниз справа от Имени-Логина
+ */
+.entrance a .figure-2 {
+    display: none;
+    box-sizing: border-box;
+    height: 5px;
+    width: 5px;
+    border-right: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    transform: translateX(5px) rotate(45deg);
+    margin-top: 4px;
+    //border: 1px solid black;
+}
+
+/*
+ *  Ссылка с Именем вместо ссылки Войти
+ */
+.entrance.nick a .text {
+    color: black;
+    text-decoration: none;
+    border-bottom: 6px solid #d3be4a;
+}
+
+.entrance.nick a .figure-2 {
+    display: block;
+}
+
+.entrance.nick a .figure-1 {
+    display: none;
+}
+
+/**
+ ** Главное меню
+ **/
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-basis: 520px;
+    //border: 1px solid black;
+}
+
+.menu > div:first-child {
+    margin-left: 0;
+}
+
+.menu > div {
+    height: 25px;
+    margin-left: 7.9%;
+    //border: 1px solid black;
+}
+
+.menu > div > a {
+    font-family: Tahoma;
+    font-size: 13px;
+    color: #7f90aa;
+    letter-spacing: 0.5px;
+    //word-spacing: -3px;
+}
+
+/* Для того, чтобы подчеркнуть страницу, которая выбрана, к div добавляется класс menu-item-selected */
+.menu-item-selected {
+    border-bottom: 6px solid #d3be4a;
+}
+
+/**
+ **  Ссылка "Задать вопрос"
+ **/
+.ask {
+    flex-basis: 110px;
+    box-sizing: border-box;
+    //border: 1px solid black;
+}
+
+.ask a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    //border: 1px solid black;
+}
+
+.ask a .text {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #888;    
+    text-decoration: underline;
+    letter-spacing: 0.2px;
+    //border: 1px solid black;
+}
+
+/* Знак вопросика после ссылки Задать вопрос */
+.ask a .figure {
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    background: url('../svg/question-mark.svg') no-repeat;
+    background-size: 100%;
+    //border: 1px solid black;
+}
+
+/**
+ **  Ссылка "Корзина"
+ **/
+.cart {
+    box-sizing: border-box;
+    width: 103px;
+    //border: 1px solid black;
+}
+
+.cart a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;    
+    //border: 1px solid black;
+}
+
+.cart a .text {
+    font-family: Tahoma;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    color: #7f90aa;
+    text-decoration: underline;
+    //border: 1px solid black;
+}
+
+/* Символ продуктовой корзинки */
+.cart a .figure {
+    box-sizing: border-box;
+    width: 17px;
+    height: 17px;
+    background: url('../svg/cart.svg') no-repeat;
+    background-size: 100%;
+    //border: 1px solid black;
+}
+
+/* Количество покупок в красном шарике */
+.cart a .count {
+    font-family: Tahoma;
+    font-size: 9px;
+    letter-spacing: 0.3px;
+    color: white;
+    line-height: 17px;
+    box-sizing: border-box;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background-image: linear-gradient(#fac5c5, #f26464);
+    text-align: center;    
+    //border: 1px solid black;
+}
+
+/**
+ ** Блок поиска
+ **/
+.search {
+    box-sizing: border-box;
+    width: 40%;
+    height: 30px;
+    transform: skewX(15deg);
+    border: 1px solid #ccc;
+}
+
+/*
+ *  Нутро наклоняю в противоположную сторону, чтобы текст при наборе был ровным
+ */
+.search input[type="text"] {
+    box-sizing: border-box;
+    width: 84%;
+    height: 100%;
+    margin-left: 1.3%;
+    outline: none;
+    border-style: none;
+    transform: skewX(-15deg);
+    //border: 1px solid black;
+}
+
+/*
+ *  Кнопка поиска
+ */
+.search .search-btn {
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    box-sizing: border-box;
+    width: 14%;
+    height: 30px;
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    outline: none;
+    cursor: pointer;
+    //border: 1px solid black;
+}
+
+.search .search-btn::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url('../svg/magnifying-glass.svg');
+    background-repeat: no-repeat;
+    background-size: 17px 17px;
+    background-position: center center;
+    transform: skewX(-15deg);
+    //border: 1px solid black;
+}
+
+.search .search-btn:active {
+    /* При нажатии будет видно нажатие за счет тени */
+    box-shadow: inset 0px 0px 2px 0 #ccc;
+}
+
+/**
+ ** Логотип (создан текстом со спец. подобранными шрифтами)
+ **/
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    //border: 1px solid red;
+}
+
+/* Влияет на все части логотипа */
+.logo-word {
+    color: #5f7495;
+    line-height: 32px;
+    //border: 1px solid black;
+}
+
+.logo-line {
+    box-sizing: border-box;
+    width: 8px;
+    height: 33px;
+    position: relative;
+    top: 0.1px;
+    background-color: #5f7495;
+    transform: skewX(15deg);
+    //border: 1px solid black;
+}
+
+.logo-line1 {
+    margin-right: 6px;
+}
+
+.logo-line2 {
+    margin-right: 2px;
+}
+
+.logo-v {
+    font-family: 'Core Sans M W01 SC 65 Bold';
+    font-size: 47px;
+    text-shadow: -1px 0 0;
+    margin-right: 2px;
+    //border: 1px solid black;
+}
+
+.logo-erybook {
+    font-family: 'Etelka Text Pro';
+    font-size: 27px;
+    letter-spacing: 1px;
+    //border: 1px solid black;
+}
+
+/***
+ *** Центральная часть страницы
+ ***/
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    //border: 1px solid green;
+}
+
+/**
+ ** Слоган под хедером
+ **/
+.slogan {
+    font-family: 'Etelka Text Pro';
+    font-size: 20.5pt;
+    letter-spacing: 0.5px;
+    line-height: 40px;
+    word-spacing: -0.1px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 83.5%;
+    //border: 1px solid black;
+}
+
+/* Ссылка Новые книги бесплатно в слогане */
+.slogan > a.new-books-free {
+    text-decoration: none;
+    color: #d3be4a;
+    margin-left: 6px;
+    margin-right: 8px;
+    padding-left: 10px;
+    padding-right: 7px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border: 1px dashed #d3be4a;
+    border-radius: 5px;
+	position: relative;
+    z-index: 1;
+}
+
+/* Ссылка Публикуй в слогане */
+.slogan > a.publish-own {
+    text-decoration: none;
+    color: #5f7495;
+    border-bottom: 2px solid #5f7495;
+    margin-left: 1px;
+    margin-right: 1px;
+	position: relative;
+    z-index: 1;
+}
+
+main .columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+/***
+ *** Для того, чтобы подчеркнуть, что выбран один из следующих пунктов, к div добавляется класс header-item-selected
+ ***/
+.header-item-selected {
+    border: 3px solid #e5d996;
+    border-radius: 5px;
+}
+
+/***
+ *** Боковые колонки
+ ***/
+.column-1 ul.top-level {
+    /* Для того чтобы Chrome не добавлял лишние отступы */
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+.column-1,
+.column-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 16%;
+    //border: 1px solid black;
+}
+
+.column-3 {
+    min-width: 199px;
+    margin-right: 30px;
+}
+
+.column-1 {
+    min-width: 185px;
+    margin-left: 30px;
+}
+
+.column-1 > .item:not(:first-child),
+.column-3 > .item:not(:first-child) {
+    margin-top: 30px;
+}
+
+/***
+ *** Центральная колонка
+ ***/
+.column-2 {
+    flex-basis: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    //border: 1px solid black;
+}
+
+/**
+ ** Заголовочная часть колонки
+ **/
+.column-2 .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 15px;
+}
+
+/*
+ * Заголовок
+ */
+.column-2 .header h1 {
+    font-family: Tahoma;
+    font-size: 34px;
+    font-weight: normal;
+    margin: 0;
+    //border: 1px solid black;
+}
+
+/**
+ ** Блок - Обратная свазь
+ **/
+/*
+ * Связанно с тенями под блоками
+ */
+.column-2 .shadow-under {
+    box-sizing: border-box;
+    width: 98%;
+    margin-left: 1%;
+    bottom: -1px;
+    border-bottom: 1px dashed #c5c5c5;
+}
+
+.feedback {
+    font-family: Tahoma;
+    font-size: 12px;
+    position: relative; /* связанно с тенями под блоками */
+    padding: 25px;
+    margin-top: 30px;
+    border: 1px dashed #c5c5c5;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*
+ * Заголовок
+ */
+.feedback h2 {
+    font-family: Tahoma;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Форма обратной связи
+ */
+.feedback form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    //border: 1px solid black;
+}
+
+.row {
+    margin-bottom: 5px;
+    width: 100%;
+    //border: 1px solid black;
+}
+
+/* Имя вопрошателя */
+label[for="fullname"] {
+    margin-right: 10px;
+}
+
+.fullname .skew-outer {
+    width: 250px;
+}
+
+.fullname .skew-outer .skew-inner {
+    //border: 1px solid black;
+}
+
+/* Email вопрошателя */
+label[for="email"] {
+    margin-right: 30px;
+}
+
+.email .skew-outer {
+    width: 250px;
+}
+
+.email .skew-outer .skew-inner {
+    //border: 1px solid black;
+}
+
+/* Текст вопроса */
+.content {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    //border: 1px solid red;
+}
+
+.content .skew-outer {
+    margin-left: 75px;
+    margin-top: 5px;
+    width: 65%;
+    padding: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    //border: 1px solid black;
+}
+
+.content textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    resize: none;
+    //border: 1px solid black;
+}
+
+/* Капча */
+.g-recaptcha {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+/* Кнопка Задать вопрос */
+.feedback form .btn {
+    margin-left: auto;
+    margin-top: 5px;
+}
+
+/***
+ *** Общее
+ ***/
+/**
+ ** Предупреждения
+ **/
+.warning {
+    font-family: Tahoma;
+    font-size: 14px;
+    color: #7f7f7f;
+    line-height: 20px;
+    margin: 25px auto;
+    background: url('../svg/warning.svg') no-repeat;
+    background-size: 18px 16px;
+    background-position: left center;
+    padding-left: 25px;
+}
+
+.warning a {
+    color: #667393;
+}
+
+/**
+ **  Меню перехода на страницу пооиска книг
+ **/
+ul.top-level {
+    border: 1px dashed #e1e1e1;
+    border-radius: 5px;
+    padding: 45px 15px;
+    //margin-top: 45px;
+}
+
+ul.top-level li.top-level-link,
+ul.top-level ul.bottom-level,
+ul.top-level ul.bottom-level li.bottom-level-link {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.top-level li.top-level-link {
+    margin-bottom: 7.5px;
+}
+
+ul.top-level ul.bottom-level li.bottom-level-link {
+    margin-bottom: 5px;
+}
+
+ul.top-level ul.bottom-level {
+    margin-bottom: 20px;
+}
+
+li.top-level-link a {
+    font-family: Tahoma;
+    font-size: 17px;
+    color: black;
+    letter-spacing: 0.3px;
+}
+
+li.bottom-level-link a {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #5f7495;
+    letter-spacing: 0.3px;
+}
+
+/**
+ **  Баннер специальных предложений
+ **/
+.spec {
+    width: 199px;
+}
+
+/* Шапка баннера специальных предложений */
+.spec > .header {
+    font-family: Verdana;
+    font-size: 15px;
+    letter-spacing: 0.8px;
+    line-height: 19px;
+    font-style: italic;
+    padding-left: 17px;
+    padding-top: 15px;
+    color: #d3be4a;
+    height: 53px;    
+    border: 1px dashed #888;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #f5f5f5;
+}
+
+.spec > .header > .arrow-down {
+    width: 15px;
+    height: 15px;
+    border-right: 2px solid #dae1ee;
+    border-bottom: 2px solid #dae1ee;
+    transform: rotate(41deg) skewX(-10deg);
+    position: relative;
+    top: -31px;
+    left: 137px;
+}
+
+/* Тело баннера специальных предложений */
+.spec > .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px dashed #888;
+    border-top: none;
+    padding: 30px 10px;
+}
+
+.spec > .main .show-all {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #667493;
+    text-align: center;
+}
+
+/* Книжка на баннере специальных предложений */
+.spec > .main > .spec-book {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+
+.spec > .main > .spec-book .cover-rating {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.spec > .main > .spec-book .cover {
+    width: 45px;
+    box-shadow: 2px 0 3px -2px #888,
+                -2px 0 3px -2px #888;
+    position: relative;
+    left: 5px;
+}
+
+/* Рейтинг-звездочка у книжки на баннере специальных предложений */
+.spec > .main > .spec-book .rating::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(../svg/rating-star.svg);
+    background-repeat: no-repeat;
+    background-size: 15px;
+    width: 15px;
+    height: 15px;
+}
+
+.spec > .main > .spec-book .rating {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #0acd1c;
+    letter-spacing: 0.3px;
+    position: relative;
+    top: 2px;
+    left: 10px;
+    //border: 1px solid black;
+}
+
+/* Описание книжки на баннере специальных предложений */
+.spec > .main > .spec-book > .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    left: 15px;
+    top: -3px;
+    padding-right: 10px;
+    height: 88px;
+    //border: 1px solid black;
+}
+
+/* Заголовок книжки на баннере специальных предложений */
+.spec > .main > .spec-book > .content > .title {
+    font-family: Tahoma;
+    font-size: 11px;
+    color: #d3be4a;
+    letter-spacing: 0.3px;
+    text-decoration: underline;
+    line-height: 16px;
+    margin-bottom: 4px;
+}
+
+/* Имя автора книжки на баннере специальных предложений */
+.spec > .main > .spec-book > .content > .author-name {
+    font-family: Tahoma;
+    font-size: 10px;
+    color: #6e6e6e;
+    text-decoration: underline;
+    letter-spacing: 0.3px;
+    margin-bottom: 9px;
+}
+
+/* Цена книжки на баннере специальных предложений */
+.spec > .main > .spec-book .price {
+    display: inline-block;
+    font-family: Tahoma;
+    font-size: 11.5px;
+    color: white;
+    height: 18px;
+    transform: skewX(15deg);
+    background-image: linear-gradient(#f9a47c 10%, #e9773e 60%);
+    margin-left: 4px;
+    position: absolute;
+    bottom: 0;
+}
+
+.spec > .main > .spec-book .price > span {
+    display: inline-block;
+    transform: skewX(-15deg);
+    box-sizing: border-box;
+    padding: 2px 13px;
+    padding-bottom: 15px;
+    position: relative;
+    left: 2px;
+}
+
+.spec > .main > .spec-book .price > span.value {
+    padding-right: 0;
+}
+
+.spec > .main > .spec-book .price > span.currency {
+    padding-left: 0;
+}
+
+/*
+ * Обложка электронной книги на баннере специальных предложений
+ */
+.spec > .main > .spec-book .cover {
+    width: 55px;
+    height: 88px;
+    overflow: hidden;
+    float: left;
+}
+
+/**
+ ** Тень под элементом
+ **/
+.shadow-under {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 20px;
+    background-color: white;
+    //border: 1px solid black;
+}
+
+.shadow-under::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    left: 2%;
+    bottom: 4px;
+    height: 0px;
+    width: 47.6%;
+    box-shadow: 0 0 10px 5px #888;
+    transform: rotate(0.5deg);
+}
+
+.shadow-under::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    right: 2%;
+    bottom: 4px;
+    height: 0px;
+    width: 47.6%;
+    box-shadow: 0 0 10px 5px #888;
+    transform: rotate(-0.5deg);
+}
+
+/**
+ ** Наклонные элементы ввода
+ **/
+.skew-outer {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 4px;
+    padding-right: 4px;
+    border: 1px solid #c3c3c3;
+    transform: skewX(15deg);
+}
+
+.skew-inner {
+    outline-style: none;
+    border-style: none;
+    transform: skewX(-15deg);
+    font-family: Tahoma;
+    font-size: 12px;
+    box-sizing: border-box;
+    height: 25px;
+    width: 100%;
+    //border: 1px solid black;
+}
+
+/**
+ ** Кнопка
+ **/
+.btn {
+    display: inline-block;
+    font-family: Tahoma;
+    font-size: 13px;
+    border-style: none;
+    border-top-left-radius: 10px 5px;
+    border-top-right-radius: 10px 5px;
+    border-bottom-left-radius: 10px 5px;
+    border-bottom-right-radius: 10px 5px;
+    padding: 5px 10px;
+    background-image: linear-gradient(to top, #dbdbdb, #f0f0f0);
+    cursor: pointer;
+    outline: none;
+}
+
+.btn:active {
+    /* При нажатии будет видно нажатие за счет тени */
+    box-shadow: inset 0px 0px 5px 0 #ccc;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+/***
+ ***  Футер
+ ***/
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    //border: 1px solid blue;
+}
+
+/**
+ ** Книжки на полке в футере
+ **/
+.books-on-shelf {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-bottom: 0;
+    width: 69%;
+    height: 183px;
+    z-index: 1;
+    overflow: hidden;
+    //border: 1px solid black;
+}
+
+.books-on-shelf > img {
+    margin-right: -4px;
+    //border: 1px solid black;
+}
+
+/**
+ ** Полка
+ **/
+.footer-shelf {
+    position: relative;
+    bottom: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    //border: 1px solid black;    
+}
+
+/*
+ *  Составные части полки (в данном случае полка - это рисунок доски, нарисованной по частям)
+ */
+/* Нижняя часть полки */
+.shelf-bottom-part {
+    box-sizing: border-box;
+    width: auto;
+    height: 17px;
+    background-color: #cacaca;
+    box-shadow: 0 10px 40px -6px #111;
+    margin-left: 30px;
+    margin-right: 30px;
+    //border: 1px solid black;
+}
+
+/* Левая наклонная часть полки */
+.shelf-left-part {
+    box-sizing: border-box;
+    width: 50%;
+    height: 20px;
+    background-image: linear-gradient(#efefef, white);
+    transform: skewX(-70deg);
+    margin-left: 58px;
+    //border: 1px solid black;
+}
+
+/* Правая наклонная часть полки */
+.shelf-right-part {
+    box-sizing: border-box;
+    width: 50%;
+    height: 20px;
+    background-image: linear-gradient(#efefef, white);
+    transform: skewX(70deg);
+    position: absolute;
+    top: 0;
+    right: 58px;
+    //border: 1px solid black;
+}
+
+/**
+ ** Под полкой футера
+ **/
+.under-footer-shelf {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    //border: 1px solid black;
+}
+
+.under-footer-shelf > div {
+    font-family: Tahoma;
+    letter-spacing: 0.3px;
+    //border: 1px solid black;
+}
+
+.under-footer-shelf > .copyright {
+    font-size: 11.5px;
+    letter-spacing: 0.1px;
+    word-spacing: 0.1px;
+    flex-basis: 18%;
+}
+
+.under-footer-shelf > .about-company {
+    flex-basis: 13%;
+}
+
+.under-footer-shelf > .help {
+    flex-basis: 11%;
+}
+
+.under-footer-shelf > .earn-with-us {
+    flex-basis: 20%;
+}
+
+.under-footer-shelf > .site-map {
+    flex-basis: 13%;
+}
+
+.under-footer-shelf > div > a {
+    display: block;
+}
+
+.under-footer-shelf > div:not(.social-sharing) > a:nth-of-type(1) {
+    font-size: 14px;
+    color: #5f7495;
+    margin-bottom: 0;
+    height: 40px;
+    //border: 1px solid black;
+}
+
+.under-footer-shelf > div:not(.social-sharing) > a:not(:nth-of-type(1)) {
+    font-size: 11px;
+    color: #3b3b3b;
+    margin-bottom: 9px;
+}
+
+/*
+ *  Шаринг соц.сетей
+ */
+.under-footer-shelf > .social-sharing {
+    flex-basis: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+.under-footer-shelf > .social-sharing > a {
+    box-sizing: border-box;
+    height: 25px;
+    width: 25px;
+    background-size: 100%;
+    text-decoration: none;
+    //border: 1px solid black;
+}
+
+.under-footer-shelf > .social-sharing > a.share-icon-facebook {
+    background-image: url(../svg/F_icon.svg); 
+}
+
+.under-footer-shelf > .social-sharing > a.share-icon-vk {
+    background-image: url(../svg/VK_icon.svg);
+}
+
+.under-footer-shelf > .social-sharing > a.share-icon-livejournal {
+    background-image: url(../svg/LJ_icon.svg);
+}
