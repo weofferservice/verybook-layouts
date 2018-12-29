@@ -147,12 +147,8 @@ span.logo-v {
     text-shadow: 1px 0 0;
     position: absolute;
     left: 27px;
-    top: 0;
-    //border: 1px solid black;
-}
-
-span.logo-v.ie { /* селектор ie используется, чтобы вводить корректировки в стили при использовании IE */
     top: -1px;
+    //border: 1px solid black;
 }
 
 span.logo-erybook {
