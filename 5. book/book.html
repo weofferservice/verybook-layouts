@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Verybook</title>
+		<meta charset="UTF-8" />
+        <link href="css/book.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body onload="init()">
+        <header>
+            <div class="header header1">
+                <a href="#" class="logo">
+                    <span class="logo-word logo-line logo-line1">\</span>
+                    <span class="logo-word logo-line logo-line2">\</span>
+                    <span class="logo-word logo-v">V</span>
+                    <span class="logo-word logo-erybook">erybook</span>
+                </a>
+                <div class="search">
+                    <label class="search">
+                        <input type="text" name="search" autocomplete />
+                    </label>
+                    <button class="search" />
+                </div>
+                <div class="ask">
+                    <a href="#">Задать вопрос</a>
+                </div>
+                <div class="cart">
+                    <a href="#">Корзина</a>
+                </div>
+            </div>
+            <nav class="header header2">
+                <div class="menu">
+                    <!-- Для того, чтобы подчеркнуть страницу, которая выбрана, к div добавляется класс menu-item-selected -->
+                    <div class="shop menu-item-selected">
+                        <a href="#">Книжный магазин</a>
+                    </div>
+                    <div class="help">
+                        <a href="#">Помощь автору</a>
+                    </div>
+                    <div class="authors-rating">
+                        <a href="#">Рейтинг авторов</a>
+                    </div>
+                    <div class="about">
+                        <a href="#">О проекте</a>
+                    </div>
+                </div>
+                <div class="entrance "> <!-- для залогиненого пользователя нужно добавить класс nick -->
+                    <a href="#">Войти</a> <!-- для залогиненого пользователя нужно поменять Войти на Логин -->
+                </div>
+            </nav>
+        </header>
+		
+		<main>
+            <div class="book">
+                <div class="title">
+                    The ultimate players guide to minecraft
+                </div>
+                <div class="columns">
+                    <div class="column column-1">
+                        <div class="summary-1">
+                        </div>
+                        <div class="cover">
+                            <img src="img/book1.jpg" width="100" height="160">
+                        </div>
+                        <ul class="pages">
+                            <li class="content">
+                                <a href="#">Полистать книгу</a>
+                            </li>
+                            <li class="content-table">
+                                <a href="#">Оглавление</a>
+                            </li>
+                        </ul>
+                        <ul class="authors">
+                            <li class="author">
+                                <div class="photo">
+                                    <img src="img/photo1.jpg" width="80" height="80">
+                                </div>
+                                <div class="about">
+                                    <div class="fullname">
+                                        <a href="#">
+                                            Константин Константинопольский
+                                        </a>
+                                    </div>
+                                    <div class="rating-3-stars">
+                                        <div class="rating-stars"></div>
+                                        <div class="rating-number">2,3</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="column column-2">
+                        <div class="summary-1">
+                            <div class="rating-5-stars">
+                                <div class="rating-stars"></div>
+                                <div class="rating-number">2,3</div>
+                            </div>
+                            <div class="reviews">
+                                <a href="#reviews">
+                                    Отзывов о книге
+                                    <span>31</span>
+                                </a>
+                            </div>
+                            <div class="downloads">
+                                <span>176</span>
+                                скачиваний
+                            </div>
+                        </div>
+                        <div class="description">
+                            Stop doing busywork. Start doing your best work.
+                            <br><br>
+                            College student Joe Talbert has the modest goal of completing a writing assignment for an English class. His task is to interview a stranger and write a brief biography of the person. With deadlines looming, Joe heads to a nearby nursing home to find a willing subject. There he meets Carl Iverson, and soon nothing in Joe's life is ever the same.
+                            <br><br>
+                            Carl is a dying Vietnam veteran and a convicted murderer. With only a few months to live, he has been medically paroled to a nursing home, after spending thirty years in prison for the crimes of rape and murder. 
+                            <br><br>
+                            As Joe writes about Carl's life, especially Carl's valor in Vietnam, he cannot reconcile the especially Carl's valor in Vietnam, he cannot reconcile the the especially Carl's
+                        </div>
+                        <ul class="summary-2">
+                            <li class="item">
+                                Дата публикации:
+                                <span class="date">
+                                    26 сентября 2015
+                                </span>
+                            </li>
+                            <li class="item">
+                                Язык:
+                                <span class="lang">
+                                    русский
+                                </span>
+                            </li>
+                            <li class="item">
+                                Лицензия:
+                                <a class="license" href="#">
+                                    verybook
+                                </a>
+                            </li>
+                            <li class="item item-tags">
+                                <span>Теги:</span>
+                                <ul class="tags">
+                                    <li class="tag">
+                                        <a href="#">сочинения</a>
+                                    </li>                                    
+                                    <li class="tag">
+                                        <a href="#">иванов</a>
+                                    </li>
+                                    <li class="tag">
+                                        <a href="#">александр</a>
+                                    </li>
+                                    <li class="tag">
+                                        <a href="#">летящие в облаках</a>
+                                    </li>
+                                    <li class="tag">
+                                        <a href="#">классика</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="column column-3">
+                        <div class="summary-1">
+                        </div>
+                        <div class="buy">
+                            <div class="item price">
+                                <span class="number">112</span>
+                                <span class="currency">р.</span>
+                            </div>
+                            <a class="item cart-btn" href="#">В корзину</a>
+                        </div>
+                        <div class="formats">
+                            <span>Форматы:</span>
+                            <ul class="list">
+                                <li class="format">
+                                    epub
+                                </li>
+                                <li class="format">
+                                    fb2
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ratings">
+                            Рейтинг книги
+                            <ul class="list">
+                                <li class="item">
+                                    <a class="link" href="#">
+                                        №
+                                        <span>19</span>
+                                    </a>
+                                    <div class="rating-title">
+                                        в
+                                        <span>
+                                            общем рейтинге
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <a class="link" href="#">
+                                        №
+                                        <span>1</span>
+                                    </a>
+                                    <div class="rating-title">
+                                        среди
+                                        <span>
+                                            Общественные и гуманитарные науки
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <a class="link" href="#">
+                                        №
+                                        <span>4</span>
+                                    </a>
+                                    <div class="rating-title">
+                                        среди
+                                        <span>
+                                            Деловая литература, право, психология
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="likes">
+                            <a class="like" href="#">
+                                1022
+                            </a>
+                            <a class="dislike" href="#">
+                                51
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="shadow">
+                </div>
+            </div>
+            
+            <div class="book-reviews" id="reviews">
+                <div class="header">
+                    Отзывы
+                    <span class="count">(<span>31</span>)</span>
+                </div>
+                <div class="send-review">
+                    <!--
+                        Открывающий и закрывающий теги textarea должны быть на одной строке, т.к. иначе placeholder не отображается:
+                        http://stackoverflow.com/questions/10186913/html5-textarea-placeholder-not-appearing
+                    -->
+                    <textarea placeholder="Оставить отзыв"></textarea>
+                    <a class="send" href="#">Добавить</a>
+                </div>
+                <ul class="review-list">
+                    <li class="review">
+                        <div class="title">
+                            Good book for beginners, but daily or even weekly players look elsewhere
+                        </div>
+                        <div class="summary">
+                            <div class="reviewer">
+                                от
+                                <a href="#">BruceInCola</a>
+                            </div>
+                            <div class="date">
+                                отзыв оставлен
+                                <span>26 декабря 2014</span>
+                            </div>
+                        </div>
+                        <div class="content">
+                            The first edition of this book helped me learn Minecraft well enough to keep up with my grandson for a little while, at least. He moved through his Minecraft phase and on to online First Person Shooters all too fast. So now Minecraft in Creative mode is where I spend my time and that, incidentally is my only criticism of this otherwi excellent guide: it is focused primarily on Surviva mode, which I don’t find to be fun. But kids love the kill-r aspect of Survival mode and kids are who this book is written for Fortunately nearly all the information i s applicable t all Minecraft modes. (By the way, you can set the mayhem to low in Survival mode, but I just don’t care for the competitive aspect. I’d rather spend all my time creating new worl
+                        </div>
+                    </li>
+                    <li class="review">
+                        <div class="title">
+                            Good book for beginners, but daily or even weekly players look elsewhere
+                        </div>
+                        <div class="summary">
+                            <div class="reviewer">
+                                от
+                                <a href="#">BruceInCola</a>
+                            </div>
+                            <div class="date">
+                                отзыв оставлен
+                                <span>26 декабря 2014</span>
+                            </div>
+                        </div>
+                        <div class="content">
+                            The first edition of this book helped me learn Minecraft well enough to keep up with my grandson for a little while, at least. He moved through his Minecraft phase and on to online First Person Shooters all too fast. So now Minecraft in Creative mode is where I spend my time and that, incidentally is my only criticism of this otherwi excellent guide: it is focused primarily on Surviva mode, which I don’t find to be fun. But kids love the kill-r aspect of Survival mode and kids are who this book is written for Fortunately nearly all the information i s applicable t all Minecraft modes. (By the way, you can set the mayhem to low in Survival mode, but I just don’t care for the competitive aspect. I’d rather spend all my time creating new worl
+                        </div>
+                    </li>
+                    <li class="review">
+                        <div class="title">
+                            Good book for beginners, but daily or even weekly players look elsewhere
+                        </div>
+                        <div class="summary">
+                            <div class="reviewer">
+                                от
+                                <a href="#">BruceInCola</a>
+                            </div>
+                            <div class="date">
+                                отзыв оставлен
+                                <span>26 декабря 2014</span>
+                            </div>
+                        </div>
+                        <div class="content">
+                            The first edition of this book helped me learn Minecraft well enough to keep up with my grandson for a little while, at least. He moved through his Minecraft phase and on to online First Person Shooters all too fast. So now Minecraft in Creative mode is where I spend my time and that, incidentally is my only criticism of this otherwi excellent guide: it is focused primarily on Surviva mode, which I don’t find to be fun. But kids love the kill-r aspect of Survival mode and kids are who this book is written for Fortunately nearly all the information i s applicable t all Minecraft modes. (By the way, you can set the mayhem to low in Survival mode, but I just don’t care for the competitive aspect. I’d rather spend all my time creating new worl
+                        </div>
+                    </li>
+                    <li class="review">
+                        <div class="title">
+                            Good book for beginners, but daily or even weekly players look elsewhere
+                        </div>
+                        <div class="summary">
+                            <div class="reviewer">
+                                от
+                                <a href="#">BruceInCola</a>
+                            </div>
+                            <div class="date">
+                                отзыв оставлен
+                                <span>26 декабря 2014</span>
+                            </div>
+                        </div>
+                        <div class="content">
+                            The first edition of this book helped me learn Minecraft well enough to keep up with my grandson for a little while, at least. He moved through his Minecraft phase and on to online First Person Shooters all too fast. So now Minecraft in Creative mode is where I spend my time and that, incidentally is my only criticism of this otherwi excellent guide: it is focused primarily on Surviva mode, which I don’t find to be fun. But kids love the kill-r aspect of Survival mode and kids are who this book is written for Fortunately nearly all the information i s applicable t all Minecraft modes. (By the way, you can set the mayhem to low in Survival mode, but I just don’t care for the competitive aspect. I’d rather spend all my time creating new worl
+                        </div>
+                    </li>
+                </ul>
+                <a class="show-more" href="#">
+                    Показать еще отзывы
+                </a>
+                
+                <div class="shadow">
+                </div>
+            </div>
+            
+            <div class="shelf">
+                <div class="title">
+                    Рекомендованные также
+                </div>
+                
+                <button class="shelf-part arrow left-arrow"></button>
+                <div class="shelf-part shelf-left-part"></div>
+                <div class="shelf-part shelf-right-part"></div>
+                <div class="shelf-part shelf-bottom-part"></div>
+                <button class="shelf-part arrow right-arrow"></button>
+
+                <div class="book-slider-out">
+                    <div class="book-slider-in">
+                        <a href="#">
+                            <img src="img/book1.jpg" >
+                        </a>
+                        <a href="#">
+                            <img src="img/book2.jpg" />
+                        </a>
+                        <a href="#">
+                            <img src="img/book3.jpg" />
+                        </a>
+                        <a href="#">
+                            <img src="img/book4.jpg" />
+                        </a>
+                        <a href="#">
+                            <img src="img/book5.jpg" />
+                        </a>
+                        <a href="#">
+                            <img src="img/book5.jpg" />
+                        </a>
+                        <a href="#">
+                            <img src="img/book4.jpg" />
+                        </a>
+                        <a href="#">
+                            <img src="img/book3.jpg" />
+                        </a>
+                        <a href="#">
+                            <img src="img/book2.jpg" />
+                        </a>
+                        <a href="#">
+                            <img src="img/book1.jpg" />
+                        </a>                            
+                        <a href="#">
+                            <img src="img/book1.jpg" />
+                        </a>
+                        <a href="#">
+                            <img src="img/book2.jpg" />
+                        </a>
+                        <a href="#">
+                            <img src="img/book3.jpg" />
+                        </a>
+                        <a href="#">
+                            <img src="img/book4.jpg" />
+                        </a>
+                        <a href="#">
+                            <img src="img/book5.jpg" />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="book-title-slider-out">
+                    <div class="book-title-slider-in">
+                        <a href="#">
+                            <div class="book-description">
+                                <div class="book-title">
+                                    Древняя Русь в картинках
+                                </div>
+                                <div class="book-author">
+                                    А.А. Иванов
+                                </div>
+
+                                <div class="rating-5-stars">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                                <div class="price">
+                                    <span class="number">20</span><span class="currency">руб</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="book-description">
+                                <div class="book-title">
+                                    Как отравили Сталина
+                                </div>
+                                <div class="book-author">
+                                    С.В. Куприн
+                                </div>
+
+                                <div class="rating-5-stars">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                                <div class="price">
+                                    <span class="number">18</span><span class="currency">руб</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="book-description">
+                                <div class="book-title">
+                                    Фаина Раневская
+                                </div>
+                                <div class="book-author">
+                                    А.П. Константинов
+                                </div>
+
+                                <div class="rating-5-stars">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                                <div class="price">
+                                    <span class="number free">Бесплатно</span><span class="currency"></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="book-description">
+                                <div class="book-title">
+                                    Тайны мозга вашего ребенка
+                                </div>
+                                <div class="book-author">
+                                    А. Александров
+                                </div>
+
+                                <div class="rating-5-stars">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                                <div class="price">
+                                    <span class="number">21</span><span class="currency">руб</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="book-description">
+                                <div class="book-title">
+                                    Тайны мозга
+                                </div>
+                                <div class="book-author">
+                                    А. Александров
+                                </div>
+
+                                <div class="rating-5-stars">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                                <div class="price">
+                                    <span class="number">5</span><span class="currency">руб</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="book-description">
+                                <div class="book-title">
+                                    Тайны мозга
+                                </div>
+                                <div class="book-author">
+                                    А. Александров
+                                </div>
+
+                                <div class="rating-5-stars">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                                <div class="price">
+                                    <span class="number">5</span><span class="currency">руб</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="book-description">
+                                <div class="book-title">
+                                    Тайны мозга вашего ребенка
+                                </div>
+                                <div class="book-author">
+                                    А. Александров
+                                </div>
+
+                                <div class="rating-5-stars">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                                <div class="price">
+                                    <span class="number">21</span><span class="currency">руб</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="book-description">
+                                <div class="book-title">
+                                    Фаина Раневская
+                                </div>
+                                <div class="book-author">
+                                    А.П. Константинов
+                                </div>
+
+                                <div class="rating-5-stars">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                                <div class="price">
+                                    <span class="number free">Бесплатно</span><span class="currency"></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="book-description">
+                                <div class="book-title">
+                                    Как отравили Сталина
+                                </div>
+                                <div class="book-author">
+                                    С.В. Куприн
+                                </div>
+
+                                <div class="rating-5-stars">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                                <div class="price">
+                                    <span class="number">18</span><span class="currency">руб</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="book-description">
+                                <div class="book-title">
+                                    Древняя Русь в картинках
+                                </div>
+                                <div class="book-author">
+                                    А.А. Иванов
+                                </div>
+
+                                <div class="rating-5-stars">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                                <div class="price">
+                                    <span class="number">20</span><span class="currency">руб</span>
+                                </div>
+                            </div>
+                        </a>                            
+                        <a href="#">
+                            <div class="book-description">
+                                <div class="book-title">
+                                    Древняя Русь в картинках
+                                </div>
+                                <div class="book-author">
+                                    А.А. Иванов
+                                </div>
+
+                                <div class="rating-5-stars">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                                <div class="price">
+                                    <span class="number">20</span><span class="currency">руб</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="book-description">
+                                <div class="book-title">
+                                    Как отравили Сталина
+                                </div>
+                                <div class="book-author">
+                                    С.В. Куприн
+                                </div>
+
+                                <div class="rating-5-stars">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                                <div class="price">
+                                    <span class="number">18</span><span class="currency">руб</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="book-description">
+                                <div class="book-title">
+                                    Фаина Раневская
+                                </div>
+                                <div class="book-author">
+                                    А.П. Константинов
+                                </div>
+
+                                <div class="rating-5-stars">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                                <div class="price">
+                                    <span class="number free">Бесплатно</span><span class="currency"></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="book-description">
+                                <div class="book-title">
+                                    Тайны мозга вашего ребенка
+                                </div>
+                                <div class="book-author">
+                                    А. Александров
+                                </div>
+
+                                <div class="rating-5-stars">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                                <div class="price">
+                                    <span class="number">21</span><span class="currency">руб</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="book-description">
+                                <div class="book-title">
+                                    Тайны мозга
+                                </div>
+                                <div class="book-author">
+                                    А. Александров
+                                </div>
+
+                                <div class="rating-5-stars">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                                <div class="price">
+                                    <span class="number">5</span><span class="currency">руб</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <div class="books-on-shelf">
+            <img src="img/bottom-book-1.jpg" />
+            <img src="img/bottom-book-2.jpg" />
+            <img src="img/bottom-book-3.jpg" />
+            <img src="img/bottom-book-4.jpg" />
+            <img src="img/bottom-book-5.jpg" />
+            <img src="img/bottom-book-6.jpg" />
+            <img src="img/bottom-book-7.jpg" />
+            <img src="img/bottom-book-8.jpg" />
+            <img src="img/bottom-book-9.jpg" />
+        </div>
+        
+		<footer>
+            <div class="footer-shelf">
+                <div class="footer-shelf shelf-part shelf-left-part"></div>
+                <div class="footer-shelf shelf-part shelf-right-part"></div>
+                <div class="footer-shelf shelf-part shelf-bottom-part"></div>
+            </div>
+            
+            <div class="under-footer-shelf">
+                <div class="copyright">
+                    © 1993–2014 Верибук.ру
+                </div>
+                
+                <div class="about-company">
+                    <a href="#">
+                        О компании
+                    </a>
+                    <a href="#">
+                        Пресс-центр
+                    </a>
+                    <a href="#">
+                        Вакансии
+                    </a>
+                    <a href="#">
+                        Реквизиты
+                    </a>
+                    <a href="#">
+                        О компании
+                    </a>
+                </div>
+                
+                <div class="help">
+                    <a href="#">
+                        Помощь
+                    </a>
+                    <a href="#">
+                        Как сделать заказ
+                    </a>
+                    <a href="#">
+                        Доставка
+                    </a>
+                    <a href="#">
+                        Оплата
+                    </a>
+                    <a href="#">
+                        Помощь
+                    </a>
+                    <a href="#">
+                        Обратная связь
+                    </a>
+                </div>
+                
+                <div class="earn-with-us">
+                    <a href="#">
+                        Зарабатывайте с нами
+                    </a>
+                    <a href="#">
+                        Продавайте Ваши товары на Ozon.ru
+                    </a>
+                    <a href="#">
+                        Становитесь поставщиками Букинистики
+                    </a>
+                    <a href="#">
+                        Партнёрская программа Ozon.ru
+                    </a>
+                    <a href="#">
+                        Размещайте рекламу на Ozon.ru
+                    </a>
+                    <a href="#">
+                        Открывайте пункты выдачи заказов Ozon.ru
+                    </a>
+                </div>
+                
+                <div class="site-map">
+                    <a href="#">
+                        Карта сайта
+                    </a>
+                    <a href="#">
+                        Покупка товаров (b2b)
+                    </a>
+                    <a href="#">
+                        Подарочные сертификаты
+                    </a>
+                    <a href="#">
+                        Loyalica
+                    </a>
+                </div>
+                
+                <div class="social-sharing">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=verybook.ru"
+                       title="Поделиться Verybook на Facebook"
+                       class="share-icon-facebook">
+                    </a>
+                    <a href="#"
+                       title="Поделиться Verybook ВКонтакте"
+                       class="share-icon-vk">
+                    </a>
+                    <a href="#"
+                       title="Поделиться Verybook в ЖЖ"
+                       class="share-icon-livejournal">
+                    </a>
+                </div>
+            </div>            
+		</footer>
+	</body>
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="js/vb.js"></script>
+    <script type="text/javascript" src="js/shelf.js"></script>
+</html>
