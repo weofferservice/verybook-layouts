@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Verybook</title>
+		<meta charset="UTF-8" />
+        <link href="css/search-book.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body onload="init()">
+        <header>
+            <div class="header header1">
+                <a href="#" class="logo">
+                    <span class="logo-word logo-line logo-line1">\</span>
+                    <span class="logo-word logo-line logo-line2">\</span>
+                    <span class="logo-word logo-v">V</span>
+                    <span class="logo-word logo-erybook">erybook</span>
+                </a>
+                <div class="search">
+                    <label class="search">
+                        <input type="text" name="search" autocomplete />
+                    </label>
+                    <button class="search" />
+                </div>
+                <div class="ask">
+                    <a href="#">Задать вопрос</a>
+                </div>
+                <div class="cart">
+                    <a href="#">Корзина</a>
+                </div>
+            </div>
+            <nav class="header header2">
+                <div class="menu">
+                    <!-- Для того, чтобы подчеркнуть страницу, которая выбрана, к div добавляется класс menu-item-selected -->
+                    <div class="shop menu-item-selected">
+                        <a href="#">Книжный магазин</a>
+                    </div>
+                    <div class="help ">
+                        <a href="#">Помощь автору</a>
+                    </div>
+                    <div class="authors-rating ">
+                        <a href="#">Рейтинг авторов</a>
+                    </div>
+                    <div class="about ">
+                        <a href="#">О проекте</a>
+                    </div>
+                </div>
+                <div class="entrance "> <!-- для залогиненого пользователя нужно добавить класс nick -->
+                    <a href="#">Войти</a> <!-- для залогиненого пользователя нужно поменять Войти на Логин -->
+                </div>
+            </nav>
+        </header>
+		
+		<main>
+            <div class="extended-search">
+                <a href="#">Расширенный поиск</a>
+            </div>
+            
+            <div class="search-results-summary">
+                <div class="header">
+                    <span class="title">Результаты поиска по запросу:</span>
+                    <span class="query">книга о войне</span> <!-- Сюда будет динамически вставляться текст строки поиска -->
+                </div>
+                <div class="summary">
+                    Найдено 3 774 совпадений, из них:
+                    <a href="#ebooks">3 765 электронных книг</a>,
+                    <a href="#audiobooks">7 аудиокниг</a>,
+                    <a href="#authors">2 автора</a>
+                </div>
+                <div class="sort-by">
+                    <div>Сортировать:</div>                        
+                    <input type="radio" name="sort-link" id="sort-link-1" checked />
+                    <input type="radio" name="sort-link" id="sort-link-2" />
+                    <input type="radio" name="sort-link" id="sort-link-3" />
+                    <input type="radio" name="sort-link" id="sort-link-4" />
+                    <div class="sort-links">
+                        <label class="sort-link" for="sort-link-1">по популярности</label>
+                        <label class="sort-link" for="sort-link-2">по рейтингу</label>
+                        <label class="sort-link" for="sort-link-3">по дате публикации</label>
+                        <label class="sort-link" for="sort-link-4">по цене</label>
+                    </div>
+                </div>
+                
+                <!-- Выбор типа отображения результатов поиска -->
+                <div class="search-results-show-type">
+                    <input type="radio" name="show-type" id="show-type-list" checked />
+                    <input type="radio" name="show-type" id="show-type-tiles" />
+                    
+                    <label class="list" for="show-type-list" title="Отобразить списком">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </label>
+                    <label class="tiles" for="show-type-tiles" title="Отобразить плиткой">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="search-results ebooks" id="ebooks">
+                <div class="column left-column">
+                    <div class="item header">
+                        <span class="title">Электнонные книги</span>
+                        <span class="summary">показано
+                                                <span class="show-range">1-15</span>
+                                              книг из 
+                                                <span class="total-count">3 765</span>
+                                              найденных по запросу 
+                                                "<span class="query">книга о войне</span>"
+                        </span>
+                    </div>
+                    
+                    <div class="item search-result-item ebook">
+                        <div class="cover">
+                            <img src="img/book1.jpg" width="100" height="160">
+                        </div>
+                        <div class="about">
+                            <div class="title">
+                                <a href="#">The ultimate players guide to minecraft</a>
+                            </div>
+                            <div class="author">
+                                <a href="#">Владимир Иванов</a>
+                            </div>
+                            <div class="description">
+                                "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
+                            </div>
+                            <div class="footer">
+                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
+                                <div class="formats">Форматы: <span>EPUB, PDF</span></div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <div class="buy">
+                                <span class="item price">112 р.</span>
+                                <a class="item cart-btn" href="#">В корзину</a>
+                            </div>
+                            <div class="rating">
+                                <div class="rating-stars"></div>
+                                <div class="rating-number">2,3</div>
+                            </div>                            
+                            <div class="reviews">
+                                <a href="#">Рецензии (<spa>15</spa>)</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item search-result-item ebook">
+                        <div class="cover">
+                            <img src="img/book2.jpg" width="100" height="160">
+                        </div>
+                        <div class="about">
+                            <div class="title">
+                                <a href="#">The ultimate players guide to minecraft</a>
+                            </div>
+                            <div class="author">
+                                <a href="#">Владимир Иванов</a>
+                            </div>
+                            <div class="description">
+                                "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
+                            </div>
+                            <div class="footer">
+                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
+                                <div class="formats">Форматы: <span>EPUB, PDF</span></div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <div class="buy">
+                                <span class="item price">112 р.</span>
+                                <a class="item cart-btn" href="#">В корзину</a>
+                            </div>
+                            <div class="rating">
+                                <div class="rating-stars"></div>
+                                <div class="rating-number">2,3</div>
+                            </div>                            
+                            <div class="reviews">
+                                <a href="#">Рецензии (<spa>15</spa>)</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item search-result-item ebook">
+                        <div class="cover">
+                            <img src="img/book3.jpg" width="100" height="160">
+                        </div>
+                        <div class="about">
+                            <div class="title">
+                                <a href="#">The ultimate players guide to minecraft</a>
+                            </div>
+                            <div class="author">
+                                <a href="#">Владимир Иванов</a>
+                            </div>
+                            <div class="description">
+                                "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
+                            </div>
+                            <div class="footer">
+                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
+                                <div class="formats">Форматы: <span>EPUB, PDF</span></div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <div class="buy">
+                                <span class="item price">112 р.</span>
+                                <a class="item cart-btn" href="#">В корзину</a>
+                            </div>
+                            <div class="rating">
+                                <div class="rating-stars"></div>
+                                <div class="rating-number">2,3</div>
+                            </div>                            
+                            <div class="reviews">
+                                <a href="#">Рецензии (<spa>15</spa>)</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item search-result-item ebook">
+                        <div class="cover">
+                            <img src="img/book4.jpg" width="100" height="160">
+                        </div>
+                        <div class="about">
+                            <div class="title">
+                                <a href="#">The ultimate players guide to minecraft</a>
+                            </div>
+                            <div class="author">
+                                <a href="#">Владимир Иванов</a>
+                            </div>
+                            <div class="description">
+                                "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
+                            </div>
+                            <div class="footer">
+                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
+                                <div class="formats">Форматы: <span>EPUB, PDF</span></div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <div class="buy">
+                                <span class="item price">112 р.</span>
+                                <a class="item cart-btn" href="#">В корзину</a>
+                            </div>
+                            <div class="rating">
+                                <div class="rating-stars"></div>
+                                <div class="rating-number">2,3</div>
+                            </div>                            
+                            <div class="reviews">
+                                <a href="#">Рецензии (<spa>15</spa>)</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item search-result-item ebook">
+                        <div class="cover">
+                            <img src="img/book5.jpg" width="100" height="160">
+                        </div>
+                        <div class="about">
+                            <div class="title">
+                                <a href="#">The ultimate players guide to minecraft</a>
+                            </div>
+                            <div class="author">
+                                <a href="#">Владимир Иванов</a>
+                            </div>
+                            <div class="description">
+                                "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
+                            </div>
+                            <div class="footer">
+                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
+                                <div class="formats">Форматы: <span>EPUB, PDF</span></div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <div class="buy">
+                                <span class="item price">112 р.</span>
+                                <a class="item cart-btn" href="#">В корзину</a>
+                            </div>
+                            <div class="rating">
+                                <div class="rating-stars"></div>
+                                <div class="rating-number">2,3</div>
+                            </div>                            
+                            <div class="reviews">
+                                <a href="#">Рецензии (<spa>15</spa>)</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item search-result-item ebook">
+                        <div class="cover">
+                            <img src="img/book1.jpg" width="100" height="160">
+                        </div>
+                        <div class="about">
+                            <div class="title">
+                                <a href="#">The ultimate players guide to minecraft</a>
+                            </div>
+                            <div class="author">
+                                <a href="#">Владимир Иванов</a>
+                            </div>
+                            <div class="description">
+                                "Инноваторы" - история о разных этапах цифровой революции и людях, без которых не было бы ни компьютеров, ни интернета: от Ады Лавлейс, дочери лорда Байрона, первой нащупавшей принципы компьютерного программирования, до Билла Гейтса, Алана Тьюринга, Стива Джобса, Стива Возняка, Ларри Пейджа. Это книга о том, что такое инновации и как сотрудничество увеличивает творческий потенциал.
+                            </div>
+                            <div class="footer">
+                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
+                                <div class="formats">Форматы: <span>EPUB, PDF</span></div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <div class="buy">
+                                <span class="item price">112 р.</span>
+                                <a class="item cart-btn" href="#">В корзину</a>
+                            </div>
+                            <div class="rating">
+                                <div class="rating-stars"></div>
+                                <div class="rating-number">2,3</div>
+                            </div>                            
+                            <div class="reviews">
+                                <a href="#">Рецензии (<spa>15</spa>)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column right-column">
+                    <div class="item shifter">
+                    </div>
+                    
+                    <ul class="item top-level">
+                        <li class="top-level-link"><a href="#">Бест-селлеры</a></li>
+                        <li class="top-level-link"><a href="#">Новинки</a></li>
+                        <li class="top-level-link"><a href="#">Акции</a></li>
+                        <li class="top-level-link"><a href="#">Детям и родителям</a></li>
+                        <ul class="bottom-level">
+                            <li class="bottom-level-link"><a href="#">Досуг и творчество</a></li>
+                            <li class="bottom-level-link"><a href="#">Книги для родителей</a></li>
+                            <li class="bottom-level-link"><a href="#">Познавательная литература</a></li>
+                            <li class="bottom-level-link"><a href="#">Художественная литература</a></li>
+                        </ul>
+                        <li class="top-level-link"><a href="#">Учебная литература</a></li>
+                        <ul class="bottom-level">
+                            <li class="bottom-level-link"><a href="#">Дошкольникам</a></li>
+                            <li class="bottom-level-link"><a href="#">Школьникам и абитуриентам</a></li>
+                            <li class="bottom-level-link"><a href="#">Студентам и аспирантам</a></li>
+                            <li class="bottom-level-link"><a href="#">Педагогам</a></li>
+                        </ul>
+                        <li class="top-level-link"><a href="#">Бизнес-литература</a></li>
+                        <ul class="bottom-level">
+                            <li class="bottom-level-link"><a href="#">Деловая литература. Право. Психология</a></li>
+                            <li class="bottom-level-link"><a href="#">Маркетинг. Реклама</a></li>
+                            <li class="bottom-level-link"><a href="#">Менеджмент</a></li>
+                            <li class="bottom-level-link"><a href="#">Финансы. Банковское дело. Инвестиции</a></li>
+                        </ul>
+                        <li class="top-level-link"><a href="#">Нехудожественная литература</a></li>
+                        <ul class="bottom-level">
+                            <li class="bottom-level-link"><a href="#">Искусство. Культура</a></li>
+                            <li class="bottom-level-link"><a href="#">Компьютеры. Интернет</a></li>
+                            <li class="bottom-level-link"><a href="#">Кулинария. Напитки</a></li>
+                            <li class="bottom-level-link"><a href="#">Медицина</a></li>
+                            <li class="bottom-level-link"><a href="#">Наука.Техника</a></li>
+                            <li class="bottom-level-link"><a href="#">Общественные и гуманитарные науки</a></li>
+                            <li class="bottom-level-link"><a href="#">Психология</a></li>
+                            <li class="bottom-level-link"><a href="#">Публицистика</a></li>
+                            <li class="bottom-level-link"><a href="#">Путешествия. Хобби. Фото. Спорт</a></li>
+                            <li class="bottom-level-link"><a href="#">Религии мира</a></li>
+                            <li class="bottom-level-link"><a href="#">Рукоделие. Творчество</a></li>
+                            <li class="bottom-level-link"><a href="#">Эзотерика</a></li>
+                        </ul>   
+                    </ul>
+                    
+                    <div class="item spec">
+                        <div class="header">
+                            <div class="title">
+                                Специальные предложения
+                            </div>
+                            <div class="arrow-down">
+                            </div>
+                        </div>
+                        <div class="main">
+                            <a href="#" class="spec-book spec-book-1">
+                                <div class="cover-rating">
+                                    <img class="cover" src="img/book1.jpg" width="100" height="160">
+                                    <div class="rating">3,8</div>
+                                </div>
+                                <div class="content">
+                                    <div class="title">Энциклопедия Marvel Heroes</div>
+                                    <div class="author-name">Дмитрий Глуховский</div>
+                                    <div class="cost"><span>599 р.</span></div>
+                                </div>                                
+                            </a>
+                            <a href="#" class="spec-book spec-book-2">
+                                <div class="cover-rating">
+                                    <img class="cover" src="img/book5.jpg" width="100" height="160">
+                                    <div class="rating">3,8</div>
+                                </div>
+                                <div class="content">
+                                    <div class="title">Непобежденные</div>
+                                    <div class="author-name">А.П. Константинов</div>
+                                    <div class="cost"><span>99 р.</span></div>
+                                </div>                                
+                            </a>
+                            <a href="#" class="spec-book spec-book-3">
+                                <div class="cover-rating">
+                                    <img class="cover" src="img/book4.jpg" width="100" height="160">
+                                    <div class="rating">3,8</div>
+                                </div>
+                                <div class="content">
+                                    <div class="title">Энциклопедия Marvel Heroes</div>
+                                    <div class="author-name">Дмитрий Глуховский</div>
+                                    <div class="cost"><span>99 р.</span></div>
+                                </div>                                
+                            </a>
+                            <a class="show-all" href="#">Показать все предложения</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="shadow">
+                </div>
+            </div>
+            
+            <div class="search-results audiobooks" id="audiobooks">
+                <div class="column left-column">
+                    <div class="item header">
+                        <span class="title">Аудио-книги</span>
+                        <span class="summary">показано
+                                                <span class="show-range">1-15</span>
+                                              аудиокниг из 
+                                                <span class="total-count">26</span>
+                                              найденных по запросу 
+                                                "<span class="query">книга о войне</span>"
+                        </span>
+                    </div>
+                    
+                    <div class="item search-result-item audiobook">
+                        <div class="cover-play">
+                            <img class="cover" src="img/audiobook1.jpg" width="137" height="137">
+                            <a class="play" href="#">Прослушать отрывок</a>
+                        </div>
+                        <div class="about">
+                            <div class="title">
+                                <a href="#">Harry Potter and the Sorcerer's Stone, Book 1</a>
+                            </div>
+                            <div class="author">
+                                <a href="#">J. K. Rowling</a> (автор), <a href="#">Roger Allam</a> (рассказчик), <a href="#">Emilia Fox</a> (рассказчик)
+                            </div>
+                            <div class="description">
+                                Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter
+                            </div>
+                            <div class="footer">
+                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
+                                <div class="formats">Форматы: <span>MP3</span></div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <div class="buy">
+                                <span class="item price">112 р.</span>
+                                <a class="item cart-btn" href="#">В корзину</a>
+                            </div>
+                            <div class="rating">
+                                <div class="rating-stars"></div>
+                                <div class="rating-number">2,3</div>
+                            </div>                            
+                            <div class="reviews">
+                                <a href="#">Рецензии (<spa>15</spa>)</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item search-result-item audiobook">
+                        <div class="cover-play">
+                            <img class="cover" src="img/audiobook1.jpg" width="137" height="137">
+                            <a class="play" href="#">Прослушать отрывок</a>
+                        </div>
+                        <div class="about">
+                            <div class="title">
+                                <a href="#">Harry Potter and the Sorcerer's Stone, Book 1</a>
+                            </div>
+                            <div class="author">
+                                <a href="#">J. K. Rowling</a> (автор), <a href="#">Roger Allam</a> (рассказчик), <a href="#">Emilia Fox</a> (рассказчик)
+                            </div>
+                            <div class="description">
+                                Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter
+                            </div>
+                            <div class="footer">
+                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
+                                <div class="formats">Форматы: <span>MP3</span></div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <div class="buy">
+                                <span class="item price">112 р.</span>
+                                <a class="item cart-btn" href="#">В корзину</a>
+                            </div>
+                            <div class="rating">
+                                <div class="rating-stars"></div>
+                                <div class="rating-number">2,3</div>
+                            </div>                            
+                            <div class="reviews">
+                                <a href="#">Рецензии (<spa>15</spa>)</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item search-result-item audiobook">
+                        <div class="cover-play">
+                            <img class="cover" src="img/audiobook1.jpg" width="137" height="137">
+                            <a class="play" href="#">Прослушать отрывок</a>
+                        </div>
+                        <div class="about">
+                            <div class="title">
+                                <a href="#">Harry Potter and the Sorcerer's Stone, Book 1</a>
+                            </div>
+                            <div class="author">
+                                <a href="#">J. K. Rowling</a> (автор), <a href="#">Roger Allam</a> (рассказчик), <a href="#">Emilia Fox</a> (рассказчик)
+                            </div>
+                            <div class="description">
+                                Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter
+                            </div>
+                            <div class="footer">
+                                <div class="date">Дата выхода: <span>26 сентября 2015 года</span></div>
+                                <div class="formats">Форматы: <span>MP3</span></div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <div class="buy">
+                                <span class="item price">112 р.</span>
+                                <a class="item cart-btn" href="#">В корзину</a>
+                            </div>
+                            <div class="rating">
+                                <div class="rating-stars"></div>
+                                <div class="rating-number">2,3</div>
+                            </div>                            
+                            <div class="reviews">
+                                <a href="#">Рецензии (<spa>15</spa>)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column right-column">
+                    <div class="item shifter">
+                    </div>
+                    
+                    <div class="item spec">
+                        <div class="header">
+                            <div class="title">
+                                Специальные предложения
+                            </div>
+                            <div class="arrow-down">
+                            </div>
+                        </div>
+                        <div class="main">
+                            <a href="#" class="spec-book spec-book-1">
+                                <div class="cover-rating">
+                                    <img class="cover" src="img/audiobook1.jpg" width="137" height="137">
+                                    <div class="rating">3,8</div>
+                                </div>
+                                <div class="content">
+                                    <div class="title">Энциклопедия Marvel Heroes</div>
+                                    <div class="author-name">Дмитрий Глуховский</div>
+                                    <div class="cost"><span>599 р.</span></div>
+                                </div>                                
+                            </a>
+                            <a href="#" class="spec-book spec-book-2">
+                                <div class="cover-rating">
+                                    <img class="cover"  src="img/audiobook1.jpg" width="137" height="137">
+                                    <div class="rating">3,8</div>
+                                </div>
+                                <div class="content">
+                                    <div class="title">Непобежденные</div>
+                                    <div class="author-name">А.П. Константинов</div>
+                                    <div class="cost"><span>99 р.</span></div>
+                                </div>                                
+                            </a>
+                            <a href="#" class="spec-book spec-book-3">
+                                <div class="cover-rating">
+                                    <img class="cover" src="img/audiobook1.jpg" width="137" height="137">
+                                    <div class="rating">3,8</div>
+                                </div>
+                                <div class="content">
+                                    <div class="title">Энциклопедия Marvel Heroes</div>
+                                    <div class="author-name">Дмитрий Глуховский</div>
+                                    <div class="cost"><span>99 р.</span></div>
+                                </div>                                
+                            </a>
+                            <a class="show-all" href="#">Показать все предложения</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="shadow">
+                </div>
+            </div>
+            <div class="search-results authors" id="authors">
+                <div class="column left-column">
+                    <div class="item header">
+                        <span class="title">Авторы</span>
+                        <span class="summary">показано
+                                                <span class="show-range">1-15</span>
+                                              авторов из 
+                                                <span class="total-count">26</span>
+                                              найденных по запросу 
+                                                "<span class="query">книга о войне</span>"
+                        </span>
+                    </div>
+                    
+                    <div class="item search-result-item author">
+                        <div class="photo">
+                            <img src="img/photo1.jpg" width="80" height="80">
+                        </div>
+                        <div class="about">
+                            <div class="fullname-rating">
+                                <div class="fullname">
+                                    <a href="#">Александр Константинопольский</a>
+                                </div>
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                            </div>
+                            <div class="genres">
+                                Жанры:
+                                <a href="#">военные</a>,
+                                <a href="#">детектив</a>,
+                                <a href="#">приключения</a>
+                            </div>
+                            <div class="description">
+                                I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.
+                            </div>
+                            <div class="footer">
+                                <div class="published">
+                                    Опубликовано:
+                                    <a href="#">
+                                        <span>18</span>
+                                        книг
+                                    </a>
+                                </div>
+                                <div class="reviews">
+                                    <a href="#">
+                                        <span>5</span>
+                                        отзывов
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item search-result-item author">
+                        <div class="photo">
+                            <img src="img/photo1.jpg" width="80" height="80">
+                        </div>
+                        <div class="about">
+                            <div class="fullname-rating">
+                                <div class="fullname">
+                                    <a href="#">Александр Константинопольский</a>
+                                </div>
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                            </div>
+                            <div class="genres">
+                                Жанры:
+                                <a href="#">военные</a>,
+                                <a href="#">детектив</a>,
+                                <a href="#">приключения</a>
+                            </div>
+                            <div class="description">
+                                I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.
+                            </div>
+                            <div class="footer">
+                                <div class="published">
+                                    Опубликовано:
+                                    <a href="#">
+                                        <span>18</span>
+                                        книг
+                                    </a>
+                                </div>
+                                <div class="reviews">
+                                    <a href="#">
+                                        <span>5</span>
+                                        отзывов
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item search-result-item author">
+                        <div class="photo">
+                            <img src="img/photo1.jpg" width="80" height="80">
+                        </div>
+                        <div class="about">
+                            <div class="fullname-rating">
+                                <div class="fullname">
+                                    <a href="#">Александр Константинопольский</a>
+                                </div>
+                                <div class="rating">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                            </div>
+                            <div class="genres">
+                                Жанры:
+                                <a href="#">военные</a>,
+                                <a href="#">детектив</a>,
+                                <a href="#">приключения</a>
+                            </div>
+                            <div class="description">
+                                I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.
+                            </div>
+                            <div class="footer">
+                                <div class="published">
+                                    Опубликовано:
+                                    <a href="#">
+                                        <span>18</span>
+                                        книг
+                                    </a>
+                                </div>
+                                <div class="reviews">
+                                    <a href="#">
+                                        <span>5</span>
+                                        отзывов
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column right-column">
+                    <div class="item shifter">
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <div class="books-on-shelf">
+            <img src="img/bottom-book-1.jpg" />
+            <img src="img/bottom-book-2.jpg" />
+            <img src="img/bottom-book-3.jpg" />
+            <img src="img/bottom-book-4.jpg" />
+            <img src="img/bottom-book-5.jpg" />
+            <img src="img/bottom-book-6.jpg" />
+            <img src="img/bottom-book-7.jpg" />
+            <img src="img/bottom-book-8.jpg" />
+            <img src="img/bottom-book-9.jpg" />
+        </div>
+        
+		<footer>
+            <div class="footer-shelf">
+                <div class="footer-shelf shelf-part shelf-left-part"></div>
+                <div class="footer-shelf shelf-part shelf-right-part"></div>
+                <div class="footer-shelf shelf-part shelf-bottom-part"></div>
+            </div>
+            
+            <div class="under-footer-shelf">
+                <div class="copyright">
+                    © 1993–2014 Верибук.ру
+                </div>
+                
+                <div class="about-company">
+                    <a href="#">
+                        О компании
+                    </a>
+                    <a href="#">
+                        Пресс-центр
+                    </a>
+                    <a href="#">
+                        Вакансии
+                    </a>
+                    <a href="#">
+                        Реквизиты
+                    </a>
+                    <a href="#">
+                        О компании
+                    </a>
+                </div>
+                
+                <div class="help">
+                    <a href="#">
+                        Помощь
+                    </a>
+                    <a href="#">
+                        Как сделать заказ
+                    </a>
+                    <a href="#">
+                        Доставка
+                    </a>
+                    <a href="#">
+                        Оплата
+                    </a>
+                    <a href="#">
+                        Помощь
+                    </a>
+                    <a href="#">
+                        Обратная связь
+                    </a>
+                </div>
+                
+                <div class="earn-with-us">
+                    <a href="#">
+                        Зарабатывайте с нами
+                    </a>
+                    <a href="#">
+                        Продавайте Ваши товары на Ozon.ru
+                    </a>
+                    <a href="#">
+                        Становитесь поставщиками Букинистики
+                    </a>
+                    <a href="#">
+                        Партнёрская программа Ozon.ru
+                    </a>
+                    <a href="#">
+                        Размещайте рекламу на Ozon.ru
+                    </a>
+                    <a href="#">
+                        Открывайте пункты выдачи заказов Ozon.ru
+                    </a>
+                </div>
+                
+                <div class="site-map">
+                    <a href="#">
+                        Карта сайта
+                    </a>
+                    <a href="#">
+                        Покупка товаров (b2b)
+                    </a>
+                    <a href="#">
+                        Подарочные сертификаты
+                    </a>
+                    <a href="#">
+                        Loyalica
+                    </a>
+                </div>
+                
+                <div class="social-sharing">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=verybook.ru"
+                       title="Поделиться Verybook на Facebook"
+                       class="share-icon-facebook">
+                    </a>
+                    <a href="#"
+                       title="Поделиться Verybook ВКонтакте"
+                       class="share-icon-vk">
+                    </a>
+                    <a href="#"
+                       title="Поделиться Verybook в ЖЖ"
+                       class="share-icon-livejournal">
+                    </a>
+                </div>
+            </div>            
+		</footer>
+	</body>
+    <script type="text/javascript">
+        var columnFilter = '.right-column';
+    </script>
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="js/vb.js"></script>
+    <script type="text/javascript" src="js/column-banner.js"></script>
+</html>

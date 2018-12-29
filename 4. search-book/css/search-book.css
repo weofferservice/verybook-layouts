@@ -1,0 +1,1596 @@
+@font-face {
+    font-family: 'Myriad Pro Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Regular'), url('fonts/MyriadProRegular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Etelka Text Pro';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Etelka Text Pro'), url('fonts/Etelka-Text-Pro.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Core Sans M W01 SC 65 Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Core Sans M W01 SC 65 Bold'), url('fonts/Core Sans M W01 SC 65 Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Font Awesome';
+    font-style: normal;
+    font-weight: normal;
+    src: local('fontawesome-webfont'), url('fonts/fontawesome-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'EmojiSymbols-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('EmojiSymbols-Regular'), url('fonts/EmojiSymbols-Regular.woff') format('woff');
+}
+
+body {
+    width: 100%;
+    max-width: 1280px;
+    min-width: 700px;
+    margin-left: auto; /* auto сделает body по центру */
+    margin-right: auto; /* auto сделает body по центру */
+    box-sizing: border-box;
+    //border: 1px solid black;
+}
+
+/*
+ *  Хедер
+ */
+header {
+    height: 90px;
+    background-color: white;
+    width: 100%;
+    height: 115px;
+    box-sizing: border-box;
+    //border: 1px solid red;
+    //position: relative;
+}
+
+/*
+ *  Тень под Хедером
+ */
+header::before {
+    content: '';
+    display: block;
+    position: relative;
+    //position: absolute;
+    left: 1%;
+    top: 103px;
+    //top: 153px;
+    z-index: -1;
+    height: 10px;
+    width: 50%;
+    box-shadow: 0 0 10px 0 #888;
+    transform: rotate(0.3deg);
+}
+
+header::after {
+    content: '';
+    display: block;
+    position: relative;
+    //position: absolute;
+    left: 51%;
+    top: 22px;
+    //top: 72px;
+    z-index: -1;
+    height: 10px;
+    width: 48%;
+    box-shadow: 0 0 10px 0 #888;
+    transform: rotate(-0.3deg);
+}
+
+/*
+ *  Самая верхняя часть Хедера с логотипом, строкой поиска, задать вопросом и корзиной
+ */
+div.header1 {
+    width: 100%;
+    //height: 100px;
+    box-sizing: border-box;
+    position: relative;
+    top: -9px;
+    //border: 1px solid black;
+}
+
+div.header1 > div {
+    display: inline-block;
+}
+
+/*
+ *  Логотип (создан текстом со спец. подобранными шрифтами)
+ */
+a.logo {
+    text-decoration: none;
+    display: inline-block;
+    width: 162px;
+    height: 30px;
+    position: relative;
+    margin-top: 17px;
+    margin-left: 2.1%;
+    //border: 2px solid red;
+}
+
+/* Влияет на все части логотипа */
+span.logo-word {
+    color: #5f7495;
+    line-height: 30px;
+    //border: 1px solid black;
+}
+
+span.logo-line {
+    font-family: 'Times New Roman';
+    font-size: 35pt;
+    font-weight: 900;
+    text-shadow: 3px 0 0;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    //border: 1px solid black;
+}
+
+span.logo-line::after {
+    /* Памятка разработчику. В content учитываются символы экранировки, т.е. \\ - это всего лишь один слеш */
+    content: '\005c'; /* бэкслеш */
+    font-family: 'Times New Roman';
+    position: relative;
+    left: -11px;
+    //border: 1px solid black;
+}
+
+span.logo-line2 {
+    position: absolute;
+    left: 13px;
+    //border: 1px solid black;
+}
+
+span.logo-v {
+    font-family: 'Core Sans M W01 SC 65 Bold';
+    font-size: 35pt;
+    vertical-align: top;
+    text-shadow: 1px 0 0;
+    position: absolute;
+    left: 27px;
+    top: 0;
+    //border: 1px solid black;
+}
+
+span.logo-v.ie { /* селектор ie используется, чтобы вводить корректировки в стили при использовании IE */
+    top: -1px;
+}
+
+span.logo-erybook {
+    font-family: 'Etelka Text Pro';
+    font-size: 20pt;
+    letter-spacing: 1px;
+    position: absolute;
+    left: 60px;
+    //top: 11px;
+    //border: 1px solid black;
+}
+
+/*
+ *  Блок поиска
+ */
+div.search {
+    position: absolute;
+    top: 15px;
+    left: 27%;
+    transform: skewX(15deg);
+    //border: 1px solid black;
+    width: 40.2%;
+    height: 30px;
+}
+
+label.search {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 30px;
+    width: 86.5%;    
+    border: 1px solid #ccc;
+    padding: 0px 8px;
+    position: absolute;
+    left: 0;
+    //border: 1px solid black;
+}
+
+/* Нутро наклоняю в противоположную сторону, чтобы текст при наборе был ровным */
+label.search > input {
+    border: 0;
+    outline: none;
+    transform: skewX(-15deg);
+    box-sizing: border-box;
+    height: 28px;
+    width: 100%;
+    font-family: Tahoma;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    //border: 1px solid black;
+}
+
+/*
+ *  Кнопка поиска
+ */
+button.search {
+    display: inline-block;
+    height: 30px;
+    width: 13.5%;
+    min-width: 35px;
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    position: absolute;
+    right: 1px;  
+    //border: 1px solid black;
+}
+
+button.search::before {
+    content: '\1f50d'; /* Значок лупы */
+    font-family: 'Segoe UI Symbol';
+    display: inline-block;
+    color: #888;
+    font-size: 19px;    
+    transform: skewX(-15deg);
+    background-position: 50% 50%;
+    //border: 1px solid black;
+}
+
+button.search:focus {
+    outline: none; /* При фокусе не будет голубой кромки */
+}
+
+button.search:active {
+    box-shadow: inset 0px 0px 2px 0 #ccc; /* При нажатии будет видно нажатие за счет тени */
+}
+
+/*
+ *  Ссылка "Задать вопрос"
+ */
+div.ask {
+    box-sizing: border-box;
+    position: absolute;
+    top: 15px;
+    //left: 78.2%;
+    right: 13.2%;
+    width: 110px;
+    //border: 1px solid black;
+}
+
+div.ask > a {
+    color: #888;
+    font-family: Tahoma;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    //border: 1px solid black;
+}
+
+/* Знак вопросика после ссылки Задать вопрос */
+div.ask::after {
+    content: '?';
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    color: #888;
+    font-size: 10pt;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #888;
+    border-radius: 50%;
+    position: relative;
+    left: 4px;
+    top: -1px;
+    //border: 1px solid black;
+}
+/* Переключение на этот класс будет скрывать Знак вопросика после ссылки Задать вопрос */
+div.ask.hidden::after {
+    display: none;
+}
+
+/*
+ *  Ссылка "Корзина"
+ */
+div.cart {
+    box-sizing: border-box;
+    position: absolute;
+    top: 17px;
+    //left: 89%;
+    right: 2.9%;
+    height: 23px;
+    width: 103px;
+    //border: 1px solid black;
+}
+
+div.cart > a {
+    color: #7f90aa;
+    font-family: Tahoma;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    position: absolute;
+    left: 29px;
+    top: 1px;
+    //border: 1px solid black;
+}
+
+/* Символ продуктовой корзинки */
+div.cart::before {
+    content: '\f07a';
+    display: inline-block;
+    font-family: 'Font Awesome';
+    color: #888;
+    font-size: 14pt;
+    position: absolute;
+    left: 1px;
+    //border: 1px solid black;
+}
+/* Переключение на этот класс будет скрывать символ продуктовой корзинки */
+div.cart.hidden::before {
+    display: none;
+}
+
+/* Красный шарик с количеством покупок */
+div.cart > a::after {
+    content: ''; 
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background-image: linear-gradient(#fac5c5, #f26464);
+    position: absolute;
+    left: 55px;
+    //border: 1px solid black;
+}
+
+/* Количество покупок в красном шарике */
+div.cart::after {
+    content: '222'; /* FIXME Это значение количества покупок в корзине будет определяться на лету */
+    color: white;
+    text-align: center;
+    display: inline-block;
+    width: 15px;
+    height: 9px;
+    font-family: Tahoma;
+    font-size: 9px;
+    letter-spacing: 0.3px;
+    position: absolute; /* Странно, но этот блок вылезает на передний план не за счет z-index, а за счет position: realtive */
+    left: 85px;
+    top: 4px;
+    //border: 1px solid black;
+}
+
+/*
+ *  Нижняя часть Хедера с полосой меню и ссылкой Войти
+ */
+nav.header2 {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    top: 23px;
+    //border: 1px solid black;
+}
+
+nav.header2 > div {
+    display: inline-block;
+}
+
+/*
+ *  Ссылка Войти с символом замочка
+ */
+div.entrance {
+    position: absolute;
+    right: 5.9%;
+    //border: 1px solid black;
+}
+
+/* символ замочка */
+div.entrance:not(.nick)::before {
+    content: '';
+/*
+    content: '\f023';
+    font-family: 'Font Awesome';
+*/
+    //color: #888;
+    position: relative;
+    right: 6px;
+    //top: 3px;
+    
+    background: url('../svg/padlock.svg');
+    background-size: 13px;
+    background-repeat: no-repeat;
+    width: 13px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: bottom;
+    //border: 1px solid black;
+}
+
+/* ссылка Войти */
+div.entrance > a {
+    color: #d3be4a;
+    font-family: Tahoma;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: bottom;
+    //border: 1px solid black;
+}
+
+/* ссылка с Именем вместо ссылки Войти */
+div.entrance.nick > a {
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 6px solid #d3be4a;
+}
+
+/* стрелочка вниз справа от Имени */
+div.entrance.nick::after {
+    content: '';
+    display: inline-block;
+    height: 5px;
+    width: 5px;
+    border-right: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    transform: translateX(5px) rotate(45deg);
+    vertical-align: top;
+    position: relative;
+    top: 3px;
+}
+
+/*
+ *  Главное меню
+ */
+div.menu {
+    position: absolute;
+    //width: 555px;
+    width: 560px;
+    //border: 1px solid black;
+}
+
+div.menu > div.shop {
+    margin-left: 4.9%;
+}
+
+div.menu > div {
+    display: inline-block;
+    margin-left: 7.9%;
+    //border: 1px solid black;
+}
+
+div.menu > div > a {
+    color: #7f90aa;
+    font-family: Tahoma;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    //word-spacing: -3px;
+}
+
+/*
+ *  Слоган под хедером
+ */
+div.slogan {
+    font-family: 'Etelka Text Pro';
+    font-size: 20.5pt;
+    letter-spacing: 0.5px;
+    line-height: 40px;
+    word-spacing: -0.1px;
+    position: relative;
+    top: 40px;
+    left: 8.7%;    
+    width: 85%;
+    //border: 1px solid black;
+}
+
+/* Ссылка Новые книги бесплатно в слогане */
+div.slogan > a.new-books-free {
+    text-decoration: none;
+    color: #d3be4a;
+    margin-left: 6px;
+    margin-right: 8px;
+    padding-left: 10px;
+    padding-right: 7px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border: 1px dashed #d3be4a;
+    border-radius: 5px;
+	position: relative;
+    z-index: 1;
+}
+
+/* Ссылка Публикуй в слогане */
+div.slogan > a.publish-own {
+    text-decoration: none;
+    color: #5f7495;
+    border-bottom: 2px solid #5f7495;
+    margin-left: 1px;
+    margin-right: 1px;
+	position: relative;
+    z-index: 1;
+}
+
+/* Для того, чтобы подчеркнуть страницу, которая выбрана, к div добавляется класс menu-item-selected */
+.menu-item-selected {
+    height: 25px;
+    border-bottom: 6px solid #d3be4a;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+/*
+ * Центральная часть страницы
+ */
+/*
+ *  Расширенный поиск
+ */
+.extended-search {
+    margin-left: 27px;
+    margin-top: 25px;
+}
+
+.extended-search a {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #8f99b0;
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: underline;
+}
+
+.extended-search a::after {
+    content: '\1f50d';
+    font-family: 'Segoe UI Symbol';
+    font-size: 16px; 
+    color: #949494;
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    position: relative;
+    left: 5px;
+    bottom: 1px;
+}
+
+/*
+ *  Сводка результатов поиска
+ */
+.search-results-summary {
+    margin-left: 24px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.search-results-summary .header {
+    font-family: Tahoma;
+    font-size: 34px;
+}
+
+.search-results-summary .summary {
+    font-family: Tahoma;
+    font-size: 13px;
+    margin-left: 1px;
+    margin-top: 10px;
+}
+
+.search-results-summary .summary a {
+    color: #8f99b0;
+}
+
+/*
+ * Блок выбора типа сортировки результатов поиска
+ */
+.sort-by {
+    margin-left: 1px;
+    margin-top: 20px;
+}
+
+.sort-by > div {
+    font-family: Tahoma;
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+    letter-spacing: 0.3px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sort-by > input[type="radio"] {
+    display: none;
+}
+
+/* Переключалка типа сортировки результатов поиска */
+label.sort-link {
+    font-family: Tahoma;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0.3px;
+    text-decoration: underline;
+    color: #5f7495;
+    margin-left: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 1px;
+    padding-bottom: 2px;
+    margin-right: -5px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+div.sort-links {
+    min-width: 200px;
+}
+
+#sort-link-1:checked ~ div.sort-links > label[for="sort-link-1"],
+#sort-link-2:checked ~ div.sort-links > label[for="sort-link-2"],
+#sort-link-3:checked ~ div.sort-links > label[for="sort-link-3"],
+#sort-link-4:checked ~ div.sort-links > label[for="sort-link-4"] {
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #e5d996;
+    word-spacing: 1px;
+    letter-spacing: 0.4px;
+}
+
+/*
+ *  Выбор типа отображения результатов поиска
+ */
+.search-results-show-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 48px;
+    position: absolute;
+    right: 15px;
+    bottom: -60px;
+    z-index: 1;
+}
+
+.search-results-show-type input[type="radio"] {
+    display: none;
+}
+
+#show-type-list:checked ~ label[for="show-type-list"] div,
+#show-type-tiles:checked ~ label[for="show-type-tiles"] div {
+    background-color: #cc7937;
+}
+
+.search-results-show-type label {
+    display: flex;
+    justify-content: space-between;
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+}
+
+.search-results-show-type div {
+    background-color: #979797;
+}
+
+/* отображение списком */
+.search-results-show-type .list {
+    flex-direction: column;
+}
+
+.search-results-show-type .list div {
+    width: 17px;
+    height: 5px;
+}
+
+/* отображение плиткой */
+.search-results-show-type .tiles {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.search-results-show-type .tiles div {
+    width: 8px;
+    height: 8px;
+}
+
+/*
+ *  Блоки результатов поиска
+ */
+.search-results {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 85px;
+}
+
+/*
+ *  Баннер специальных предложений
+ */
+.spec {
+    width: 199px;
+}
+
+/* Шапка баннера специальных предложений */
+.spec > .header {
+    font-family: Verdana;
+    font-size: 15px;
+    letter-spacing: 0.8px;
+    line-height: 19px;
+    font-style: italic;
+    padding-left: 17px;
+    padding-top: 15px;
+    color: #d3be4a;
+    height: 53px;    
+    border: 1px dashed #888;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #f5f5f5;
+}
+
+.spec > .header > .arrow-down {
+    width: 15px;
+    height: 15px;
+    border-right: 2px solid #dae1ee;
+    border-bottom: 2px solid #dae1ee;
+    transform: rotate(41deg) skewX(-10deg);
+    position: relative;
+    top: -31px;
+    left: 137px;
+}
+
+/* Тело баннера специальных предложений */
+.spec > .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px dashed #888;
+    border-top: none;
+    padding: 30px 10px;
+}
+
+.spec > .main .show-all {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #667493;
+    text-align: center;
+}
+
+/* Книжка на баннере специальных предложений */
+.spec > .main > .spec-book {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+
+.spec > .main > .spec-book .cover-rating {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.spec > .main > .spec-book .cover {
+    width: 45px;
+    box-shadow: 2px 0 3px -2px #888,
+                -2px 0 3px -2px #888;
+    position: relative;
+    left: 5px;
+}
+
+/* Рейтинг-звездочка у книжки на баннере специальных предложений */
+.spec > .main > .spec-book .rating::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(../svg/rating-star.svg);
+    background-repeat: no-repeat;
+    background-size: 15px;
+    width: 15px;
+    height: 15px;
+}
+
+.spec > .main > .spec-book .rating {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #0acd1c;
+    letter-spacing: 0.3px;
+    position: relative;
+    top: 2px;
+    left: 10px;
+    //border: 1px solid black;
+}
+
+/* Описание книжки на баннере специальных предложений */
+.spec > .main > .spec-book > .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    left: 15px;
+    top: -3px;
+    padding-right: 10px;
+    height: 88px;
+    //border: 1px solid black;
+}
+
+/* Заголовок книжки на баннере специальных предложений */
+.spec > .main > .spec-book > .content > .title {
+    font-family: Tahoma;
+    font-size: 11px;
+    color: #d3be4a;
+    letter-spacing: 0.3px;
+    text-decoration: underline;
+    line-height: 16px;
+    margin-bottom: 4px;
+}
+
+/* Имя автора книжки на баннере специальных предложений */
+.spec > .main > .spec-book > .content > .author-name {
+    font-family: Tahoma;
+    font-size: 10px;
+    color: #6e6e6e;
+    text-decoration: underline;
+    letter-spacing: 0.3px;
+    margin-bottom: 9px;
+}
+
+/* Цена книжки на баннере специальных предложений */
+.spec > .main > .spec-book .cost {
+    display: inline-block;
+    font-family: Tahoma;
+    font-size: 11.5px;
+    color: white;
+    height: 18px;
+    transform: skewX(15deg);
+    background-image: linear-gradient(#f9a47c 10%, #e9773e 60%);
+    margin-left: 4px;
+    position: absolute;
+    bottom: 0;
+}
+
+.spec > .main > .spec-book .cost > span {
+    display: inline-block;
+    transform: skewX(-15deg);
+    box-sizing: border-box;
+    padding: 2px 13px;
+    padding-bottom: 15px;
+    position: relative;
+    left: 2px;
+}
+
+/* Тень под блоками результатов поиска */
+.shadow {
+    height: 55px;
+    width: 100%;
+    position: absolute;
+    bottom: -55px;
+    background-color: white;
+    //border: 1px solid black;
+}
+
+.shadow::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 1%;
+    bottom: 1px;
+    z-index: -1;
+    height: 10px;
+    width: 49%;
+    box-shadow: 0 0 10px 0 #888;
+    transform: rotate(0.2deg);
+}
+
+.shadow::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 1%;
+    bottom: 1px;
+    z-index: -1;
+    height: 10px;
+    width: 49%;
+    box-shadow: 0 0 10px 0 #888;
+    transform: rotate(-0.2deg);
+}
+
+.search-results .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.search-results .column > .item:not(:first-child):not(:nth-child(2)) {
+    margin-top: 30px;
+}
+
+.search-results .left-column {
+    width: 76%;
+    margin-left: 25px;
+    min-width: 570px;
+}
+
+.search-results .right-column {
+    min-width: 199px;
+    width: 16%;
+}
+
+.search-results .right-column .shifter {
+    height: 40px;
+    //border: 1px solid black;
+}
+
+.search-results .left-column .header {
+    height: 40px;
+    //border: 1px solid black;
+}
+
+.search-results .left-column .header .title {
+    font-family: Tahoma;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.search-results .left-column .header .summary {
+    font-family: Tahoma;
+    font-size: 12px;
+    margin-left: 22px;
+}
+
+/*
+ *  Блок результатов поиска: Электнонные книги
+ */
+.search-results .left-column .search-result-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    padding: 30px;
+    //margin-top: 25px;
+}
+
+/* 1-ый столбец описания книги */
+.search-results .left-column .ebook .cover {
+    width: 140px;
+    height: 224px;
+    box-shadow: 2px 0 10px -5px black,
+                -2px 0 10px -5px black;
+}
+
+.search-results .left-column .ebook .cover img {
+    width: 140px;
+    height: 224px;
+}
+
+/* 2-ой столбец описания книги */
+.search-results .left-column .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.search-results .left-column .about .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.search-results .left-column .about .footer div {
+    margin-right: 30px;
+}
+
+.search-results .left-column .about .title a {
+    font-family: Tahoma;
+    font-size: 22px;
+    color: #667393;
+    text-decoration: underline;
+}
+
+.search-results .left-column .about .author {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: black;
+    margin-top: 5px;
+}
+
+.search-results .left-column .about .author a {
+    font-family: Tahoma;
+    font-size: 14px;
+    color: #8e98af;
+    text-decoration: underline;
+}
+
+.search-results .left-column .about .description {
+    font-family: Tahoma;
+    font-size: 12px;
+    margin-top: 25px;
+    line-height: 17px;
+}
+
+.search-results .left-column .about .footer {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #9e9e9e;
+    margin-top: 20px;
+}
+
+/* 3-ий столбец описания книги */
+.search-results .left-column .actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.search-results .left-column .actions .buy {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+
+.search-results .left-column .actions .buy .item {
+    font-family: Tahoma;
+    font-size: 12px;
+    border: 1px solid #c4c4c4;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    height: 34px;
+}
+
+.search-results .left-column .actions .buy .price {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: none;
+}
+
+.search-results .left-column .actions .buy .cart-btn {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+.search-results .left-column .actions .buy .cart-btn:hover {
+    background-color: #cc7937;
+}
+
+/* 
+ * Звездочки рейтинга книги
+ */
+.search-results .left-column .actions .rating,
+.search-results .left-column .actions .reviews {
+    margin-left: 10px;
+}
+
+.search-results .left-column .actions .rating {
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.search-results .left-column .actions .rating div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.search-results .left-column .actions .rating-stars {
+    width: 75px;
+    height: 13px;
+    background-color: yellow;
+    position: absolute;
+}
+
+/* маска для звездочек рейтинга */
+.search-results .left-column .actions .rating-stars::before {
+    content: '';
+    position: relative;
+    left: -2px;
+    display: block;
+    width: 75px;
+    height: 25px;
+    background-image: url(../svg/rating-5-stars.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+/* закраска звездочек в рейтинге */
+.search-results .left-column .actions .rating-stars {
+    width: 56px;
+}
+
+.search-results .left-column .actions .rating-number {
+    font-family: Tahoma;
+    font-size: 12px;
+    //color: #0acd1c;
+    color: black;
+    width: 20px;
+    letter-spacing: 0.3px;
+    position: relative;
+    left: 85px;
+}
+
+/*
+ *  Ссылка на рецензии (отзывы)
+ */
+.search-results .left-column .actions .reviews a {
+    font-family: Tahoma;
+    font-size: 11px;
+    color: #7d89a3;
+}
+
+/*
+ *  Меню справа от списка найденных электронных книг
+ */
+.search-results .right-column .top-level {
+    border: 1px dashed #e1e1e1;
+    border-radius: 5px;
+    padding: 45px 15px;
+    //margin-top: 45px;
+}
+
+.right-column ul.top-level,
+.right-column ul.top-level li.top-level-link,
+.right-column ul.top-level ul.bottom-level,
+.right-column ul.top-level ul.bottom-level li.bottom-level-link {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.right-column ul.top-level li.top-level-link {
+    margin-bottom: 7.5px;
+}
+
+.right-column ul.top-level ul.bottom-level li.bottom-level-link {
+    margin-bottom: 5px;
+}
+
+.right-column ul.top-level ul.bottom-level {
+    margin-bottom: 20px;
+}
+
+.right-column li.top-level-link a {
+    font-family: Tahoma;
+    font-size: 17px;
+    color: black;
+    letter-spacing: 0.3px;
+}
+
+.right-column li.bottom-level-link a {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #5f7495;
+    letter-spacing: 0.3px;
+}
+
+/*
+ * Обложка электронной книги на баннере специальных предложений
+ */
+.search-results.ebooks .right-column .spec > .main > .spec-book .cover {
+    width: 55px;
+    height: 88px;
+    overflow: hidden;
+    float: left;
+}
+
+/*
+ *  Блок результатов поиска: Аудио-книги
+ */
+/* 1-ый столбец описания аудио-книги */
+.search-results .left-column .audiobook .cover-play {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.search-results .left-column .audiobook .cover {
+    width: 137px;
+    height: 137px;
+    box-shadow: 2px 0 10px -5px black,
+                -2px 0 10px -5px black;
+}
+
+.search-results .left-column .audiobook .play {
+    display: block;
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #585858;
+    background: url('../svg/play-button.svg');
+    background-repeat: no-repeat;
+    background-size: 35px 35px;
+    height: 35px;
+    padding-left: 48px;
+    padding-top: 3px;
+    text-decoration: none;
+    margin-top: 25px;
+    margin-left: 5px;
+}
+
+/*
+ * Обложка электронной книги на баннере специальных предложений
+ */
+.search-results.audiobooks .right-column .spec > .main > .spec-book .cover {
+    overflow: hidden;
+    float: left;
+    width: 55px;
+    height: 55px;
+}
+
+/*
+ *  Блок результатов поиска: Авторы
+ */
+/*
+ *  Стилизация фотографии автора
+ */
+/* фото автора */
+.search-results .left-column .author .photo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 25px;
+    margin-right: 25px;
+    //border: 1px solid black;
+}
+    
+/* круглая маска для обрезания фотки автора */
+.search-results .left-column .author .photo::before {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-image: url(../svg/circle.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+}
+
+/*
+ * Стилизация 1-ой строки блока с автором
+ */
+.search-results .left-column .author .about .fullname-rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.search-results .left-column .author .about .fullname-rating > div {
+    //border: 1px solid black;
+    margin-right: 30px;
+}
+
+/*
+ * Стилизация имени автора
+ */
+.search-results .left-column .author .about .fullname-rating .fullname a {
+    font-family: Tahoma;
+    font-size: 22px;
+    color: #667393;
+}
+
+/* 
+ * Звездочки рейтинга автора
+ */
+.search-results .left-column .author .about .fullname-rating .rating {
+    margin-left: 10px;
+}
+
+.search-results .left-column .author .about .fullname-rating .rating .rating-stars {
+    width: 75px;
+    height: 13px;
+    background-color: yellow;
+    position: absolute;
+}
+
+/* маска для звездочек рейтинга */
+.search-results .left-column .author .about .fullname-rating .rating .rating-stars::before {
+    content: '';
+    position: relative;
+    left: -2px;
+    display: block;
+    width: 75px;
+    height: 25px;
+    background-image: url(../svg/rating-5-stars.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+/* закраска звездочек в рейтинге */
+.search-results .left-column .author .about .fullname-rating .rating .rating-stars {
+    width: 56px;
+}
+
+.search-results .left-column .author .about .fullname-rating .rating .rating-number {
+    font-family: Tahoma;
+    font-size: 12px;
+    //color: #0acd1c;
+    color: black;
+    width: 20px;
+    letter-spacing: 0.3px;
+    position: relative;
+    left: 85px;
+}
+
+/*
+ * Стилизация 2-ой строки блока с автором
+ */
+.search-results .left-column .author .about .genres {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #7b7b7b;
+    margin-top: 10px;
+}
+
+.search-results .left-column .author .about .genres a {
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #667493;
+}
+
+/*
+ * Стилизация 3-ей строки блока с автором
+ */
+.search-results .left-column .author .about .description {
+    font-family: Tahoma;
+    font-size: 12px;
+    margin-right: 30px;
+    //border: 1px solid black;
+}
+
+/*
+ * Стилизация 4-ой строки блока с автором (футер)
+ */
+.search-results .left-column .author .about .footer {
+    justify-content: space-between;
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #7b7b7b;
+    margin-right: 20px;
+}
+
+.search-results .left-column .author .about .footer a {
+    color: #667493;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* FIXME убрать эти тестовые рамки */
+/*
+.search-results:nth-of-type(3) .column,
+.search-results:nth-of-type(4) .column,
+.search-results:nth-of-type(5) .column {
+    border: 1px solid black;
+}
+*/
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+/*
+ * Книжки на полке в футере
+ */
+.books-on-shelf {
+    margin-top: 100px;
+    position: relative;
+    z-index: 1;
+    left: 14.45%;
+    width: 71%;
+    height: 183px;
+    overflow: hidden;
+    //border: 1px solid black;
+}
+
+.books-on-shelf > img {
+    margin-right: -4px;
+}
+
+/*
+ *  Футер
+ */
+footer {
+    position: relative;
+    top: -75px;
+}
+
+/*
+ *  Составные части полки (в данном случае полка - это рисунок доски, нарисованной по частям)
+ */
+/* Нижняя часть полки */
+div.shelf-bottom-part {
+    //width: 964px;
+    width: 97.1%;
+    height: 15px;
+    background-color: #cacaca;
+    position: absolute;
+    //left: 13px;
+    left: 1.4%;
+    top: 193px;
+    box-shadow: 0 10px 40px -6px #111;
+}
+
+/* Левая наклонная часть полки */
+div.shelf-left-part {
+    //width: 500px;
+    width: 50.4%;
+    height: 16px;
+    background-image: linear-gradient(#efefef, white);
+    transform: skewX(-70deg);
+    position: absolute;
+    //left: 36px;
+    left: 4.1%;
+    top: 176px;
+    //border: 1px solid black;
+}
+
+/* Правая наклонная часть полки */
+div.shelf-right-part {
+    //width: 500px;
+    width: 50.4%;
+    height: 16px;
+    background-image: linear-gradient(#efefef, white);
+    transform: skewX(70deg);
+    position: absolute;
+    //right: 36px;
+    right: 4.1%;
+    top: 176px;
+    //border: 1px solid black;
+}
+
+footer > div.footer-shelf {
+    position: relative;
+    //width: 1280px;
+    width: 100%;
+    height: 95px;
+    //border: 1px solid black;    
+}
+
+/* левая часть полки */
+footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-left-part {
+    position: absolute;
+    top: 65px;
+    left: 4.8%;
+    //width: 650px;
+    width: 50.78%;
+    height: 20px;
+    //border: 1px solid black;
+}
+
+/* правая часть полки */
+footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-right-part {
+    position: absolute;
+    top: 65px;
+    right: 5%;
+    //width: 650px;
+    width: 50.78%;
+    height: 20px;
+    //border: 1px solid black;
+}
+
+/* нижняя часть полки */
+footer > div.footer-shelf > div.footer-shelf.shelf-part.shelf-bottom-part {
+    position: absolute;
+    top: 88px;
+    left: 2.2%;
+    //width: 1220px;
+    width: 95.3%;
+    height: 17px;
+}
+
+/*
+ *  Под полкой футера
+ */
+footer > div.under-footer-shelf {
+    width: 100%;
+    //border: 1px solid black;
+}
+
+footer > div.under-footer-shelf > div {
+    display: inline-block;
+    vertical-align: top;
+    font-family: Tahoma;
+    letter-spacing: 0.3px;
+    margin-top: 55px;
+    //margin-left: 15px;
+    margin-left: 1.2%;
+    //border: 1px solid black;
+}
+
+footer > div.under-footer-shelf > div.copyright {
+    font-size: 11.5px;
+    letter-spacing: 0.1px;
+    word-spacing: 0.1px;
+    width: 18%;
+    margin-left: 4.5%;
+}
+
+footer > div.under-footer-shelf > div.about-company {
+    width: 13%;
+}
+
+footer > div.under-footer-shelf > div.help {
+    width: 11%;
+}
+
+footer > div.under-footer-shelf > div.earn-with-us {
+    width: 19.5%;
+}
+
+footer > div.under-footer-shelf > div.site-map {
+    width: 13%;
+}
+
+footer > div.under-footer-shelf > div > a {
+    display: block;
+}
+
+footer > div.under-footer-shelf > div > a:nth-of-type(1) {
+    font-size: 14px;
+    color: #5f7495;
+    margin-bottom: 23px;
+}
+
+footer > div.under-footer-shelf > div > a:not(:nth-of-type(1)) {
+    font-size: 11px;
+    color: #3b3b3b;
+    margin-bottom: 9px;
+}
+
+/*
+ *  Шаринг соц.сетей
+ */
+footer > div.under-footer-shelf > div.social-sharing {
+    position: absolute;
+}
+
+footer > div.under-footer-shelf > div.social-sharing > a {
+    text-decoration: none;
+/*
+    background-repeat: no-repeat;
+    background-image: url(../img/social-icons.png);
+*/
+    background-size: 25px;
+    height: 25px;
+    width: 25px;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+footer > div.under-footer-shelf > div.social-sharing > a.share-icon-facebook {
+    //background-position: -75px 0;
+    background-image: url(../svg/F_icon.svg); 
+}
+
+footer > div.under-footer-shelf > div.social-sharing > a.share-icon-vk {
+    //background-position: 0 -25px;
+    background-image: url(../svg/VK_icon.svg);
+}
+
+footer > div.under-footer-shelf > div.social-sharing > a.share-icon-livejournal {
+    //background-position: -75px -25px;
+    background-image: url(../svg/LJ_icon.svg);
+}
