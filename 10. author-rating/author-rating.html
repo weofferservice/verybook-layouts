@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Verybook</title>
+		<meta charset="UTF-8" />
+        <link href="css/author-rating.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body onload="init()">
+        <header>
+            <div class="header header1">
+                <a href="#" class="logo">
+                    <span class="logo-word logo-line logo-line1"></span>
+                    <span class="logo-word logo-line logo-line2"></span>
+                    <span class="logo-word logo-v">V</span>
+                    <span class="logo-word logo-erybook">erybook</span>
+                </a>
+                <div class="search">
+                    <input type="text" name="search" autocomplete>
+                    <button class="search-btn"></button>
+                </div>
+                
+                <!-- Для того, чтобы подчеркнуть, что выбран один из следующих пунктов, к div добавляется класс header-item-selected -->
+                <div class="ask ">
+                    <a href="#">
+                        <span class="text">Задать вопрос</span>
+                        <span class="figure"></span>
+                    </a>
+                </div>
+                <div class="cart">
+                    <a href="#">
+                        <span class="figure"></span>
+                        <span class="text">Корзина</span>
+                        <span class="count">222</span>
+                    </a>
+                </div>
+            </div>
+            <nav class="header header2">
+                <div class="menu">
+                    <!-- Для того, чтобы подчеркнуть страницу, которая выбрана, к div добавляется класс menu-item-selected -->
+                    <div class="shop ">
+                        <a href="#">Книжный магазин</a>
+                    </div>
+                    <div class="help ">
+                        <a href="#">Помощь автору</a>
+                    </div>
+                    <div class="authors-rating menu-item-selected">
+                        <a href="#">Рейтинг авторов</a>
+                    </div>
+                    <div class="about ">
+                        <a href="#">О проекте</a>
+                    </div>
+                </div>
+                <div class="entrance "> <!-- для залогиненого пользователя нужно добавить класс nick -->
+                    <a href="#"> 
+                        <span class="figure-1"></span>
+                        <span class="text">
+                            <!-- для залогиненого пользователя нужно поменять Войти на Логин -->
+                            Войти
+                        </span>
+                        <span class="figure-2"></span>
+                    </a> 
+                </div>
+            </nav>
+        </header>
+		
+		<main>
+            <div class="slogan">
+                Читай <a href="#" class="new-books-free">новые книги бесплатно</a> и решай их судьбу или <a href="#" class="publish-own">публикуй</a> собственные
+            </div>
+            
+            <div class="columns">
+                <div class="column column-1">
+                    <ul class="rating-filter">
+                        <li class="rating-filter-header">
+                            <h2>Выберите категорию</h2>
+                        </li>
+                        <li class="rating-filter-group">
+                            <h3>Категория 1</h3>
+                            <ul class="radios">
+                                <label>
+                                    <input type="radio" name="radio-group-1" value="1">
+                                    <li class="radio">
+                                        Досуг и творчество
+                                    </li>
+                                </label>
+                                <label>
+                                    <input type="radio" name="radio-group-1" value="2">
+                                    <li class="radio">
+                                        На какой бумаге печатать книгу и обложку?
+                                    </li>
+                                </label>
+                                <label>
+                                    <input type="radio" name="radio-group-1" value="3">
+                                    <li class="radio">
+                                        Переплет и количество страниц
+                                    </li>
+                                </label>
+                                <label>
+                                    <input type="radio" name="radio-group-1" value="4">
+                                    <li class="radio">
+                                        Твердый переплет
+                                    </li>
+                                </label>
+                                <label>
+                                    <input type="radio" name="radio-group-1" value="5">
+                                    <li class="radio">
+                                        Как определить цену?
+                                    </li>
+                                </label>
+                            </ul>
+                        </li>
+                        <li class="rating-filter-group">
+                            <h3>Категория 2</h3>
+                            <ul class="radios">
+                                <label>
+                                    <input type="radio" name="radio-group-2" value="1">
+                                    <li class="radio">
+                                        Досуг и творчество
+                                    </li>
+                                </label>
+                                <label>
+                                    <input type="radio" name="radio-group-2" value="2">
+                                    <li class="radio">
+                                        Книги для родителей
+                                    </li>
+                                </label>
+                                <label>
+                                    <input type="radio" name="radio-group-2" value="3">
+                                    <li class="radio">
+                                        Познавательная литература
+                                    </li>
+                                </label>
+                                <label>
+                                    <input type="radio" name="radio-group-2" value="4">
+                                    <li class="radio">
+                                        Художественная литература
+                                    </li>
+                                </label>
+                            </ul>
+                        </li>
+                        <li class="rating-filter-group">
+                            <h3>Категория 3</h3>
+                            <ul class="radios">
+                                <label>
+                                    <input type="radio" name="radio-group-3" value="1">
+                                    <li class="radio">
+                                        Досуг и творчество
+                                    </li>
+                                </label>
+                                <label>
+                                    <input type="radio" name="radio-group-3" value="2">
+                                    <li class="radio">
+                                        Книги для родителей
+                                    </li>
+                                </label>
+                                <label>
+                                    <input type="radio" name="radio-group-3" value="3">
+                                    <li class="radio">
+                                        Познавательная литература
+                                    </li>
+                                </label>
+                                <label>
+                                    <input type="radio" name="radio-group-3" value="4">
+                                    <li class="radio">
+                                        Художественная литература
+                                    </li>
+                                </label>
+                            </ul>
+                        </li>
+                        <li class="rating-filter-group">
+                            <h3>Категория 4</h3>
+                            <ul class="radios">
+                                <label>
+                                    <input type="radio" name="radio-group-4" value="1">
+                                    <li class="radio">
+                                        Дошкольникам
+                                    </li>
+                                </label>
+                                <label>
+                                    <input type="radio" name="radio-group-4" value="2">
+                                    <li class="radio">
+                                        Школьникам и абитуриентам
+                                    </li>
+                                </label>
+                                <label>
+                                    <input type="radio" name="radio-group-4" value="3">
+                                    <li class="radio">
+                                        Студентам и аспирантам
+                                    </li>
+                                </label>
+                                <label>
+                                    <input type="radio" name="radio-group-4" value="4">
+                                    <li class="radio">
+                                        Педагогам
+                                    </li>
+                                </label>
+                            </ul>
+                        </li>
+                        <li class="rating-filter-group">
+                            <h3>Категория 5</h3>
+                            <ul class="radios">
+                                <label>
+                                    <input type="radio" name="radio-group-5" value="1">
+                                    <li class="radio">
+                                        Досуг и творчество
+                                    </li>
+                                </label>
+                                <label>
+                                    <input type="radio" name="radio-group-5" value="2">
+                                    <li class="radio">
+                                        Книги для родителей
+                                    </li>
+                                </label>
+                                <label>
+                                    <input type="radio" name="radio-group-5" value="3">
+                                    <li class="radio">
+                                        Познавательная литература
+                                    </li>
+                                </label>
+                                <label>
+                                    <input type="radio" name="radio-group-5" value="4">
+                                    <li class="radio">
+                                        Художественная литература
+                                    </li>
+                                </label>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="column column-2">
+                    <div class="item header">
+                        <h1>Рейтинг авторов</h1>
+                        
+                        <div class="categories">
+                            <span class="title">
+                                в категории:
+                            </span>
+                            <span class="query"> <!-- Сюда будет динамически вставляться текст -->
+                                военные, приключения
+                            </span>
+                        </div>
+                        
+                        <div class="summary">
+                            Данному запросу соответствует <span class="count">3 774</span>
+                            автор<span class="ending">ов</span>
+                        </div>
+                    </div>
+                    
+                    <div class="item author">
+                        <div class="serial-number">
+                            <span class="text">1</span>
+                        </div>                        
+                        <div class="photo">
+                            <img src="img/photo1.jpg" width="80" height="80">
+                        </div>
+                        <div class="about">
+                            <div class="fullname-rating">
+                                <div class="fullname">
+                                    <a href="#">Александр Константинопольский</a>
+                                </div>
+                                <div class="rating-3-stars">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                            </div>
+                            <div class="genres">
+                                Жанры:
+                                <a href="#">военные</a>,
+                                <a href="#">детектив</a>,
+                                <a href="#">приключения</a>
+                            </div>
+                            <div class="description">
+                                I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.
+                            </div>
+                            <div class="footer">
+                                <div class="published">
+                                    Опубликовано:
+                                    <a href="#">
+                                        <span>18</span>
+                                        книг
+                                    </a>
+                                </div>
+                                <div class="reviews">
+                                    <a href="#">
+                                        <span>5</span>
+                                        отзывов
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item author">
+                        <div class="serial-number">
+                            <span class="text">2</span>
+                        </div>
+                        <div class="photo">
+                            <img src="img/photo1.jpg" width="80" height="80">
+                        </div>
+                        <div class="about">
+                            <div class="fullname-rating">
+                                <div class="fullname">
+                                    <a href="#">Александр Константинопольский</a>
+                                </div>
+                                <div class="rating-3-stars">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                            </div>
+                            <div class="genres">
+                                Жанры:
+                                <a href="#">военные</a>,
+                                <a href="#">детектив</a>,
+                                <a href="#">приключения</a>
+                            </div>
+                            <div class="description">
+                                I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.
+                            </div>
+                            <div class="footer">
+                                <div class="published">
+                                    Опубликовано:
+                                    <a href="#">
+                                        <span>18</span>
+                                        книг
+                                    </a>
+                                </div>
+                                <div class="reviews">
+                                    <a href="#">
+                                        <span>5</span>
+                                        отзывов
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item author">
+                        <div class="serial-number">
+                            <span class="text">3</span>
+                        </div>
+                        <div class="photo">
+                            <img src="img/photo1.jpg" width="80" height="80">
+                        </div>
+                        <div class="about">
+                            <div class="fullname-rating">
+                                <div class="fullname">
+                                    <a href="#">Александр Константинопольский</a>
+                                </div>
+                                <div class="rating-3-stars">
+                                    <div class="rating-stars"></div>
+                                    <div class="rating-number">2,3</div>
+                                </div>
+                            </div>
+                            <div class="genres">
+                                Жанры:
+                                <a href="#">военные</a>,
+                                <a href="#">детектив</a>,
+                                <a href="#">приключения</a>
+                            </div>
+                            <div class="description">
+                                I draw pictures and I make colouring books! Welcome to my world. Tumble down the rabbit hole and find yourself in my inky black and white Wonderland... I'm an illustrator and ink evangelist who prefers pens and pencils to pixels. I create intricate, hand drawn illustrations predominately, although not exclusively, in black and white. My creativity is cultivated by a curious imagination and a delight in the fantastic. Much of my work has roots in the flora and fauna that surrounded me growing up on my parent's fish farm in rural Scotland.
+                            </div>
+                            <div class="footer">
+                                <div class="published">
+                                    Опубликовано:
+                                    <a href="#">
+                                        <span>18</span>
+                                        книг
+                                    </a>
+                                </div>
+                                <div class="reviews">
+                                    <a href="#">
+                                        <span>5</span>
+                                        отзывов
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a class="show-more" href="#">
+                        Показать еще
+                    </a>
+                </div>
+                
+                <div class="column column-3">
+
+                </div>
+            </div>            
+        </main>
+        
+		<footer>
+            <div class="books-on-shelf">
+                <img src="img/bottom-book-1.jpg">
+                <img src="img/bottom-book-2.jpg">
+                <img src="img/bottom-book-3.jpg">
+                <img src="img/bottom-book-4.jpg">
+                <img src="img/bottom-book-5.jpg">
+                <img src="img/bottom-book-6.jpg">
+                <img src="img/bottom-book-7.jpg">
+                <img src="img/bottom-book-8.jpg">
+                <img src="img/bottom-book-9.jpg">
+            </div>
+            
+            <div class="footer-shelf">
+                <div class="shelf-left-part"></div>
+                <div class="shelf-right-part"></div>
+                <div class="shelf-bottom-part"></div>
+            </div>
+            
+            <div class="under-footer-shelf">
+                <div class="copyright">
+                    © 1993–2014 Верибук.ру
+                </div>
+                
+                <div class="about-company">
+                    <a href="#">
+                        О компании
+                    </a>
+                    <a href="#">
+                        Пресс-центр
+                    </a>
+                    <a href="#">
+                        Вакансии
+                    </a>
+                    <a href="#">
+                        Реквизиты
+                    </a>
+                    <a href="#">
+                        О компании
+                    </a>
+                </div>
+                
+                <div class="help">
+                    <a href="#">
+                        Помощь
+                    </a>
+                    <a href="#">
+                        Как сделать заказ
+                    </a>
+                    <a href="#">
+                        Доставка
+                    </a>
+                    <a href="#">
+                        Оплата
+                    </a>
+                    <a href="#">
+                        Помощь
+                    </a>
+                    <a href="#">
+                        Обратная связь
+                    </a>
+                </div>
+                
+                <div class="earn-with-us">
+                    <a href="#">
+                        Зарабатывайте с нами
+                    </a>
+                    <a href="#">
+                        Продавайте Ваши товары на Ozon.ru
+                    </a>
+                    <a href="#">
+                        Становитесь поставщиками Букинистики
+                    </a>
+                    <a href="#">
+                        Партнёрская программа Ozon.ru
+                    </a>
+                    <a href="#">
+                        Размещайте рекламу на Ozon.ru
+                    </a>
+                    <a href="#">
+                        Открывайте пункты выдачи заказов Ozon.ru
+                    </a>
+                </div>
+                
+                <div class="site-map">
+                    <a href="#">
+                        Карта сайта
+                    </a>
+                    <a href="#">
+                        Покупка товаров (b2b)
+                    </a>
+                    <a href="#">
+                        Подарочные сертификаты
+                    </a>
+                    <a href="#">
+                        Loyalica
+                    </a>
+                </div>
+                
+                <div class="social-sharing">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=verybook.ru"
+                       title="Поделиться Verybook на Facebook"
+                       class="share-icon-facebook">
+                    </a>
+                    <a href="#"
+                       title="Поделиться Verybook ВКонтакте"
+                       class="share-icon-vk">
+                    </a>
+                    <a href="#"
+                       title="Поделиться Verybook в ЖЖ"
+                       class="share-icon-livejournal">
+                    </a>
+                </div>
+            </div>            
+		</footer>
+	</body>
+    
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="js/vb.js"></script>
+    
+</html>
